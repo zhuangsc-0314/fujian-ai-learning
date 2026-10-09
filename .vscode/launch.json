@@ -1,0 +1,58 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "项目 0.1：材料输入诊断",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/project_steps/00_01_material_input/main.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "第一课：逐步调试",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/01_first_chain/main.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "第二课：两轮演示",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/02_chat_history/main.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "第二课：交互聊天",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/02_chat_history/main.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--chat"],
+      "justMyCode": true,
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  ]
+}

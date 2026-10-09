@@ -1,0 +1,4 @@
+# Lesson 01: LangChain core, DeepSeek integration, and .env configuration.
+langchain-core==1.6.6
+langchain-deepseek==1.1.1
+python-dotenv==1.2.4
