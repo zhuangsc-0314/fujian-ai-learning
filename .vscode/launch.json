@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "项目 1.3-B：认证失败故障注入",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/project_steps/01_03b_http_errors/main.py",
+      "python": "${workspaceFolder}/.venv-py312/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": ["auth"],
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
       "name": "项目 1.3-A：超时故障注入",
       "type": "debugpy",
       "request": "launch",
