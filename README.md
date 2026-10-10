@@ -24,7 +24,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 更早任务：[安全配置讲义](project_steps/00_02_safe_config/README.md)。用户独立补上 MODEL 校验，13 个隔离案例和真实配置入口通过，见 [评审记录](project_steps/00_02_safe_config/REVIEW_RESULTS.md)。配置优先级解释/独立调试仍待验证；已在新环境回归通过。
 
-更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。准确抛错定位/输入修复通过，捕获传播说明及注释/格式收尾仍保留。推进课次不等于全部掌握。
+更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。0.1核心输入/异常验收及本课收尾通过，0.2/0.3解释与1.2练习仍待证据。推进课次不等于全部掌握。
 
 当前课程分支 `codex/1-2-langchain-model`，包含此前所有课程；跨电脑指令见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)，本课 Git 交付状态见 [任务记录](docs/tasks/1.2-langchain-model.md)。旧课程同步记录 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史证据；任务分支通过 PR 交接，main 合并单独处理。
 
