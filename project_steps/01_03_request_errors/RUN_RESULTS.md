@@ -41,3 +41,15 @@ Python3.12.15、openai3.26.1，依赖声明和uv.lock未改。实际打印APITim
 退出1为TODO尚未完成时的预期结果，不能登记整课功能或用户能力通过。6项基础检查使用socket哨兵防止意外联网；没有读取.env、创建真实模型客户端或API调用。
 
 三份Python文件AST解析及.vscode/launch.json的JSON解析实际通过。语法检查没有导入或执行模型调用。此次未执行用户TODO、未演练真实供应商故障/重试、未检查账单；用户完成后需核对修改与新离线结果。
+
+## 2026-10-10 命令行参数补讲实测
+
+本轮助手运行args_demo.py无参数：退出0；sys.argv只有脚本路径，len为1，类型str，模型请求0。
+
+```powershell
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03_request_errors\args_demo.py timeout '福建 政策材料.txt' 3
+```
+
+退出0；实际输出的列表包含脚本路径、'timeout'、'福建 政策材料.txt'、'3'，len为4，各项均str，模型请求0。引号分组使含空格文件名成为一项，数字没有自动变为int。
+
+AST实际对比确认参数补讲前后的main.py执行逻辑一致；只扩展注释。args_demo.py语法检查通过。用户参数数量TODO未代做，用户独立预测/修改和运行结果尚未提供；没有重跑无关模型或故障检查。

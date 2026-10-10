@@ -8,24 +8,24 @@
 - 协作契约：根目录 `AGENTS.md`。
 - 学习掌握事实：`LEARNING_PROGRESS.md`；架构决策：`DECISIONS.md`。
 - 当前没有多人后端、前端、生产数据库迁移或平台部署。1.2本课已通过；当前1.3-A故障注入骨架及6项基础检查通过，超时分支TODO待用户完成，整课1.3未完成。
-- 当前分支 `codex/1-3-request-errors` 从已完成1.2继续，含此前所有课程；课程提交7356c08已推送，[草稿PR #5](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/5)已创建并附到会话，未合并。Git交接见 [任务记录](tasks/1.3-request-errors.md)，本交接文档随后独立提交。1.3-A不读取配置、不联网，用户独立分类尚待验收。
-- 已完成1.2课程分支为 `codex/1-2-langchain-model`，课程提交0a42a19已推送且完整SHA与远端核对一致；[PR #4](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/4)已创建、未合并。历史Git交付状态见 [任务记录](tasks/1.2-langchain-model.md)；跨电脑获取当前1.3分支，main合并单独处理。
-- 历史1.1课程分支 `codex/1-1-first-model-call` 已推送，课程提交 `2cc6a56` 的本地/远端完整SHA实测一致；本交付记录随后另行提交，最新文档以分支远端为准。[PR #3](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/3) 未合并，含0.3用户修改/评审及此前课程；详见 [任务记录](tasks/1.1-first-sdk-call.md)。跨电脑先获取当前课程分支。
-- 当前交付分支 `codex/0-3-reproducible-env` 已推送，课程提交 `ac3af79` 包含 0.1/0.2 用户修改、0.3 环境及进度记录，本地/远端完整 SHA 实测一致；本验收文档随后另行提交，最新状态以分支远端为准。详见 [SYNC-002](tasks/SYNC-002-progress-push.md)。[PR #2](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/2) 已创建、main 尚未合并；跨电脑使用该分支，不能只拉 main 后认定课程丢失。
+- 本轮由 [SYNC-003](tasks/SYNC-003-daily-main.md) 汇总今日档案、命令行参数补讲与所有既有课程。工作分支 `codex/sync-003-daily-main`，用户明确授权通过PR合并main；当前正在交接，合并完成后统一从main获取。实际推送、PR和合并结果将写入该任务，不把待执行动作称为完成。
+- 历史课程分支 `codex/1-3-request-errors` 包含此前所有课程，7356c08为1.3骨架交付；[PR #5](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/5)及 [任务记录](tasks/1.3-request-errors.md)保留当时状态。补讲不修改异常逻辑，独立TODO仍待验收。
+- 1.2历史交付0a42a19、[PR #4](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/4)见 [任务记录](tasks/1.2-langchain-model.md)；1.1交付2cc6a56、[PR #3](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/3)见 [任务记录](tasks/1.1-first-sdk-call.md)；阶段0交付ac3af79、[PR #2](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/2)见 [SYNC-002](tasks/SYNC-002-progress-push.md)。这些提交均已推送，fetch及祖先检查确认全部包含在本轮汇总分支；各PR当前状态以GitHub为准。
 
 ## 任务索引
 
 | ID | 范围 | 负责人 | 功能状态 | 学习状态 | 依赖/下一步 |
 | --- | --- | --- | --- | --- | --- |
-| 0.1 | 材料输入诊断 | 当前教学智能体；用户独立修改/修复 | region历史12案例、修复/负例5项及收尾通过；AST一致 | 0.1核心输入/异常验收通过；0.2随后通过 | [任务记录](tasks/0.1-material-input.md)；0.3解释/调试待证据 |
+| 0.1 | 材料输入诊断 | 当前教学智能体；用户独立修改/修复 | region历史12案例、修复/负例5项及收尾通过；AST一致 | 0.1核心输入/异常验收通过；0.2随后通过 | [任务记录](tasks/0.1-material-input.md)；0.3已按用户要求收尾 |
 | SYNC-001 | GitHub 初始化与协作文档 | 当前主智能体/协调者 | 通过：私有 main 已推送，初始 SHA 已核实 | 不推进学习阶段 | 后续智能体先获仓库访问权限，再读 AGENTS 与任务记录 |
 | SYNC-002 | 全部课程改动及学习进度云端同步 | 当前主智能体；用户直接分配 | 通过：课程已推送，远端 SHA 一致，PR #2 已创建 | 不把同步登记为学习掌握 | [任务记录](tasks/SYNC-002-progress-push.md)；[跨电脑说明](CROSS_COMPUTER_SETUP.md) |
-| ENV-001 | 中文提交规范与本机 VS Code 语言修复 | 当前主智能体；用户本轮直接分配 | 通过：本机简中界面实测恢复；规范通过任务分支/PR 交接，main 待合并 | 不推进学习阶段 | 见 [任务记录](tasks/ENV-001-vscode-locale.md) |
+| ENV-001 | 中文提交规范与本机 VS Code 语言修复 | 当前主智能体；用户直接分配 | 通过：本机简中界面实测恢复；规范已通过任务分支/PR交接，本轮SYNC-003汇总 | 不推进学习阶段 | 见 [任务记录](tasks/ENV-001-vscode-locale.md) |
 | 0.2 | 环境变量与配置诊断 | 当前教学智能体；用户独立修改 | 通过：MODEL 校验、13 隔离案例与真实入口通过；新环境回归通过 | 本课通过：独立修改/优先级解释、9项用户运行日志、故障定位/输入修复说明 | [任务记录](tasks/0.2-safe-config.md)；进入0.3解释/调试验收 |
 | 0.3 | 支持中的 Python 与依赖锁定 | 当前教学智能体；用户独立练习 | 环境/报告扩展通过，课程按用户要求已完成 | 修改/来源/定位与切换有证据，运行时依赖解释成立；完整职责/tree输出未验证，剩余补验收停止 | [任务记录](tasks/0.3-reproducible-env.md)；进入1.2，不以未验证项阻挡 |
 | 1.1 | 最小真实SDK请求对照 | 当前教学智能体；用户独立修改目标 | 原/新目标请求输出及离线检查通过，信息不足问题有据 | 独立修改/三项解释/输出核对/缺Key定位说明通过 | [任务记录](tasks/1.1-first-sdk-call.md)；[用户反馈](../project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md) |
 | 1.2 | ChatDeepSeek模型接口 | 当前教学智能体；用户独立练习 | 原目标/10项离线检查及用户新目标真实回答通过 | 本课核心验收通过：修改、真实输出、请求/角色/正文解释与空材料定位；用量专用含义由助手补充 | [任务记录](tasks/1.2-langchain-model.md)；当前推进1.3-A |
 | 1.3 | 输入与上游错误处理，先做1.3-A | 当前教学智能体；用户独立TODO | 故障注入骨架/6项基础检查通过；超时分类探针待完成，退出1 | 待用户超时分支、顺序与未知执行状态解释；不据骨架通过登记掌握 | [任务记录](tasks/1.3-request-errors.md)；[讲义](../project_steps/01_03_request_errors/README.md) |
+| SYNC-003 | 参数补讲、2026-10-10档案及main统一 | 当前主智能体/协调者；用户直接授权 | 参数观察程序两次运行通过；档案已整理；Git汇总交接进行中 | sys.argv独立数量修改/解释待用户；不代做1.3 TODO | [任务记录](tasks/SYNC-003-daily-main.md)；[当天档案](learning/2026-10-10.md)；[补讲](../project_steps/01_03_request_errors/COMMAND_LINE.md) |
 
 “示例已提供”不等于功能阶段全部完成，“功能通过”不等于用户掌握。状态词采用：未开始、已分配、进行中、待验证、通过、阻塞；历史状态不靠覆盖运行记录来修改。
 
@@ -43,7 +43,7 @@
 
 1. `git fetch origin` 后核对当前分支、工作区和分配任务的基线 SHA；有本地改动先识别归属，不自动覆盖。
 2. 阅读 `AGENTS.md` 及相关任务记录，确认自身任务和可编辑文件。
-3. 1.1/1.2本课双重验收通过，保留用户目标修改及回答证据；usage_metadata精确含义在1.4自然复习，不重开已通过问题。当前1.3-A任务已分配，保留用户超时except TODO，按修改/离线输出/解释验收，再进入认证/限流。0.3用户要求标记完成，停止补验收；不因助手测试成功登记用户掌握。
+3. 1.1/1.2本课双重验收通过，保留用户目标修改及回答证据；usage_metadata精确含义在1.4自然复习，不重开已通过问题。当前先做命令行参数补讲的小修改/解释，再回到1.3-A超时except TODO，按修改/离线输出/解释验收，再进入认证/限流。0.3用户要求标记完成，停止补验收；不因助手测试成功登记用户掌握。
 4. 通过协调者分配不同文件的任务，再使用独立分支/worktree 并行。任务状态表不提供原子锁。
 
 ## 运维与模型状态

@@ -10,7 +10,9 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前任务：阶段1，1.3-A连接/超时异常
+## 当前任务：命令行参数补讲，再继续1.3-A
+
+先读 [Python命令行参数讲义](project_steps/01_03_request_errors/COMMAND_LINE.md)，运行同目录 [args_demo.py](project_steps/01_03_request_errors/args_demo.py)。独立练习是新增一行“用户参数数量”输出；助手没有代做。当天累计进度与证据见 [2026-10-10学习档案](docs/learning/2026-10-10.md)。
 
 打开 [1.3-A讲义](project_steps/01_03_request_errors/README.md) 和 [main.py](project_steps/01_03_request_errors/main.py)。本小步是明确标记的故障注入：不读取.env、不联网、不生成模型回答。用户独立TODO是在通用连接分支前增加超时分支；6项基础检查已通过，TODO探针仍待完成，见 [实测](project_steps/01_03_request_errors/RUN_RESULTS.md)。整课1.3及用户能力均未完成。
 
@@ -18,7 +20,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03_request_errors\main.py timeout
 ```
 
-目前退出1、显示通用失败是骨架预期；完成TODO后才有独立超时反馈。下一小步再做认证/限流。当前分支为 `codex/1-3-request-errors`，任务与双重验收见 [记录](docs/tasks/1.3-request-errors.md)。
+目前退出1、显示通用失败是骨架预期；完成TODO后才有独立超时反馈。下一小步再做认证/限流。1.3任务与双重验收见 [记录](docs/tasks/1.3-request-errors.md)。
 
 ## 已完成任务1.2
 
@@ -38,7 +40,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。0.1/0.2本课验收通过，0.3按用户要求收尾完成，1.1/1.2本课通过，下一任务1.3。推进课次不等于全部掌握。
 
-当前课程分支 `codex/1-3-request-errors`，包含此前所有课程；跨电脑环境准备见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)，其中旧分支名需替换为当前分支；本课 Git 交付状态见 [任务记录](docs/tasks/1.3-request-errors.md)。旧课程同步记录 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史证据；任务分支通过 PR 交接，main 合并单独处理。
+本次 [SYNC-003](docs/tasks/SYNC-003-daily-main.md) 按用户授权汇总全部既有课程和今日档案，通过PR合并到 `main`。合并成功后的统一获取入口为 `main`；跨电脑环境准备见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)。旧课程分支与 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史记录；实际合并结果以SYNC-003及GitHub为准。
 
 百炼Embedding已选定qwen3.7-text-embedding，.env与.env.example预留配置，API Key和对应业务空间接口地址由你后续填写；任务0.1不依赖这些配置。
 

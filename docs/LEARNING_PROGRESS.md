@@ -15,6 +15,7 @@
 - 1.2本课核心双重验收通过：用户独立术语目标修改并保留SYSTEM_MESSAGE，新目标真实输出明确说明定义依据不足，AIMessage/ai、stop、输入147/输出91/总238token、1次尝试、0.98秒；又准确指出invoke真正请求、System/Human角色、content正文与空材料在invoke前抛错/尝试0，见 [用户运行与解释评审](../project_steps/01_02_langchain_model/USER_RUN_RESULTS.md)。用户把usage_metadata概括为响应元数据，方向正确但较宽；token专用含义及与response_metadata的区别由助手补充，不算用户独立精确解释，1.4自然复习，不阻挡本课收尾。原目标输入147/输出93/总240token及10项离线检查仍为 [助手历史实测](../project_steps/01_02_langchain_model/RUN_RESULTS.md)，不混作用户运行。
 - 已确认Embedding选用百炼qwen3.7-text-embedding，初始1024维；配置预留，Key与业务空间地址由你后续填写。本课不发Embedding请求。
 - 当前1.3-A只学习连接/超时分类、捕获顺序与执行状态未知；教学故障注入和6项基础检查通过，独立超时分支仍待完成，检查脚本退出1符合骨架状态。无Key读取、无API调用、无模拟模型回答；用户修改/解释尚无证据，整课1.3未完成，见 [任务](tasks/1.3-request-errors.md)。
+- 用户随后请求命令行参数补讲：已交付 [讲义](../project_steps/01_03_request_errors/COMMAND_LINE.md)及args_demo，助手无参/含空格与数字案例实测通过，原入口AST不变；用户参数数量小修改/解释尚无证据，不能登记掌握。今日累计状态见 [2026-10-10档案](learning/2026-10-10.md)，Git汇总合并见 [SYNC-003](tasks/SYNC-003-daily-main.md)。
 
 ## 双重进度
 

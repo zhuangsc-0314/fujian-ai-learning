@@ -14,14 +14,22 @@ from fault_injection import raise_request_failure
 
 def main() -> int:
     """运行一个离线失败案例：1表示注入的请求失败，2表示参数不合法。"""
-    # 你已经学过命令行参数：argv[0]是脚本名，argv[1]是第一个参数。
+    # 命令行参数是运行时从终端传入的值，本课补讲见COMMAND_LINE.md。
+    # 例如：python -X utf8 本课main.py timeout。
+    # sys.argv是字符串列表：[脚本名/路径, 'timeout']，长度为2。
+    # argv[0]是脚本名，argv[1]是第一个用户参数；下标从0开始。
+    # python.exe和脚本名前的-X utf8由解释器处理，不进入这个列表。
     # 本轮不再读取材料/Key；案例名只控制抛哪种异常，不是用户提示词。
-    # 先检查数量，再读取argv[1]，避免没有参数时出现IndexError。
+    # 本课要求恰好1个用户参数，加上脚本名共2项，所以检查!=2。
+    # 不传timeout/connection时列表只有脚本名，长度为1，没有argv[1]。
+    # 先检查数量并return，再读取argv[1]，避免下标越界IndexError。
     if len(sys.argv) != 2:
         print("用法：运行本课main.py，并传入timeout或connection。")
         print("未注入异常；真实模型请求数：0。")
         return 2
 
+    # 赋值把第1项字符串保存为case；它不是自动传给main()的函数参数。
+    # timeout和connection是由本程序自己解释的案例名，不是Python关键字。
     case = sys.argv[1]
     # 只接受两个固定值；非法输入不回显、不执行、不传给模型。
     if case not in ("timeout", "connection"):
