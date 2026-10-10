@@ -10,7 +10,11 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前任务：1.4-A读懂token用量
+## 本次学习已结束；下次先复习
+
+先阅读[本次前情提要](docs/learning/2026-10-11.md)。助手下次先用简短要点带你回顾，你表示可以继续后，再恢复1.4-B；不直接开始新代码或API实验。1.4-B当前仅只读分析/任务草稿，代码与真实比较未实施，见[暂停记录](docs/tasks/1.4-b-usage-comparison.md)。
+
+## 已完成修改：1.4-A读懂token用量
 
 打开[1.4-A讲义](project_steps/01_04a_token_usage/README.md)与[main.py](project_steps/01_04a_token_usage/main.py)：回放1.2用户历史用量147/91/238，区分token与字符、两类元数据、输出上限与预算。用户合计展示已独立完成，助手7项基础及合计探针通过，检查脚本退出0。功能与独立修改通过，用户运行日志/3概念解释待验证。全程不读.env、不联网、不生成模型回答；人工边界样例与真实历史记录明确区分。
 
