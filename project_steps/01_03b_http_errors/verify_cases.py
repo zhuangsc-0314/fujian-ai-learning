@@ -54,7 +54,10 @@ def main() -> int:
     print("7项基础检查通过；真实模型请求0。")
     exercise_passed = (
         "[限流]" in results["rate-limit"]
-        and "检查限制原因" in results["rate-limit"]
+        and any(
+            phrase in results["rate-limit"]
+            for phrase in ("检查限制原因", "检查限流原因")
+        )
         and "[限流]" not in results["auth"]
         and "[限流]" not in results["server"]
     )

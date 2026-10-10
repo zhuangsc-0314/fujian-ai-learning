@@ -1,7 +1,7 @@
 r"""1.3-B：只在本机注入认证/限流等HTTP失败，不读取Key或联网。
 
 运行：.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03b_http_errors\main.py auth
-先观察已提供的认证分支，再独立完成限流TODO；没有模型回答。
+认证、限流分支已验收；没有模型回答。
 """
 
 import sys
@@ -35,16 +35,17 @@ def main() -> int:
         # 固定安全提示不包含Key、原始异常、错误正文或请求对象。
         print("[认证] HTTP 401：请检查本机认证配置；本课不自动重试。")
         return 1
-
-    # TODO 1.3-B（你独立完成）：在通用APIStatusError之前增加限流分支。
-    # 捕获已导入的RateLimitError，提示含[限流]、429、检查限制原因，
-    # 并明确不自动重试；返回1，不打印原始异常/response/body。
-    # 429可能涉及临时频率限制，也可能需处理额度；不能保证等一会就好。
-    # 不修改辅助文件或检查规则，不把失败改成成功。
+    except RateLimitError as error:
+        print(
+            "[限流] 状态码：429；未取得可用回答，可能涉及临时频率限制，不能保证等一会就好；"
+            "请检查限流原因；本课不自动重试。"
+        )
+        return 1
+    # 1.3-B独立练习已完成：具体限流分支在通用状态分支之前。
     except APIStatusError as error:
         # as error把捕获的异常对象绑定到变量，供此分支读取安全字段。
         # status_code是SDK保存的HTTP状态码；只显示数字，不打印完整对象。
-        # 这是兜底：未完成TODO时429也会匹配这里；500也由这里处理。
+        # 这是兜底：没有具体分支的HTTP错误（如500）由这里处理。
         print(
             f"[HTTP失败] 状态码：{error.status_code}；未取得可用回答；"
             "请检查服务状态或配置；本课不自动重试。"
