@@ -45,12 +45,18 @@ def main() -> int:
         # 点进辅助文件能看到raise，没有ChatDeepSeek客户端或HTTP发送。
         raise_request_failure(case)
 
-    # TODO 1.3-A（你独立完成）：在下方连接异常分支之前，
-    # 增加一个单独捕获APITimeoutError的except分支。
+    # 1.3-A独立修改已完成：用户在连接异常分支之前添加了超时分支。
+    # 2026-10-11离线分类探针通过；执行未知的独立解释仍待证据。
     # 输出必须说明：[超时]、服务端执行状态未知、本课不自动重试；返回1。
     # 不打印原始异常/请求对象，不把失败改成成功，不改fault_injection.py。
     # 原因提示：超时是连接错误的子类，except只执行第一个匹配分支。
     # 当前通用分支的提示安全但不够具体；它没有声称超时等于没执行。
+    except APITimeoutError:
+        print(
+            "请求失败[超时]：未取得可用响应；"
+            "服务端执行状态未知；本课不自动重试。"
+        )
+        return 1
     except APIConnectionError:
         print(
             "请求失败（连接/超时）：未取得可用响应；"
