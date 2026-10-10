@@ -12,7 +12,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前项目任务：阶段1，任务1.2
 
-打开 [LangChain模型接口讲义](project_steps/01_02_langchain_model/README.md) 和 [详细注释代码](project_steps/01_02_langchain_model/main.py)。用相同材料通过ChatDeepSeek.invoke得到AIMessage，见 [实测记录](project_steps/01_02_langchain_model/RUN_RESULTS.md)。你的TODO是修改LEARNING_GOAL，解释“客观题”，并要求原文没定义时明确说明依据不足，保留SYSTEM_MESSAGE。每次正常运行尝试一次真实请求，可能计费。
+打开 [LangChain模型接口讲义](project_steps/01_02_langchain_model/README.md) 和 [详细注释代码](project_steps/01_02_langchain_model/main.py)。用相同材料通过ChatDeepSeek.invoke得到AIMessage，见 [原目标实测记录](project_steps/01_02_langchain_model/RUN_RESULTS.md)。用户已独立修改LEARNING_GOAL：解释“客观题”，原文没定义时明确说明依据不足，且保留SYSTEM_MESSAGE；静态检查通过。下一步提供新目标实际运行结果、接口解释与调试证据，不重复代写目标。每次正常运行尝试一次真实请求，可能计费。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_02_langchain_model\main.py
