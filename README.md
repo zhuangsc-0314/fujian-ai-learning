@@ -10,16 +10,17 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前任务：1.3-C验证LangChain调用边界
+## 当前任务：1.4-A读懂token用量
 
-1.3-C用户server/500案例已独立完成；助手8项案例及500探针通过，整体退出0。用户修改/次数解释及纠正后异常传播解释有证据，独立运行日志未验证。打开[讲义](project_steps/01_03c_call_boundary/README.md)与[main.py](project_steps/01_03c_call_boundary/main.py)复习：离线运行原1.2入口，在invoke边界注入异常，验证其已有except。全程不读.env、不联网、不生成模型回答。
+打开[1.4-A讲义](project_steps/01_04a_token_usage/README.md)与[main.py](project_steps/01_04a_token_usage/main.py)：回放1.2用户历史用量147/91/238，区分token与字符、两类元数据、输出上限与预算。用户合计展示已独立完成，助手7项基础及合计探针通过，检查脚本退出0。功能与独立修改通过，用户运行日志/3概念解释待验证。全程不读.env、不联网、不生成模型回答；人工边界样例与真实历史记录明确区分。
 
 ```powershell
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03c_call_boundary\main.py
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04a_token_usage\main.py history
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04a_token_usage\verify_cases.py
 $LASTEXITCODE
 ```
 
-任务/负责人/修改边界与实际证据见[1.3-C记录](docs/tasks/1.3-c-call-boundary.md)。下一小任务建议1.4用量观察，尚未分配实施。1.3-A/B下述骨架安排均属历史快照；参数补讲不作为推进前置条件。
+任务/负责人/修改边界与实测见[1.4-A记录](docs/tasks/1.4-a-token-usage.md)。1.3-C已通过8项案例及500探针，用户修改/解释有证据、独立运行日志未验证；下述骨架安排均属历史快照。真实长短文比较/当前价目核对尚未实施，不将1.4-A骨架当整课完成。
 
 ## 历史入口：参数补讲与1.3-A骨架
 
