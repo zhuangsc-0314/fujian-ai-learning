@@ -44,7 +44,7 @@ def read_material(file_path: Path) -> dict:
     # (...) 是一个元组，在这里用来保存本次已经实现的必填字段名。
     # owner_user_id 只是本机学习数据的归属占位；不是已经实现了登录权限。
     # 正式后端会从认证身份赋值，不能相信客户端 JSON 自报的用户身份。
-    required_fields = ("owner_user_id", "title", "text")
+    required_fields = ("owner_user_id", "title", "text",'region')
     for field_name in required_fields:
         # get 在键不存在时返回 None；直接 material[field_name] 会抛 KeyError。
         value = material.get(field_name)
@@ -82,7 +82,7 @@ def main() -> int:
     # __file__ 是当前脚本的路径；resolve() 得到绝对路径；parent 得到父目录。
     task_dir = Path(__file__).resolve().parent
     # Path 的 / 运算符在这里用于拼接路径，不是数字相除。
-    file_path = task_dir / "cases" / "material.json"
+    file_path = task_dir / "cases" / "missing_region.json"
 
     # sys.argv[0] 是脚本名；用户额外传入的第一个参数是 sys.argv[1]。
     # 先判断长度再索引，避免没有传参数时出现 IndexError。
@@ -132,3 +132,4 @@ def main() -> int:
 # SystemExit 将返回值作为命令行退出码，便于终端或测试判断成功/失败。
 if __name__ == "__main__":
     raise SystemExit(main())
+

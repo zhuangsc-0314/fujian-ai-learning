@@ -1,0 +1,18 @@
+# 正式项目的直接依赖声明。间接依赖、精确版本与下载哈希由 uv.lock 记录。
+# 旧 .venv/requirements.txt 暂留给历史课程，不从旧环境直接升级。
+[project]
+name = "fujian-ai-learning"
+version = "0.1.0"
+description = "以福建事业单位备考学习平台开发实践学习 LangChain"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "langchain-core==1.6.6",
+    "langchain-deepseek==1.1.1",
+    "python-dotenv==1.2.4",
+]
+
+[tool.uv]
+# 当前是脚本学习项目，不构建或发布 Python 安装包。
+package = false
+# 工具版本也有记录；升级 uv 时须重新验证并修改此约束。
+required-version = "==0.12.24"

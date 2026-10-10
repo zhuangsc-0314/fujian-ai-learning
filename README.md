@@ -2,7 +2,7 @@
 
 为用户和朋友开发材料学习、政策问答、练习与错题复习平台，同时逐步学习 Python 和 LangChain。当前交付为设计、历史课程与阶段 0 诊断示例，尚无可上线的多人平台。
 
-GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有；需要仓库访问权限）。克隆不包含本机 `.venv` 或 `.env`。
+GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有；需要仓库访问权限）。克隆不包含本机虚拟环境、`.local` 或 `.env`。
 
 ## 开发者与智能体接入
 
@@ -10,9 +10,19 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前项目任务：阶段0，任务0.1
+## 当前项目任务：阶段0，任务0.3
 
-从 [材料输入诊断讲义](project_steps/00_01_material_input/README.md) 和 [带详细注释的main.py](project_steps/00_01_material_input/main.py) 开始。先验证解释器、JSON读取与错误定位，再独立补上region校验。本任务不调用模型。
+打开 [独立环境与锁文件讲义](project_steps/00_03_reproducible_env/README.md) 和 [详细注释代码](project_steps/00_03_reproducible_env/main.py)。Python 3.12.15 新环境、完整依赖锁定及第二环境重建已验证，见 [实测记录](project_steps/00_03_reproducible_env/RUN_RESULTS.md)。你的 TODO 是扩展依赖报告并解释依赖来源，不新增安装包。
+
+```powershell
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\00_03_reproducible_env\main.py
+```
+
+前一任务：[安全配置讲义](project_steps/00_02_safe_config/README.md)。用户独立补上 MODEL 校验，13 个隔离案例和真实配置入口通过，见 [评审记录](project_steps/00_02_safe_config/REVIEW_RESULTS.md)。配置优先级解释/独立调试仍待验证；已在新环境回归通过。
+
+更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。region 校验由用户独立完成，12 个案例通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。默认正常入口收尾与解释验收仍保留。推进课次不等于全部掌握。
+
+跨电脑同步使用分支 `codex/0-3-reproducible-env`，不是只拉默认 `main`。[另一台电脑的拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)；本次提交和远端核对记录见 [SYNC-002](docs/tasks/SYNC-002-progress-push.md)。历史实测中的“尚未推送”是当时快照，最新交付状态以远端分支及 SYNC-002 为准；任务分支通过 PR 交接，main 合并单独处理。
 
 百炼Embedding已选定qwen3.7-text-embedding，.env与.env.example预留配置，API Key和对应业务空间接口地址由你后续填写；任务0.1不依赖这些配置。
 
@@ -20,26 +30,19 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 打开 [第一课讲义](lessons/01_first_chain/README.md)，再阅读 [main.py](lessons/01_first_chain/main.py)。
 
-已有本机 `.venv` 使用 Python 3.10.10，VS Code 默认解释器指向该环境。这是历史课程环境快照；正式项目计划在任务 0.3 建立受支持的 Python 3.12 环境与完整依赖锁文件，当前 `requirements.txt` 只钉定顶层包。
+本机旧 `.venv` 使用 Python 3.10.10，暂留给历史课程；新正式环境 `.venv-py312` 使用 Python 3.12.15。VS Code 默认路径已更新，0.3 F5 入口明确使用新环境；历史课程 F5 仍使用旧环境。若编辑器缓存旧选择，以程序打印路径核实。
 
 首次克隆先将 `.env.example` 复制为 `.env`，填写 `DEEPSEEK_API_KEY` 并保存。已有 `.env` 不要覆盖。模型名和 DeepSeek 官方 API 地址已填写。Key 来自 [DeepSeek API 平台](https://platform.deepseek.com/api_keys)，聊天网站的登录状态不会自动提供 API Key。
 
 在 VS Code 中选择 **终端 → 新建终端**，从项目根目录运行：
 
 ```powershell
-.\.venv\Scripts\python.exe lessons\01_first_chain\main.py
+.\.venv-py312\Scripts\python.exe lessons\01_first_chain\main.py
 ```
 
 每次运行发起一次真实模型请求，可能按服务商规则计费。`.env` 已被 Git 忽略；可分享的配置模板是 `.env.example`。
 
-重新创建环境时：
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-直接使用虚拟环境中的 Python，不必激活环境或修改 PowerShell 执行策略。
+新克隆环境按 [0.3 安装步骤](project_steps/00_03_reproducible_env/README.md) 建立，正式依赖以 `pyproject.toml` + `uv.lock` 为准，`requirements.txt` 保留历史课程顶层版本。使用 `scripts/uv-project.cmd sync --locked` 同步新环境，不直接操作旧 `.venv`。直接使用环境中的 Python，不必激活或修改执行策略。历史课程在新环境的真实 API 调用未在 0.3 验证。
 
 ## 学习路线
 
@@ -64,7 +67,7 @@ python -m venv .venv
 - `Ctrl+P`：按文件名打开代码。
 - `Ctrl+Shift+E`：查看项目文件。
 - `Ctrl+Shift+G`：查看本地 Git 改动；以提交与远程分支核对同步状态。
-- 打开 `main.py`，选择“第一课：逐步调试”并按 `F5`。在 `chain.invoke(inputs)` 行左侧设置断点，观察输入和结果。
+- 当前课选择“项目 0.3：环境与依赖核对”并按 `F5`，观察解释器路径和版本；历史课选择对应调试入口。
 - 首次打开本地目录时，根据 VS Code 提示确认工作区信任后才能调试。
 
 ## 官方资料
@@ -74,4 +77,4 @@ python -m venv .venv
 - [DeepSeek API 入门](https://api-docs.deepseek.com/)
 - [Python 中文教程](https://docs.python.org/zh-cn/3/tutorial/)
 
-资料核对日期：2026-10-05，实际依赖版本见 `requirements.txt`。模型名以 DeepSeek 官方 API 文档为准，部分集成教程仍使用旧模型名。
+LangChain 课程资料原核对日期：2026-10-05；uv 环境管理资料在 0.3 于 2026-10-09 核对，链接见讲义。正式解析版本见 `uv.lock` 与运行记录。模型名以 DeepSeek 官方 API 文档为准，部分集成教程仍使用旧模型名。
