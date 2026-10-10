@@ -10,16 +10,16 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前任务：1.3-B认证失败与限流
+## 当前任务：1.3-C验证LangChain调用边界
 
-1.3-A用户超时分支及离线分类检查已通过；独立实现/捕获顺序有证据，执行未知的独立准确解释仍保留待验证，按用户要求继续。打开[1.3-B讲义](project_steps/01_03b_http_errors/README.md)及[main.py](project_steps/01_03b_http_errors/main.py)，先观察auth，再独立补RateLimitError分支。仅本地故障注入，不读取.env、不联网、不生成模型正文；7项基础检查通过，限流TODO尚未完成，因此检查脚本退出1，不表示整课完成。
+1.3-B用户限流分支及核心处理原因解释已验收，助手7项基础及分类探针通过；用户独立运行日志保留未验证。当前打开[1.3-C讲义](project_steps/01_03c_call_boundary/README.md)与[main.py](project_steps/01_03c_call_boundary/main.py)：离线运行原1.2入口，在invoke边界注入异常，验证其已有except。基础7项通过，用户独立server/500案例待添加，整体预期退出1。全程不读.env、不联网、不生成模型回答。
 
 ```powershell
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03b_http_errors\main.py auth
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03b_http_errors\main.py rate-limit
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03c_call_boundary\main.py
+$LASTEXITCODE
 ```
 
-两条失败案例均预期退出1；第二条当前走通用HTTP分支。任务/修改边界见[1.3-B记录](docs/tasks/1.3-b-http-errors.md)，助手实测见[RUN_RESULTS](project_steps/01_03b_http_errors/RUN_RESULTS.md)。参数补讲练习不作为本轮推进前置条件，也不登记为已掌握。
+独立扩展完成后预期探针通过、整体退出0。任务/负责人/修改边界与实际证据见[1.3-C记录](docs/tasks/1.3-c-call-boundary.md)。1.3-A/B下述骨架安排均属历史快照；当前练习不能由接入智能体代做。参数补讲不作为推进前置条件。
 
 ## 历史入口：参数补讲与1.3-A骨架
 
