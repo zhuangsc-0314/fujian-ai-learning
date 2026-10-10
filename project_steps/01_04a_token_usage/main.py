@@ -34,9 +34,8 @@ def show_metadata(usage: dict[str, int] | None, response: dict[str, str]) -> Non
     # get提供的默认值只处理缺失，不能把缺失token数设为0。
     print(f"输入token：{show_count(counts.get('input_tokens'))}")
     print(f"输出token：{show_count(counts.get('output_tokens'))}")
-    # TODO 1.4-A（你独立完成）：仿照上面增加“合计token：”这一行。
-    # 读取total_tokens字段，用show_count保持缺失为未知、明确零值为0。
-    # 不自行相加、按字符估算或硬编码238；不修改案例和检查脚本。
+    print(f"合计token：{show_count(counts.get('total_tokens'))}")
+    # 1.4-A独立修改已完成：读取total_tokens，缺失为未知，零值保留。
     print(f"结束原因：{response.get('finish_reason', '未知')}")
     if response.get("finish_reason") == "length":
         print("输出达到token上限，内容可能不完整；本次不自动重发。")

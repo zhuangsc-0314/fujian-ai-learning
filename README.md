@@ -12,7 +12,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前任务：1.4-A读懂token用量
 
-打开[1.4-A讲义](project_steps/01_04a_token_usage/README.md)与[main.py](project_steps/01_04a_token_usage/main.py)：回放1.2用户历史用量147/91/238，区分token与字符、两类元数据、输出上限与预算。用户独立补合计token展示。骨架7项基础通过，合计探针待完成，检查脚本预期退出1。全程不读.env、不联网、不生成模型回答；人工边界样例与真实历史记录明确区分。
+打开[1.4-A讲义](project_steps/01_04a_token_usage/README.md)与[main.py](project_steps/01_04a_token_usage/main.py)：回放1.2用户历史用量147/91/238，区分token与字符、两类元数据、输出上限与预算。用户合计展示已独立完成，助手7项基础及合计探针通过，检查脚本退出0。功能与独立修改通过，用户运行日志/3概念解释待验证。全程不读.env、不联网、不生成模型回答；人工边界样例与真实历史记录明确区分。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04a_token_usage\main.py history
