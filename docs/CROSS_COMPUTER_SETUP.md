@@ -55,7 +55,7 @@ if (-not (Test-Path -LiteralPath .env)) {
 
 1.2和0.3的F5调试入口明确使用 `.venv-py312`。新电脑没有旧 `.venv`，旧课程 F5 入口需要另行调整或使用新解释器的显式命令，不能假定虚拟环境跟随 Git 复制。Markdown 打开后按 `Ctrl+Shift+V` 查看预览。
 
-当前 0.1 默认选中缺 region 的案例，是保留的用户练习状态；正常验证可显式传参，不要误判安装失败：
+0.1默认入口已由用户恢复为正常material.json。invalid_json.json和missing_region.json均已修复；失败演示使用另存的invalid_json_trailing_comma.json或missing_region_original.json。正常验证也可显式传参：
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\00_01_material_input\main.py project_steps\00_01_material_input\cases\material.json

@@ -82,7 +82,7 @@ def main() -> int:
     # __file__ 是当前脚本的路径；resolve() 得到绝对路径；parent 得到父目录。
     task_dir = Path(__file__).resolve().parent
     # Path 的 / 运算符在这里用于拼接路径，不是数字相除。
-    file_path = task_dir / "cases" / "missing_region.json"
+    file_path = task_dir / "cases" / "material.json"
 
     # sys.argv[0] 是脚本名；用户额外传入的第一个参数是 sys.argv[1]。
     # 先判断长度再索引，避免没有传参数时出现 IndexError。
