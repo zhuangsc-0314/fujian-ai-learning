@@ -8,7 +8,7 @@
 - 协作契约：根目录 `AGENTS.md`。
 - 学习掌握事实：`LEARNING_PROGRESS.md`；架构决策：`DECISIONS.md`。
 - 当前没有多人后端、前端、生产数据库迁移或平台部署。1.2本课已通过；当前1.3-A故障注入骨架及6项基础检查通过，超时分支TODO待用户完成，整课1.3未完成。
-- 本轮由 [SYNC-003](tasks/SYNC-003-daily-main.md) 汇总今日档案、命令行参数补讲与所有既有课程。工作分支 `codex/sync-003-daily-main`，用户明确授权通过PR合并main；当前正在交接，合并完成后统一从main获取。实际推送、PR和合并结果将写入该任务，不把待执行动作称为完成。
+- 本轮 [SYNC-003](tasks/SYNC-003-daily-main.md) 已通过 [PR #6](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/6) 汇总今日档案、命令行参数补讲与所有既有课程到main；交付4f912a2、合并de1fa7d完整SHA见任务。2026-10-10 17:58:29（UTC+8）实际合并，fetch/祖先及本机/远端main核对通过，统一从main获取。历史PR #1—#5也已由GitHub自动标记MERGED；原任务文档“未合并”是当时快照。本次回执在codex/sync-003-merge-receipt单独通过PR交付。
 - 历史课程分支 `codex/1-3-request-errors` 包含此前所有课程，7356c08为1.3骨架交付；[PR #5](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/5)及 [任务记录](tasks/1.3-request-errors.md)保留当时状态。补讲不修改异常逻辑，独立TODO仍待验收。
 - 1.2历史交付0a42a19、[PR #4](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/4)见 [任务记录](tasks/1.2-langchain-model.md)；1.1交付2cc6a56、[PR #3](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/3)见 [任务记录](tasks/1.1-first-sdk-call.md)；阶段0交付ac3af79、[PR #2](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/2)见 [SYNC-002](tasks/SYNC-002-progress-push.md)。这些提交均已推送，fetch及祖先检查确认全部包含在本轮汇总分支；各PR当前状态以GitHub为准。
 
@@ -25,7 +25,7 @@
 | 1.1 | 最小真实SDK请求对照 | 当前教学智能体；用户独立修改目标 | 原/新目标请求输出及离线检查通过，信息不足问题有据 | 独立修改/三项解释/输出核对/缺Key定位说明通过 | [任务记录](tasks/1.1-first-sdk-call.md)；[用户反馈](../project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md) |
 | 1.2 | ChatDeepSeek模型接口 | 当前教学智能体；用户独立练习 | 原目标/10项离线检查及用户新目标真实回答通过 | 本课核心验收通过：修改、真实输出、请求/角色/正文解释与空材料定位；用量专用含义由助手补充 | [任务记录](tasks/1.2-langchain-model.md)；当前推进1.3-A |
 | 1.3 | 输入与上游错误处理，先做1.3-A | 当前教学智能体；用户独立TODO | 故障注入骨架/6项基础检查通过；超时分类探针待完成，退出1 | 待用户超时分支、顺序与未知执行状态解释；不据骨架通过登记掌握 | [任务记录](tasks/1.3-request-errors.md)；[讲义](../project_steps/01_03_request_errors/README.md) |
-| SYNC-003 | 参数补讲、2026-10-10档案及main统一 | 当前主智能体/协调者；用户直接授权 | 参数观察程序两次运行通过；档案已整理；Git汇总交接进行中 | sys.argv独立数量修改/解释待用户；不代做1.3 TODO | [任务记录](tasks/SYNC-003-daily-main.md)；[当天档案](learning/2026-10-10.md)；[补讲](../project_steps/01_03_request_errors/COMMAND_LINE.md) |
+| SYNC-003 | 参数补讲、2026-10-10档案及main统一 | 当前主智能体/协调者；用户直接授权 | 通过：演示/档案已通过PR #6合并main、远端核对一致；本条为回执 | sys.argv独立数量修改/解释待用户；不代做1.3 TODO | [任务记录](tasks/SYNC-003-daily-main.md)；[当天档案](learning/2026-10-10.md)；[补讲](../project_steps/01_03_request_errors/COMMAND_LINE.md) |
 
 “示例已提供”不等于功能阶段全部完成，“功能通过”不等于用户掌握。状态词采用：未开始、已分配、进行中、待验证、通过、阻塞；历史状态不靠覆盖运行记录来修改。
 

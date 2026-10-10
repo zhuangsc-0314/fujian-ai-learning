@@ -40,7 +40,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。0.1/0.2本课验收通过，0.3按用户要求收尾完成，1.1/1.2本课通过，下一任务1.3。推进课次不等于全部掌握。
 
-本次 [SYNC-003](docs/tasks/SYNC-003-daily-main.md) 按用户授权汇总全部既有课程和今日档案，通过PR合并到 `main`。合并成功后的统一获取入口为 `main`；跨电脑环境准备见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)。旧课程分支与 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史记录；实际合并结果以SYNC-003及GitHub为准。
+本次 [SYNC-003](docs/tasks/SYNC-003-daily-main.md) 已通过 [PR #6](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/6) 将全部既有课程和今日档案合并到 `main`，统一获取入口为 `main`；跨电脑环境准备见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)。旧课程分支与 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史记录；各任务里的早期“未合并”属于当时快照，最新结果以SYNC-003及GitHub为准。
 
 百炼Embedding已选定qwen3.7-text-embedding，.env与.env.example预留配置，API Key和对应业务空间接口地址由你后续填写；任务0.1不依赖这些配置。
 
