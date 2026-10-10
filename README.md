@@ -10,7 +10,18 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前任务：命令行参数补讲，再继续1.3-A
+## 当前任务：1.3-B认证失败与限流
+
+1.3-A用户超时分支及离线分类检查已通过；独立实现/捕获顺序有证据，执行未知的独立准确解释仍保留待验证，按用户要求继续。打开[1.3-B讲义](project_steps/01_03b_http_errors/README.md)及[main.py](project_steps/01_03b_http_errors/main.py)，先观察auth，再独立补RateLimitError分支。仅本地故障注入，不读取.env、不联网、不生成模型正文；7项基础检查通过，限流TODO尚未完成，因此检查脚本退出1，不表示整课完成。
+
+```powershell
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03b_http_errors\main.py auth
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03b_http_errors\main.py rate-limit
+```
+
+两条失败案例均预期退出1；第二条当前走通用HTTP分支。任务/修改边界见[1.3-B记录](docs/tasks/1.3-b-http-errors.md)，助手实测见[RUN_RESULTS](project_steps/01_03b_http_errors/RUN_RESULTS.md)。参数补讲练习不作为本轮推进前置条件，也不登记为已掌握。
+
+## 历史入口：参数补讲与1.3-A骨架
 
 先读 [Python命令行参数讲义](project_steps/01_03_request_errors/COMMAND_LINE.md)，运行同目录 [args_demo.py](project_steps/01_03_request_errors/args_demo.py)。独立练习是新增一行“用户参数数量”输出；助手没有代做。当天累计进度与证据见 [2026-10-10学习档案](docs/learning/2026-10-10.md)。
 
