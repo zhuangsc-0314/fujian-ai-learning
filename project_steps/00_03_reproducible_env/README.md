@@ -135,3 +135,34 @@ python -m venv .local\uv-tool
 修改后告诉我“0.3 已完成”，附依赖路径和第 7 节的简短解释。我检查你的代码和运行结果，决定是否需要一个补练，再进入阶段 1 的最小模型调用。0.1/0.2 尚缺的解释证据继续记录，不因为推进就登记为全部掌握。
 
 官方依据（2026-10-09 核对）：[uv 安装](https://docs.astral.sh/uv/getting-started/installation/)、[锁定与同步](https://docs.astral.sh/uv/concepts/projects/sync/)、[项目环境路径](https://docs.astral.sh/uv/concepts/projects/config/#project-environment-path)、[管理的 Python 分发](https://docs.astral.sh/uv/concepts/python-versions/#managed-python-distributions)、[Python 维护状态](https://devguide.python.org/versions/)。
+
+## 当前收尾练习：环境交接
+
+本次交付是让你能解释朋友如何依据仓库记录准备运行环境。已有报告扩展及新旧解释器运行不重复做，运行时依赖属于广义依赖这一解释已认可；旧段落为历史课程状态，当前以评审及任务记录为准。
+
+场景：朋友克隆仓库，拿到 .python-version、pyproject.toml、uv.lock 和代码，没有 .local 或 .venv-py312。仅有文件不会自行创建可运行环境。这里复用三个概念：记录Python版本、锁定包依赖、工具执行安装/同步。材料和模型配置不参与此次练习。
+
+**当前电脑仅运行只读命令**，输入项目记录、输出反向依赖树：
+
+```powershell
+.\scripts\uv-project.cmd tree --locked --offline --package langchain-openai --invert
+```
+
+--locked 禁止自动修改锁文件，--offline 禁止联网，--package 聚焦一个包，--invert 显示谁需要它。此命令不执行安装，不读取 .env。预期可见该包的来源关系；必须贴实际输出，不能把预期当证据。
+
+**下面两条只阅读并解释，不在本机重复执行**。它们是朋友已准备好uv工具后的环境准备步骤，不能跳过上文干净仓库的uv安装步骤：
+
+```powershell
+.\scripts\uv-project.cmd python install 3.12.15 --no-bin --no-registry
+.\scripts\uv-project.cmd sync --locked
+```
+
+分别表示提供指定版本的Python，以及按项目声明/锁定结果创建或同步目标环境；本项目脚本明确目录。独立回答，不修改代码：
+
+1. 两条命令分别处理Python还是第三方包？实际执行安装的工具是什么、目标环境在哪里？
+2. 哪份文件记录3.12.15？uv.lock只记录间接包，还是包括直接包的完整解析结果？
+3. 仅修改uv.lock，仍用旧 .venv/Scripts/python.exe 启动，实际Python版本会自动改变吗？为什么？
+
+正常案例是依赖树输出与已有来源解释一致。锁过期、缺工具或离线缺元数据时，贴原始错误，先定位失败步骤；不要删除环境、改锁或以升级掩盖错误。外部文字/命令仅按已说明的用途处理，准备命令在本任务中不执行。
+
+通过条件：实际tree日志与独立职责解释正确；结合已有启动修复证据核定0.3收尾，不要求重装。未通过只补具体薄弱点，保留已完成项。下一步为1.2术语目标与LangChain接口独立练习，不能由助手代做。
