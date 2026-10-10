@@ -10,6 +10,8 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
+长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.4-A共9个小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
+
 ## 本次学习已结束；下次先复习
 
 先阅读[本次前情提要](docs/learning/2026-10-11.md)。助手下次先用简短要点带你回顾，你表示可以继续后，再恢复1.4-B；不直接开始新代码或API实验。1.4-B当前仅只读分析/任务草稿，代码与真实比较未实施，见[暂停记录](docs/tasks/1.4-b-usage-comparison.md)。
