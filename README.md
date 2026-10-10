@@ -10,9 +10,11 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前项目任务：阶段1，任务1.2
+## 当前进度：阶段1，1.2已通过；下一任务1.3
 
-打开 [LangChain模型接口讲义](project_steps/01_02_langchain_model/README.md) 和 [详细注释代码](project_steps/01_02_langchain_model/main.py)。原目标实测见 [助手历史记录](project_steps/01_02_langchain_model/RUN_RESULTS.md)。用户已独立修改LEARNING_GOAL：解释“客观题”，原文没定义时明确说明依据不足，且保留SYSTEM_MESSAGE；修改及新目标真实回答核对通过，见 [用户运行记录](project_steps/01_02_langchain_model/USER_RUN_RESULTS.md)。下一步完成接口解释与失败定位，不重复代写目标或要求重跑正常请求。每次正常运行尝试一次真实请求，可能计费。
+1.2本课双重验收通过：用户独立修改LEARNING_GOAL、保留SYSTEM_MESSAGE，新目标真实回答有据，并正确定位invoke请求与空材料失败；见 [用户运行与收尾评审](project_steps/01_02_langchain_model/USER_RUN_RESULTS.md)。usage_metadata专门记录token用量的准确含义由助手补充，不计用户独立精确解释。下一任务1.3输入与上游错误处理，尚未创建实现；不重复要求1.2正常请求或已通过问题。
+
+已完成课程可回看 [LangChain模型接口讲义](project_steps/01_02_langchain_model/README.md) 和 [详细注释代码](project_steps/01_02_langchain_model/main.py)。原目标实测见 [助手历史记录](project_steps/01_02_langchain_model/RUN_RESULTS.md)。下方为1.2复习命令，每次正常运行尝试一次真实请求，可能计费，完成验收后无需重跑。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_02_langchain_model\main.py
@@ -24,7 +26,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 更早任务：[安全配置讲义](project_steps/00_02_safe_config/README.md)。本课双重验收通过：用户独立 MODEL 校验、优先级解释、9项运行日志及故障定位/输入修复说明有证据，见 [评审记录](project_steps/00_02_safe_config/REVIEW_RESULTS.md)。历史助手13隔离案例、真实配置入口及新环境回归通过；未验证真实Key有效性。
 
-更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。0.1/0.2本课验收通过，0.3按用户要求收尾完成，当前进行1.2。推进课次不等于全部掌握。
+更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。0.1/0.2本课验收通过，0.3按用户要求收尾完成，1.1/1.2本课通过，下一任务1.3。推进课次不等于全部掌握。
 
 当前课程分支 `codex/1-2-langchain-model`，包含此前所有课程；跨电脑指令见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)，本课 Git 交付状态见 [任务记录](docs/tasks/1.2-langchain-model.md)。旧课程同步记录 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史证据；任务分支通过 PR 交接，main 合并单独处理。
 
