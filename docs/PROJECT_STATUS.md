@@ -20,7 +20,7 @@
 | SYNC-001 | GitHub 初始化与协作文档 | 当前主智能体/协调者 | 通过：私有 main 已推送，初始 SHA 已核实 | 不推进学习阶段 | 后续智能体先获仓库访问权限，再读 AGENTS 与任务记录 |
 | SYNC-002 | 全部课程改动及学习进度云端同步 | 当前主智能体；用户直接分配 | 通过：课程已推送，远端 SHA 一致，PR #2 已创建 | 不把同步登记为学习掌握 | [任务记录](tasks/SYNC-002-progress-push.md)；[跨电脑说明](CROSS_COMPUTER_SETUP.md) |
 | ENV-001 | 中文提交规范与本机 VS Code 语言修复 | 当前主智能体；用户本轮直接分配 | 通过：本机简中界面实测恢复；规范通过任务分支/PR 交接，main 待合并 | 不推进学习阶段 | 见 [任务记录](tasks/ENV-001-vscode-locale.md) |
-| 0.2 | 环境变量与配置诊断 | 当前教学智能体；用户独立修改 | 通过：MODEL 校验、13 隔离案例与真实入口通过；新环境回归通过 | 独立修改证据已取得；优先级解释/调试待验证 | [任务记录](tasks/0.2-safe-config.md)；按用户指令进入 0.3，缺口保留 |
+| 0.2 | 环境变量与配置诊断 | 当前教学智能体；用户独立修改 | 通过：MODEL 校验、13 隔离案例与真实入口通过；新环境回归通过 | 独立修改、进程空值优先/失败定位说明通过；变量不存在补充规则与运行调试待证据 | [任务记录](tasks/0.2-safe-config.md)；补答缺失与空值区别，其他练习保留 |
 | 0.3 | 支持中的 Python 与依赖锁定 | 当前教学智能体；用户独立练习 | 环境通过，用户langchain-openai报告扩展实测通过 | 独立修改证据已取得；依赖解释/调试待验证 | [任务记录](tasks/0.3-reproducible-env.md)；[评审](../project_steps/00_03_reproducible_env/REVIEW_RESULTS.md) |
 | 1.1 | 最小真实SDK请求对照 | 当前教学智能体；用户独立修改目标 | 原/新目标请求输出及离线检查通过，信息不足问题有据 | 独立修改/三项解释/输出核对/缺Key定位说明通过 | [任务记录](tasks/1.1-first-sdk-call.md)；[用户反馈](../project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md) |
 | 1.2 | ChatDeepSeek模型接口 | 当前教学智能体；用户独立练习 | 真实AIMessage正文/元数据及10项离线检查通过 | 独立术语目标、接口解释/调试待证据 | [任务记录](tasks/1.2-langchain-model.md)；[讲义](../project_steps/01_02_langchain_model/README.md) |
