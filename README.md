@@ -20,11 +20,11 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 前一任务：[1.1 SDK对照](project_steps/01_01_first_sdk_call/README.md)，独立目标修改、请求/响应解释和缺Key定位说明均通过，见 [用户证据](project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md)。1.2不升级依赖。
 
-更早任务：[0.3 环境讲义](project_steps/00_03_reproducible_env/README.md)。用户已独立扩展 langchain-openai 报告，实测为间接依赖且版本匹配，见 [评审](project_steps/00_03_reproducible_env/REVIEW_RESULTS.md)；解释/调试仍待验收。1.1 新增 SDK 的显式直接声明，当前直接依赖4个，安装版本未变。
+更早任务：[0.3 环境讲义](project_steps/00_03_reproducible_env/README.md)。课程按用户要求已完成，剩余补验收停止；报告扩展及新旧解释器运行/切换有证据，未验证项保留在[评审](project_steps/00_03_reproducible_env/REVIEW_RESULTS.md)，不阻挡1.2。1.1 新增 SDK 的显式直接声明，当前直接依赖4个，安装版本未变。
 
 更早任务：[安全配置讲义](project_steps/00_02_safe_config/README.md)。本课双重验收通过：用户独立 MODEL 校验、优先级解释、9项运行日志及故障定位/输入修复说明有证据，见 [评审记录](project_steps/00_02_safe_config/REVIEW_RESULTS.md)。历史助手13隔离案例、真实配置入口及新环境回归通过；未验证真实Key有效性。
 
-更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。0.1/0.2本课验收通过，0.3解释/调试与1.2练习仍待证据。推进课次不等于全部掌握。
+更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。0.1/0.2本课验收通过，0.3按用户要求收尾完成，当前进行1.2。推进课次不等于全部掌握。
 
 当前课程分支 `codex/1-2-langchain-model`，包含此前所有课程；跨电脑指令见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)，本课 Git 交付状态见 [任务记录](docs/tasks/1.2-langchain-model.md)。旧课程同步记录 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史证据；任务分支通过 PR 交接，main 合并单独处理。
 

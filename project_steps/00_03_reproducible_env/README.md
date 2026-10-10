@@ -4,7 +4,7 @@
 
 ## 1. 本次交付
 
-建立 Python 3.12.15 的独立环境 `.venv-py312`，用 uv 0.12.24 管理依赖，提交可分享的环境声明和锁文件。提供 [main.py](main.py) 核对当前解释器和依赖版本。[实际运行记录](RUN_RESULTS.md) 是初版助手测试证据，后续用户独立扩展已通过，见 [评审](REVIEW_RESULTS.md)；解释/调试仍待验收。
+建立 Python 3.12.15 的独立环境 `.venv-py312`，用 uv 0.12.24 管理依赖，提交可分享的环境声明和锁文件。提供 [main.py](main.py) 核对当前解释器和依赖版本。[实际运行记录](RUN_RESULTS.md) 是初版助手测试证据，后续用户独立扩展及解释器运行/切换已取得证据，见 [评审](REVIEW_RESULTS.md)。2026-10-10用户明确要求收尾，本课已完成，剩余环境交接补验收停止；未提供证据的能力保留为未验证，不阻挡1.2。
 
 本课三个新概念：解释器与虚拟环境、直接与间接依赖、声明与锁定及同步。
 
@@ -136,7 +136,9 @@ python -m venv .local\uv-tool
 
 官方依据（2026-10-09 核对）：[uv 安装](https://docs.astral.sh/uv/getting-started/installation/)、[锁定与同步](https://docs.astral.sh/uv/concepts/projects/sync/)、[项目环境路径](https://docs.astral.sh/uv/concepts/projects/config/#project-environment-path)、[管理的 Python 分发](https://docs.astral.sh/uv/concepts/python-versions/#managed-python-distributions)、[Python 维护状态](https://devguide.python.org/versions/)。
 
-## 当前收尾练习：环境交接
+## 历史收尾练习：环境交接（已按用户要求结束）
+
+以下是此前提供的练习，供以后参考；本轮无需再完成或提交。当前已进入1.2，课程完成不等于这里所有验收都有运行证据。
 
 本次交付是让你能解释朋友如何依据仓库记录准备运行环境。已有报告扩展及新旧解释器运行不重复做，运行时依赖属于广义依赖这一解释已认可；旧段落为历史课程状态，当前以评审及任务记录为准。
 
