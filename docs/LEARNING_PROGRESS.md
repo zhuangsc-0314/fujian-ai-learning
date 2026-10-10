@@ -7,7 +7,7 @@
 - 产品方向已确认：你与朋友，为未来福建省事业单位招聘考试进行材料学习。
 - 当前交付：设计、阶段0诊断/环境及1.1 SDK/1.2 LangChain真实调用示例；尚未实现或部署多人平台。
 - 已有第一课、第二课示例继续保留；示例存在不代表概念已掌握。
-- 0.1：独立region规则、短路、两类错误概念区别、准确抛错定位及JSON/region输入修复通过，已指出异常继承关系；用户已恢复默认material.json，助手核验默认/两份修复输入成功、两份另存原始负例正确失败，共5项通过，见 [评审](../project_steps/00_01_material_input/REVIEW_RESULTS.md)。用户“不是被except捕获”不准确，子函数到入口的异常捕获/传播说明待证据；旧TODO注释/格式仍待收尾，阶段0未全部掌握。
+- 0.1：独立region规则、短路、两类错误概念区别、准确抛错定位及JSON/region输入修复通过，已指出异常继承关系；用户恢复默认入口，助手核验修复/另存负例5项通过，见 [评审](../project_steps/00_01_material_input/REVIEW_RESULTS.md)。随后对region=null准确指出raise且预测不打印标题；对应except及main结束语句仍待回答，捕获/传播说明尚未通过。旧TODO注释/格式待收尾，阶段0未全部掌握。
 - 0.2 功能验收通过：用户已独立增加 MODEL 校验，13 个隔离案例及真实配置入口实测通过，没有打印 Key，模型请求 0；见 [用户练习评审](../project_steps/00_02_safe_config/REVIEW_RESULTS.md)。独立修改已有证据，配置优先级解释与独立调试仍待验证；新 Python 环境下回归通过。
 - 0.3：环境锁定及双环境重建通过；用户已独立加入 langchain-openai，报告实测正确，见 [评审](../project_steps/00_03_reproducible_env/REVIEW_RESULTS.md)。依赖路径/环境解释及独立错误定位仍待验证，助手解释不计作用户证据。
 - 1.1 初版公开材料真实调用与9项离线检查通过，见 [实测](../project_steps/01_01_first_sdk_call/RUN_RESULTS.md)。SDK只作对照，1.2再用LangChain接口。
