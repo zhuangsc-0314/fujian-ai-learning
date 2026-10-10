@@ -10,19 +10,21 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前项目任务：阶段0，任务0.3
+## 当前项目任务：阶段1，任务1.1
 
-打开 [独立环境与锁文件讲义](project_steps/00_03_reproducible_env/README.md) 和 [详细注释代码](project_steps/00_03_reproducible_env/main.py)。Python 3.12.15 新环境、完整依赖锁定及第二环境重建已验证，见 [实测记录](project_steps/00_03_reproducible_env/RUN_RESULTS.md)。你的 TODO 是扩展依赖报告并解释依赖来源，不新增安装包。
+打开 [最小真实 SDK 请求讲义](project_steps/01_01_first_sdk_call/README.md) 和 [详细注释代码](project_steps/01_01_first_sdk_call/main.py)。默认公开材料已实际请求 DeepSeek 并得到正文，见 [实测记录](project_steps/01_01_first_sdk_call/RUN_RESULTS.md)。你的 TODO 是修改 LEARNING_GOAL，增加“列出原文无法回答的问题”，保留依据和历史限制。每次正常运行尝试一次真实请求，可能计费。
 
 ```powershell
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\00_03_reproducible_env\main.py
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_01_first_sdk_call\main.py
 ```
 
-前一任务：[安全配置讲义](project_steps/00_02_safe_config/README.md)。用户独立补上 MODEL 校验，13 个隔离案例和真实配置入口通过，见 [评审记录](project_steps/00_02_safe_config/REVIEW_RESULTS.md)。配置优先级解释/独立调试仍待验证；已在新环境回归通过。
+前一任务：[0.3 环境讲义](project_steps/00_03_reproducible_env/README.md)。用户已独立扩展 langchain-openai 报告，实测为间接依赖且版本匹配，见 [评审](project_steps/00_03_reproducible_env/REVIEW_RESULTS.md)；解释/调试仍待验收。1.1 新增 SDK 的显式直接声明，当前直接依赖4个，安装版本未变。
+
+更早任务：[安全配置讲义](project_steps/00_02_safe_config/README.md)。用户独立补上 MODEL 校验，13 个隔离案例和真实配置入口通过，见 [评审记录](project_steps/00_02_safe_config/REVIEW_RESULTS.md)。配置优先级解释/独立调试仍待验证；已在新环境回归通过。
 
 更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。region 校验由用户独立完成，12 个案例通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。默认正常入口收尾与解释验收仍保留。推进课次不等于全部掌握。
 
-跨电脑同步使用分支 `codex/0-3-reproducible-env`，不是只拉默认 `main`。[另一台电脑的拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)；本次提交和远端核对记录见 [SYNC-002](docs/tasks/SYNC-002-progress-push.md)。历史实测中的“尚未推送”是当时快照，最新交付状态以远端分支及 SYNC-002 为准；任务分支通过 PR 交接，main 合并单独处理。
+当前课程分支 `codex/1-1-first-model-call`，包含此前所有课程；跨电脑指令见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)，本课 Git 交付状态见 [任务记录](docs/tasks/1.1-first-sdk-call.md)。旧课程同步记录 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史证据；任务分支通过 PR 交接，main 合并单独处理。
 
 百炼Embedding已选定qwen3.7-text-embedding，.env与.env.example预留配置，API Key和对应业务空间接口地址由你后续填写；任务0.1不依赖这些配置。
 
@@ -67,7 +69,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 - `Ctrl+P`：按文件名打开代码。
 - `Ctrl+Shift+E`：查看项目文件。
 - `Ctrl+Shift+G`：查看本地 Git 改动；以提交与远程分支核对同步状态。
-- 当前课选择“项目 0.3：环境与依赖核对”并按 `F5`，观察解释器路径和版本；历史课选择对应调试入口。
+- 当前课选择“项目 1.1：最小真实 SDK 请求”并按 `F5`，在 create 行设断点观察联网位置；历史课选择对应调试入口。
 - 首次打开本地目录时，根据 VS Code 提示确认工作区信任后才能调试。
 
 ## 官方资料

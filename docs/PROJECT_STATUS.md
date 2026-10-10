@@ -7,7 +7,8 @@
 - GitHub：<https://github.com/zhuangsc-0314/fujian-ai-learning>；已创建私有仓库并推送，默认分支 `main`。初始交付提交 `5ca2766` 已实测与远程 SHA 一致；本状态更新随后提交，最新状态以远程分支为准。
 - 协作契约：根目录 `AGENTS.md`。
 - 学习掌握事实：`LEARNING_PROGRESS.md`；架构决策：`DECISIONS.md`。
-- 当前没有多人后端、前端、生产数据库迁移或平台部署。现有两课为历史学习示例；当前任务为 0.3 独立环境与依赖锁定。
+- 当前没有多人后端、前端、生产数据库迁移或平台部署。现有两课为历史学习示例；当前任务为 1.1 最小真实SDK请求对照。
+- 当前课程分支 `codex/1-1-first-model-call`，基线 `0b365b2`，含0.3用户修改/评审；1.1交付和最新推送状态见 [任务记录](tasks/1.1-first-sdk-call.md)。旧0.3分支继续保留，main未合并，跨电脑先获取当前课程分支。
 - 当前交付分支 `codex/0-3-reproducible-env` 已推送，课程提交 `ac3af79` 包含 0.1/0.2 用户修改、0.3 环境及进度记录，本地/远端完整 SHA 实测一致；本验收文档随后另行提交，最新状态以分支远端为准。详见 [SYNC-002](tasks/SYNC-002-progress-push.md)。[PR #2](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/2) 已创建、main 尚未合并；跨电脑使用该分支，不能只拉 main 后认定课程丢失。
 
 ## 任务索引
@@ -19,25 +20,26 @@
 | SYNC-002 | 全部课程改动及学习进度云端同步 | 当前主智能体；用户直接分配 | 通过：课程已推送，远端 SHA 一致，PR #2 已创建 | 不把同步登记为学习掌握 | [任务记录](tasks/SYNC-002-progress-push.md)；[跨电脑说明](CROSS_COMPUTER_SETUP.md) |
 | ENV-001 | 中文提交规范与本机 VS Code 语言修复 | 当前主智能体；用户本轮直接分配 | 通过：本机简中界面实测恢复；规范通过任务分支/PR 交接，main 待合并 | 不推进学习阶段 | 见 [任务记录](tasks/ENV-001-vscode-locale.md) |
 | 0.2 | 环境变量与配置诊断 | 当前教学智能体；用户独立修改 | 通过：MODEL 校验、13 隔离案例与真实入口通过；新环境回归通过 | 独立修改证据已取得；优先级解释/调试待验证 | [任务记录](tasks/0.2-safe-config.md)；按用户指令进入 0.3，缺口保留 |
-| 0.3 | 支持中的 Python 与依赖锁定 | 当前教学智能体；用户独立练习 | 通过：Python 3.12.15、锁定及第二环境版本一致；旧环境保留 | 待验证：扩展报告、依赖路径与环境解释/定位 | [任务记录](tasks/0.3-reproducible-env.md)；[讲义](../project_steps/00_03_reproducible_env/README.md) |
+| 0.3 | 支持中的 Python 与依赖锁定 | 当前教学智能体；用户独立练习 | 环境通过，用户langchain-openai报告扩展实测通过 | 独立修改证据已取得；依赖解释/调试待验证 | [任务记录](tasks/0.3-reproducible-env.md)；[评审](../project_steps/00_03_reproducible_env/REVIEW_RESULTS.md) |
+| 1.1 | 最小真实SDK请求对照 | 当前教学智能体；用户独立修改目标 | 本课一次真实请求与9项离线检查通过，SDK显式依赖/锁检查通过 | 学习目标修改、消息/响应解释及定位待验证 | [任务记录](tasks/1.1-first-sdk-call.md)；[讲义](../project_steps/01_01_first_sdk_call/README.md) |
 
 “示例已提供”不等于功能阶段全部完成，“功能通过”不等于用户掌握。状态词采用：未开始、已分配、进行中、待验证、通过、阻塞；历史状态不靠覆盖运行记录来修改。
 
 ## 当前可运行内容
 
 ```powershell
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\00_03_reproducible_env\main.py
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_01_first_sdk_call\main.py
 ```
 
-这条命令不调用模型。历史课程 1/2 会请求真实 DeepSeek API，不能用于默认离线验证。
+这条命令会尝试一次真实DeepSeek请求，可能计费，自动重试关闭；无网络验证用本课verify_cases.py。历史课程1/2也不能用于默认离线验证。
 
-正式环境 Python 3.12.15、uv 0.12.24；`pyproject.toml` + `uv.lock` 已建立，Windows 实测两个环境安装的 40 个发行包版本一致。锁文件含 42 条记录，不等于安装数量。旧 Python 3.10.10 `.venv` 保留。克隆后按 0.3 讲义建立自己的环境；本机虚拟环境、工具/缓存与 `.env` 不进入仓库。Linux 和真实 API 行为未验证。
+正式环境Python3.12.15、uv0.12.24；0.3双环境安装40包版本一致，1.1只将既有openai3.26.1改为显式直接声明，安装版本不变且兼容/锁检查通过。锁42条记录，直接依赖4个。旧Python3.10.10 .venv保留；本机工具/环境与.env不入仓库。DeepSeek默认公开材料调用已验证；Linux、百炼和真实异常分支未验证。
 
 ## 下一次开始工作的规则
 
 1. `git fetch origin` 后核对当前分支、工作区和分配任务的基线 SHA；有本地改动先识别归属，不自动覆盖。
 2. 阅读 `AGENTS.md` 及相关任务记录，确认自身任务和可编辑文件。
-3. 当前 0.3 独立练习待用户完成；0.2 配置优先级解释、0.1 收尾/解释保留待验收。不因助手环境检查通过就宣称用户全部掌握；验收后再进入阶段 1。
+3. 当前1.1独立练习待完成；阶段0各课解释/调试缺口保留。用户要求下一课后已推进，不把助手实测当作全部掌握；根据1.1用户证据决定补练或1.2。
 4. 通过协调者分配不同文件的任务，再使用独立分支/worktree 并行。任务状态表不提供原子锁。
 
 ## 运维与模型状态

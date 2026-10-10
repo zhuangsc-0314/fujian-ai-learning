@@ -9,6 +9,8 @@ dependencies = [
     "langchain-core==1.6.6",
     "langchain-deepseek==1.1.1",
     "python-dotenv==1.2.4",
+    # 1.1 直接使用已安装的兼容 SDK，明确依赖关系，不升级其版本。
+    "openai==3.26.1",
 ]
 
 [tool.uv]
