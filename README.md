@@ -10,9 +10,19 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-## 当前进度：阶段1，1.2已通过；下一任务1.3
+## 当前任务：阶段1，1.3-A连接/超时异常
 
-1.2本课双重验收通过：用户独立修改LEARNING_GOAL、保留SYSTEM_MESSAGE，新目标真实回答有据，并正确定位invoke请求与空材料失败；见 [用户运行与收尾评审](project_steps/01_02_langchain_model/USER_RUN_RESULTS.md)。usage_metadata专门记录token用量的准确含义由助手补充，不计用户独立精确解释。下一任务1.3输入与上游错误处理，尚未创建实现；不重复要求1.2正常请求或已通过问题。
+打开 [1.3-A讲义](project_steps/01_03_request_errors/README.md) 和 [main.py](project_steps/01_03_request_errors/main.py)。本小步是明确标记的故障注入：不读取.env、不联网、不生成模型回答。用户独立TODO是在通用连接分支前增加超时分支；6项基础检查已通过，TODO探针仍待完成，见 [实测](project_steps/01_03_request_errors/RUN_RESULTS.md)。整课1.3及用户能力均未完成。
+
+```powershell
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03_request_errors\main.py timeout
+```
+
+目前退出1、显示通用失败是骨架预期；完成TODO后才有独立超时反馈。下一小步再做认证/限流。当前分支为 `codex/1-3-request-errors`，任务与双重验收见 [记录](docs/tasks/1.3-request-errors.md)。
+
+## 已完成任务1.2
+
+1.2本课双重验收通过：用户独立修改LEARNING_GOAL、保留SYSTEM_MESSAGE，新目标真实回答有据，并正确定位invoke请求与空材料失败；见 [用户运行与收尾评审](project_steps/01_02_langchain_model/USER_RUN_RESULTS.md)。usage_metadata专门记录token用量的准确含义由助手补充，不计用户独立精确解释。当前已进入1.3-A，不重复要求1.2正常请求或已通过问题。
 
 已完成课程可回看 [LangChain模型接口讲义](project_steps/01_02_langchain_model/README.md) 和 [详细注释代码](project_steps/01_02_langchain_model/main.py)。原目标实测见 [助手历史记录](project_steps/01_02_langchain_model/RUN_RESULTS.md)。下方为1.2复习命令，每次正常运行尝试一次真实请求，可能计费，完成验收后无需重跑。
 
@@ -28,7 +38,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 更早任务：[材料输入诊断](project_steps/00_01_material_input/README.md)。用户region规则及历史12案例通过；已恢复默认material.json并修复两份输入，另存负例后5项核验通过，见 [评审](project_steps/00_01_material_input/REVIEW_RESULTS.md)。0.1/0.2本课验收通过，0.3按用户要求收尾完成，1.1/1.2本课通过，下一任务1.3。推进课次不等于全部掌握。
 
-当前课程分支 `codex/1-2-langchain-model`，包含此前所有课程；跨电脑指令见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)，本课 Git 交付状态见 [任务记录](docs/tasks/1.2-langchain-model.md)。旧课程同步记录 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史证据；任务分支通过 PR 交接，main 合并单独处理。
+当前课程分支 `codex/1-3-request-errors`，包含此前所有课程；跨电脑环境准备见 [拉取与环境准备](docs/CROSS_COMPUTER_SETUP.md)，其中旧分支名需替换为当前分支；本课 Git 交付状态见 [任务记录](docs/tasks/1.3-request-errors.md)。旧课程同步记录 [SYNC-002](docs/tasks/SYNC-002-progress-push.md) 保留为历史证据；任务分支通过 PR 交接，main 合并单独处理。
 
 百炼Embedding已选定qwen3.7-text-embedding，.env与.env.example预留配置，API Key和对应业务空间接口地址由你后续填写；任务0.1不依赖这些配置。
 
@@ -73,7 +83,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 - `Ctrl+P`：按文件名打开代码。
 - `Ctrl+Shift+E`：查看项目文件。
 - `Ctrl+Shift+G`：查看本地 Git 改动；以提交与远程分支核对同步状态。
-- 当前课选择“项目 1.2：LangChain模型接口”并按 `F5`，在 invoke 行设断点观察联网位置；历史课选择对应调试入口。
+- 当前课选择“项目 1.3-A：超时故障注入”并按 `F5`，观察异常捕获，不联网；1.2及历史课选择对应调试入口。
 - 首次打开本地目录时，根据 VS Code 提示确认工作区信任后才能调试。
 
 ## 官方资料
