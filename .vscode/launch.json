@@ -2,6 +2,72 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "项目 1.3-A：超时故障注入",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/project_steps/01_03_request_errors/main.py",
+      "python": "${workspaceFolder}/.venv-py312/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": ["timeout"],
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "项目 1.2：LangChain模型接口",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/project_steps/01_02_langchain_model/main.py",
+      "python": "${workspaceFolder}/.venv-py312/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "项目 1.1：最小真实 SDK 请求",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/project_steps/01_01_first_sdk_call/main.py",
+      "python": "${workspaceFolder}/.venv-py312/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "项目 0.3：环境与依赖核对",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/project_steps/00_03_reproducible_env/main.py",
+      "python": "${workspaceFolder}/.venv-py312/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "项目 0.2：安全配置诊断",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/project_steps/00_02_safe_config/main.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
       "name": "项目 0.1：材料输入诊断",
       "type": "debugpy",
       "request": "launch",

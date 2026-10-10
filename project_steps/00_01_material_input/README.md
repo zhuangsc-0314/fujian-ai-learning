@@ -29,10 +29,10 @@ material.json使用福建省人社厅历史说明的一句原文节选。其他�
 在VS Code打开main.py，终端从项目根目录运行：
 
 ~~~powershell
-.\.venv\Scripts\python.exe -X utf8 project_steps\00_01_material_input\main.py
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\00_01_material_input\main.py
 ~~~
 
-不用激活虚拟环境。当前3.10环境只用于本次标准库诊断；正式平台独立环境的升级与版本锁在0.3处理，不现在修改旧课程解释器。
+不用激活虚拟环境。当前正式环境在0.3建立，为Python3.12.15；旧3.10环境保留。用户已将默认入口恢复为cases/material.json。invalid_json.json和missing_region.json均已由用户修复为合法材料；观察失败时，分别使用另存的invalid_json_trailing_comma.json和missing_region_original.json。
 
 -X utf8仅用于统一中文输入输出编码，避免终端编码不同导致乱码，不改变校验规则。
 
@@ -50,6 +50,8 @@ material.json使用福建省人社厅历史说明的一句原文节选。其他�
 
 ## 7. 你独立完成的小修改
 
+0.1核心输入/异常验收已通过，已完成练习注释/格式收尾；下面保留原练习说明，见[最新评审](REVIEW_RESULTS.md)。不能据此登记阶段0整体或其他课掌握。
+
 让region成为必填的非空字符串：缺失、不是字符串、只有空格都要拒绝。保留其他行为，只作最小修改。TODO已经标在main.py里；我没有代做。
 
 完成后独立复制案例，把region改为空格或数字，检查是否被拒绝。不要把现有程序的成功运行登记为“已掌握”。
@@ -59,20 +61,22 @@ material.json使用福建省人社厅历史说明的一句原文节选。其他�
 从项目根目录，替换最后一个文件名即可：
 
 ~~~powershell
-.\.venv\Scripts\python.exe -X utf8 project_steps\00_01_material_input\main.py project_steps\00_01_material_input\cases\missing_title.json
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\00_01_material_input\main.py project_steps\00_01_material_input\cases\missing_title.json
 ~~~
 
-| 文件/输入 | 修改前预期 | 你的修改后预期 |
+| 文件/输入 | 教学初版 | 当前用户修改后预期 |
 | --- | --- | --- |
 | material.json | 成功，显示实际解释器和字段；模型请求0 | 继续成功 |
 | missing_title.json | 材料校验错误，指出title | 相同 |
 | blank_title.json | 材料校验错误 | 相同 |
-| invalid_json.json | JSON解析错误及行列，还未进入字段校验 | 相同 |
+| invalid_json.json | JSON解析错误及行列，还未进入字段校验 | 用户补region后JSON合法，成功；保留文件名和修复结果作为练习证据 |
+| invalid_json_trailing_comma.json | 后续为保留解析负例另存 | JSON解析错误，尚未进入字段校验 |
 | untrusted_text.json | 只显示正文预览，不执行命令 | 相同；这只验证普通程序不执行正文，不代表已实现模型提示注入防护 |
-| missing_region.json | 当前成功，这是故意留下的校验缺口 | 改为材料校验错误，指出region |
+| missing_region.json | 初版缺region，原校验缺口 | 用户补region后成功；保留修复结果 |
+| missing_region_original.json | 后续为保留缺字段负例另存 | 材料校验错误，指出region |
 | 不存在的文件路径 | 文件错误 | 相同 |
 
-失败退出码2，成功0。PowerShell可用$LASTEXITCODE查看；有非零退出码不一定是代码崩溃，要看具体失败步骤。
+失败退出码2，成功0。PowerShell用$LASTEXITCODE，CMD用echo %ERRORLEVEL%；有非零退出码不一定是代码崩溃，要看具体失败步骤。JSON语法异常在json.load中抛出，经read_material调用向外传播，由main中的except json.JSONDecodeError捕获；这两个步骤并不冲突。
 
 ## 9. 双重通过条件
 
@@ -87,7 +91,7 @@ B掌握：你能指认实际解释器；解释解析错误与字段错误区别�
 只需要三项，不要发.env或Key：
 
 1. 正常运行输出中的Python路径和虚拟环境结果。
-2. 你改动的几行代码，以及missing_region和空格region的实际反馈。
+2. 你改动的几行代码，以及missing_region_original和空格region的实际反馈。
 3. 用自己的话解释：为什么缺标题能被json.load读出来，却还是不能作为合格材料？不可信正文为什么没有被执行？
 
 我按实际结果决定补练或进入0.2安全配置。若你已掌握，能通过小修改和解释即可跳过重复讲解。

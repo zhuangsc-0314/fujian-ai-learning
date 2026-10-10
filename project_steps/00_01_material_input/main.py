@@ -44,7 +44,7 @@ def read_material(file_path: Path) -> dict:
     # (...) 是一个元组，在这里用来保存本次已经实现的必填字段名。
     # owner_user_id 只是本机学习数据的归属占位；不是已经实现了登录权限。
     # 正式后端会从认证身份赋值，不能相信客户端 JSON 自报的用户身份。
-    required_fields = ("owner_user_id", "title", "text")
+    required_fields = ("owner_user_id", "title", "text", "region")
     for field_name in required_fields:
         # get 在键不存在时返回 None；直接 material[field_name] 会抛 KeyError。
         value = material.get(field_name)
@@ -58,9 +58,9 @@ def read_material(file_path: Path) -> dict:
             # raise 主动报告业务错误，把后续打印/处理停止在此处。
             raise ValueError(f"字段 {field_name} 必须是非空字符串。")
 
-    # TODO（你独立完成）：region 缺失、不是字符串或只有空格时，也应拒绝。
-    # 先用 cases/missing_region.json 观察当前限制，再作最小修改。
-    # 不需要加入 LangChain、Pydantic 或额外依赖。
+    # 独立练习TODO 0.1（用户已完成并通过验收）：region也进入必填字段校验。
+    # 用户修复后的missing_region.json已合法，原缺字段负例另存为
+    # cases/missing_region_original.json；规则实现由用户完成，未添加新依赖。
 
     # 返回原始材料，不在这里改写政策原文、生成摘要或执行正文中的命令。
     return material
