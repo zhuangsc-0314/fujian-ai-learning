@@ -12,14 +12,14 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前任务：1.3-C验证LangChain调用边界
 
-1.3-B用户限流分支及核心处理原因解释已验收，助手7项基础及分类探针通过；用户独立运行日志保留未验证。当前打开[1.3-C讲义](project_steps/01_03c_call_boundary/README.md)与[main.py](project_steps/01_03c_call_boundary/main.py)：离线运行原1.2入口，在invoke边界注入异常，验证其已有except。基础7项通过，用户独立server/500案例待添加，整体预期退出1。全程不读.env、不联网、不生成模型回答。
+1.3-C用户server/500案例已独立完成；助手8项案例及500探针通过，整体退出0。用户修改/次数解释及纠正后异常传播解释有证据，独立运行日志未验证。打开[讲义](project_steps/01_03c_call_boundary/README.md)与[main.py](project_steps/01_03c_call_boundary/main.py)复习：离线运行原1.2入口，在invoke边界注入异常，验证其已有except。全程不读.env、不联网、不生成模型回答。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_03c_call_boundary\main.py
 $LASTEXITCODE
 ```
 
-独立扩展完成后预期探针通过、整体退出0。任务/负责人/修改边界与实际证据见[1.3-C记录](docs/tasks/1.3-c-call-boundary.md)。1.3-A/B下述骨架安排均属历史快照；当前练习不能由接入智能体代做。参数补讲不作为推进前置条件。
+任务/负责人/修改边界与实际证据见[1.3-C记录](docs/tasks/1.3-c-call-boundary.md)。下一小任务建议1.4用量观察，尚未分配实施。1.3-A/B下述骨架安排均属历史快照；参数补讲不作为推进前置条件。
 
 ## 历史入口：参数补讲与1.3-A骨架
 

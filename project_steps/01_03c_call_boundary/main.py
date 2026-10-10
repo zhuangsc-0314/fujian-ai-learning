@@ -42,9 +42,8 @@ CASES = [
     ("rate-limit", status_error(RateLimitError, 429), "API请求受限"),
     ("timeout", APITimeoutError(request=Mock()), "服务端是否执行未知"),
     ("connection", APIConnectionError(message=RAW_MARKER, request=Mock()), "API连接失败"),
-    # TODO 1.3-C（你独立完成）：仿照auth，增加名为server的案例，
-    # 用已导入的InternalServerError及状态500；期望提示为API返回HTTP 500。
-    # 只增加这一项，不修改验收断言、原1.2代码或辅助函数。
+    ("server", status_error(InternalServerError, 500), "API返回HTTP 500"),
+    # 1.3-C独立案例已完成：500由原1.2的APIStatusError兜底处理。
 ]
 
 
@@ -129,7 +128,10 @@ def main() -> int:
             lesson, "initialization", ValueError(RAW_MARKER),
             "模型初始化失败", 0, initialization=True,
         )
-    print("4项请求异常及3项前置失败检查通过；真实请求0，未读.env，未生成模型回答。")
+    print(
+        f"{len(CASES)}项请求异常及3项前置失败检查通过；"
+        "真实请求0，未读.env，未生成模型回答。"
+    )
     server = [error for name, error, _ in CASES if name == "server"]
     if not server:
         print("独立练习待完成：增加server/500案例；本脚本退出1不表示基础检查失败。")
