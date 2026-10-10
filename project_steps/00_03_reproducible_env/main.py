@@ -18,6 +18,7 @@ AUDIT_PACKAGES = (
     "langchain-core",
     "langchain-deepseek",
     "python-dotenv",
+    'langchain-openai'
 )
 # TODO 0.3（你独立完成）：加入 langchain-openai，让报告也显示其版本。
 # 不要把它添加到 pyproject.toml 的直接依赖中，也不安装/升级任何包。
