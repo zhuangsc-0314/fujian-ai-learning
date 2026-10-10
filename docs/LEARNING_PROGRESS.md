@@ -11,7 +11,7 @@
 - 0.2 功能验收通过：用户已独立增加 MODEL 校验，13 个隔离案例及真实配置入口实测通过，没有打印 Key，模型请求 0；见 [用户练习评审](../project_steps/00_02_safe_config/REVIEW_RESULTS.md)。独立修改已有证据，配置优先级解释与独立调试仍待验证；新 Python 环境下回归通过。
 - 0.3：环境锁定及双环境重建通过；用户已独立加入 langchain-openai，报告实测正确，见 [评审](../project_steps/00_03_reproducible_env/REVIEW_RESULTS.md)。依赖路径/环境解释及独立错误定位仍待验证，助手解释不计作用户证据。
 - 1.1 初版公开材料真实调用与9项离线检查通过，见 [实测](../project_steps/01_01_first_sdk_call/RUN_RESULTS.md)。SDK只作对照，1.2再用LangChain接口。
-- 1.1 用户独立扩展目标、三项核心解释及新目标真实输出（输入147/输出132/总279token）均通过，见 [用户反馈](../project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md)。随后用户准确说明load_settings在attempts=1之前失败、请求0，错误定位解释通过；1.1本课学习验收完成。不是用户运行全部离线测试的证据。
+- 1.1用户独立扩展目标、三项核心解释及新目标真实输出（输入147/输出132/总279token）通过，见 [用户反馈](../project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md)。缺Key定位解释通过，本课学习验收完成；随后另提供verify_cases.py完整9项通过日志、请求0，补齐用户执行离线脚本的证据。该日志属于1.1，不能替代当前0.1的JSON案例/定位验收。
 - 1.2同一材料通过ChatDeepSeek.invoke真实调用返回AIMessage：输入147/输出93/总240token；10项离线检查通过，见 [实测](../project_steps/01_02_langchain_model/RUN_RESULTS.md)。用户术语目标TODO、接口解释/调试待验收，助手运行不计用户掌握。
 - 已确认Embedding选用百炼qwen3.7-text-embedding，初始1024维；配置预留，Key与业务空间地址由你后续填写。本课不发Embedding请求。
 
