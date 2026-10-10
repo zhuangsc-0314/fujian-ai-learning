@@ -7,8 +7,9 @@
 - GitHub：<https://github.com/zhuangsc-0314/fujian-ai-learning>；已创建私有仓库并推送，默认分支 `main`。初始交付提交 `5ca2766` 已实测与远程 SHA 一致；本状态更新随后提交，最新状态以远程分支为准。
 - 协作契约：根目录 `AGENTS.md`。
 - 学习掌握事实：`LEARNING_PROGRESS.md`；架构决策：`DECISIONS.md`。
-- 当前没有多人后端、前端、生产数据库迁移或平台部署。现有两课为历史学习示例；当前任务为 1.1 最小真实SDK请求对照。
-- 当前课程分支 `codex/1-1-first-model-call` 已推送，课程提交 `2cc6a56` 的本地/远端完整SHA实测一致；本交付记录随后另行提交，最新文档以分支远端为准。[PR #3](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/3) 未合并，含0.3用户修改/评审及此前课程；详见 [任务记录](tasks/1.1-first-sdk-call.md)。跨电脑先获取当前课程分支。
+- 当前没有多人后端、前端、生产数据库迁移或平台部署。现有两课为历史学习示例；当前任务为1.2 LangChain模型接口。
+- 当前1.2课程在 `codex/1-2-langchain-model`，Git交付状态见 [任务记录](tasks/1.2-langchain-model.md)；跨电脑获取此分支，main合并单独处理。
+- 历史1.1课程分支 `codex/1-1-first-model-call` 已推送，课程提交 `2cc6a56` 的本地/远端完整SHA实测一致；本交付记录随后另行提交，最新文档以分支远端为准。[PR #3](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/3) 未合并，含0.3用户修改/评审及此前课程；详见 [任务记录](tasks/1.1-first-sdk-call.md)。跨电脑先获取当前课程分支。
 - 当前交付分支 `codex/0-3-reproducible-env` 已推送，课程提交 `ac3af79` 包含 0.1/0.2 用户修改、0.3 环境及进度记录，本地/远端完整 SHA 实测一致；本验收文档随后另行提交，最新状态以分支远端为准。详见 [SYNC-002](tasks/SYNC-002-progress-push.md)。[PR #2](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/2) 已创建、main 尚未合并；跨电脑使用该分支，不能只拉 main 后认定课程丢失。
 
 ## 任务索引
@@ -21,14 +22,15 @@
 | ENV-001 | 中文提交规范与本机 VS Code 语言修复 | 当前主智能体；用户本轮直接分配 | 通过：本机简中界面实测恢复；规范通过任务分支/PR 交接，main 待合并 | 不推进学习阶段 | 见 [任务记录](tasks/ENV-001-vscode-locale.md) |
 | 0.2 | 环境变量与配置诊断 | 当前教学智能体；用户独立修改 | 通过：MODEL 校验、13 隔离案例与真实入口通过；新环境回归通过 | 独立修改证据已取得；优先级解释/调试待验证 | [任务记录](tasks/0.2-safe-config.md)；按用户指令进入 0.3，缺口保留 |
 | 0.3 | 支持中的 Python 与依赖锁定 | 当前教学智能体；用户独立练习 | 环境通过，用户langchain-openai报告扩展实测通过 | 独立修改证据已取得；依赖解释/调试待验证 | [任务记录](tasks/0.3-reproducible-env.md)；[评审](../project_steps/00_03_reproducible_env/REVIEW_RESULTS.md) |
-| 1.1 | 最小真实SDK请求对照 | 当前教学智能体；用户独立修改目标 | 原/新目标请求输出及离线检查通过，信息不足问题有据 | 独立修改/三项解释/输出核对通过，独立调试待证据 | [任务记录](tasks/1.1-first-sdk-call.md)；[用户反馈](../project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md) |
+| 1.1 | 最小真实SDK请求对照 | 当前教学智能体；用户独立修改目标 | 原/新目标请求输出及离线检查通过，信息不足问题有据 | 独立修改/三项解释/输出核对/缺Key定位说明通过 | [任务记录](tasks/1.1-first-sdk-call.md)；[用户反馈](../project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md) |
+| 1.2 | ChatDeepSeek模型接口 | 当前教学智能体；用户独立练习 | 真实AIMessage正文/元数据及10项离线检查通过 | 独立术语目标、接口解释/调试待证据 | [任务记录](tasks/1.2-langchain-model.md)；[讲义](../project_steps/01_02_langchain_model/README.md) |
 
 “示例已提供”不等于功能阶段全部完成，“功能通过”不等于用户掌握。状态词采用：未开始、已分配、进行中、待验证、通过、阻塞；历史状态不靠覆盖运行记录来修改。
 
 ## 当前可运行内容
 
 ```powershell
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_01_first_sdk_call\main.py
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_02_langchain_model\main.py
 ```
 
 这条命令会尝试一次真实DeepSeek请求，可能计费，自动重试关闭；无网络验证用本课verify_cases.py。历史课程1/2也不能用于默认离线验证。
@@ -39,7 +41,7 @@
 
 1. `git fetch origin` 后核对当前分支、工作区和分配任务的基线 SHA；有本地改动先识别归属，不自动覆盖。
 2. 阅读 `AGENTS.md` 及相关任务记录，确认自身任务和可编辑文件。
-3. 当前1.1独立修改、解释和输出核对已通过，缺Key独立定位仍待证据；阶段0解释/调试缺口保留，不因运行成功登记全部掌握。完成定位后进入1.2；用户明确要求推进时保留缺口。
+3. 1.1独立修改、解释、输出核对及缺Key定位说明通过；当前1.2用户术语目标/接口解释/调试待证据。阶段0解释/调试缺口保留，不因助手测试成功登记用户掌握。
 4. 通过协调者分配不同文件的任务，再使用独立分支/worktree 并行。任务状态表不提供原子锁。
 
 ## 运维与模型状态

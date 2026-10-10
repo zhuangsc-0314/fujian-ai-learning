@@ -4,12 +4,12 @@
 
 ## 获取当前进度
 
-当前1.1课程和全部此前内容在 `codex/1-1-first-model-call` 分支，实际推送/PR状态见 [1.1任务记录](tasks/1.1-first-sdk-call.md)。没有合并前，仅拉 `main` 不会得到本轮内容。
+当前1.2课程和全部此前内容在 `codex/1-2-langchain-model` 分支，实际推送/PR状态见 [1.2任务记录](tasks/1.2-langchain-model.md)。没有合并前，仅拉 `main` 不会得到本轮内容。
 
 首次获取：在你打算存放项目的父目录运行（目标文件夹不存在时）：
 
 ```powershell
-git clone --branch codex/1-1-first-model-call https://github.com/zhuangsc-0314/fujian-ai-learning.git
+git clone --branch codex/1-2-langchain-model https://github.com/zhuangsc-0314/fujian-ai-learning.git
 cd fujian-ai-learning
 git log -1 --oneline
 ```
@@ -18,7 +18,7 @@ git log -1 --oneline
 
 ```powershell
 git fetch origin
-git switch codex/1-1-first-model-call
+git switch codex/1-2-langchain-model
 git pull --ff-only
 ```
 
@@ -51,9 +51,9 @@ if (-not (Test-Path -LiteralPath .env)) {
 
 ## 打开代码与接续进度
 
-用 VS Code“文件 → 打开文件夹”打开克隆目录，阅读 README、AGENTS、PROJECT_STATUS 和 LEARNING_PROGRESS。当前任务是1.1，独立 TODO 为修改学习目标；0.3报告扩展已通过，阶段0各课解释/调试仍有待验收。同步环境、填写配置后运行1.1的main.py会发真实请求，可能计费。
+用 VS Code“文件 → 打开文件夹”打开克隆目录，阅读 README、AGENTS、PROJECT_STATUS 和 LEARNING_PROGRESS。1.1本课学习验收完成；当前任务1.2，独立TODO为术语解释目标及依据不足要求；0.3报告扩展已通过，阶段0各课解释/调试仍有待验收。同步环境、填写配置后运行1.2的main.py会发真实请求，可能计费。
 
-0.3 的 F5 调试入口明确使用 `.venv-py312`。新电脑没有旧 `.venv`，旧课程 F5 入口需要另行调整或使用新解释器的显式命令，不能假定虚拟环境跟随 Git 复制。Markdown 打开后按 `Ctrl+Shift+V` 查看预览。
+1.2和0.3的F5调试入口明确使用 `.venv-py312`。新电脑没有旧 `.venv`，旧课程 F5 入口需要另行调整或使用新解释器的显式命令，不能假定虚拟环境跟随 Git 复制。Markdown 打开后按 `Ctrl+Shift+V` 查看预览。
 
 当前 0.1 默认选中缺 region 的案例，是保留的用户练习状态；正常验证可显式传参，不要误判安装失败：
 
