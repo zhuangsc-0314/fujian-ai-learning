@@ -8,7 +8,7 @@
 - 协作契约：根目录 `AGENTS.md`。
 - 学习掌握事实：`LEARNING_PROGRESS.md`；架构决策：`DECISIONS.md`。
 - 当前没有多人后端、前端、生产数据库迁移或平台部署。现有两课为历史学习示例；当前任务为 0.3 独立环境与依赖锁定。
-- 当前交付分支 `codex/0-3-reproducible-env`，包含 0.1/0.2 用户修改、0.3 环境及进度记录；本轮按用户“都推送”同步，实际提交 SHA/远端核对见 [SYNC-002](tasks/SYNC-002-progress-push.md)。跨电脑使用该分支，main 仍需经 PR 合并，不能只拉 main 后认定课程丢失。
+- 当前交付分支 `codex/0-3-reproducible-env` 已推送，课程提交 `ac3af79` 包含 0.1/0.2 用户修改、0.3 环境及进度记录，本地/远端完整 SHA 实测一致；本验收文档随后另行提交，最新状态以分支远端为准。详见 [SYNC-002](tasks/SYNC-002-progress-push.md)。[PR #2](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/2) 已创建、main 尚未合并；跨电脑使用该分支，不能只拉 main 后认定课程丢失。
 
 ## 任务索引
 
@@ -16,7 +16,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 0.1 | 材料输入诊断 | 当前教学智能体；用户独立修改 | region 校验与 12 案例通过；默认入口及格式待收尾 | 已有独立修改证据；解释/调试待验证 | [任务记录](tasks/0.1-material-input.md)；用户已要求进入 0.2，旧缺口保留 |
 | SYNC-001 | GitHub 初始化与协作文档 | 当前主智能体/协调者 | 通过：私有 main 已推送，初始 SHA 已核实 | 不推进学习阶段 | 后续智能体先获仓库访问权限，再读 AGENTS 与任务记录 |
-| SYNC-002 | 全部课程改动及学习进度云端同步 | 当前主智能体；用户直接分配 | 提交/推送及远端核对以任务记录为准 | 不把同步登记为学习掌握 | [任务记录](tasks/SYNC-002-progress-push.md)；[跨电脑说明](CROSS_COMPUTER_SETUP.md) |
+| SYNC-002 | 全部课程改动及学习进度云端同步 | 当前主智能体；用户直接分配 | 通过：课程已推送，远端 SHA 一致，PR #2 已创建 | 不把同步登记为学习掌握 | [任务记录](tasks/SYNC-002-progress-push.md)；[跨电脑说明](CROSS_COMPUTER_SETUP.md) |
 | ENV-001 | 中文提交规范与本机 VS Code 语言修复 | 当前主智能体；用户本轮直接分配 | 通过：本机简中界面实测恢复；规范通过任务分支/PR 交接，main 待合并 | 不推进学习阶段 | 见 [任务记录](tasks/ENV-001-vscode-locale.md) |
 | 0.2 | 环境变量与配置诊断 | 当前教学智能体；用户独立修改 | 通过：MODEL 校验、13 隔离案例与真实入口通过；新环境回归通过 | 独立修改证据已取得；优先级解释/调试待验证 | [任务记录](tasks/0.2-safe-config.md)；按用户指令进入 0.3，缺口保留 |
 | 0.3 | 支持中的 Python 与依赖锁定 | 当前教学智能体；用户独立练习 | 通过：Python 3.12.15、锁定及第二环境版本一致；旧环境保留 | 待验证：扩展报告、依赖路径与环境解释/定位 | [任务记录](tasks/0.3-reproducible-env.md)；[讲义](../project_steps/00_03_reproducible_env/README.md) |
