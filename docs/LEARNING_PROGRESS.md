@@ -7,7 +7,7 @@
 - 产品方向已确认：你与朋友，为未来福建省事业单位招聘考试进行材料学习。
 - 当前交付：设计、阶段0诊断/环境及1.1 SDK/1.2 LangChain真实调用示例；尚未实现或部署多人平台。
 - 已有第一课、第二课示例继续保留；示例存在不代表概念已掌握。
-- 0.1：用户独立region修改、12个材料诊断案例通过；数字123短路解释及JSON解析/业务校验概念区别通过。见 [练习评审记录](../project_steps/00_01_material_input/REVIEW_RESULTS.md)。用户把业务报错定位到get仍不准确，准确raise位置、异常传播和独立调试待证据；默认输入与注释/格式收尾仍待完成。
+- 0.1：用户独立region修改、12个材料诊断案例通过；数字123短路解释及JSON解析/业务校验概念区别通过，已指出JSONDecodeError与ValueError的继承关系。见 [练习评审记录](../project_steps/00_01_material_input/REVIEW_RESULTS.md)。顺序影响由助手讲解演示，准确raise位置、异常匹配/传播和独立调试待用户证据；默认输入与注释/格式收尾仍待完成。
 - 0.2 功能验收通过：用户已独立增加 MODEL 校验，13 个隔离案例及真实配置入口实测通过，没有打印 Key，模型请求 0；见 [用户练习评审](../project_steps/00_02_safe_config/REVIEW_RESULTS.md)。独立修改已有证据，配置优先级解释与独立调试仍待验证；新 Python 环境下回归通过。
 - 0.3：环境锁定及双环境重建通过；用户已独立加入 langchain-openai，报告实测正确，见 [评审](../project_steps/00_03_reproducible_env/REVIEW_RESULTS.md)。依赖路径/环境解释及独立错误定位仍待验证，助手解释不计作用户证据。
 - 1.1 初版公开材料真实调用与9项离线检查通过，见 [实测](../project_steps/01_01_first_sdk_call/RUN_RESULTS.md)。SDK只作对照，1.2再用LangChain接口。
