@@ -8,7 +8,7 @@
 - 协作契约：根目录 `AGENTS.md`。
 - 学习掌握事实：`LEARNING_PROGRESS.md`；架构决策：`DECISIONS.md`。
 - 当前没有多人后端、前端、生产数据库迁移或平台部署。现有两课为历史学习示例；当前任务为1.2 LangChain模型接口。
-- 当前1.2课程在 `codex/1-2-langchain-model`，Git交付状态见 [任务记录](tasks/1.2-langchain-model.md)；跨电脑获取此分支，main合并单独处理。
+- 当前1.2课程在 `codex/1-2-langchain-model`，课程提交0a42a19已推送且完整SHA与远端核对一致；[PR #4](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/4)已创建、未合并。Git交付状态见 [任务记录](tasks/1.2-langchain-model.md)；交付记录随后另行提交，跨电脑获取此分支，main合并单独处理。
 - 历史1.1课程分支 `codex/1-1-first-model-call` 已推送，课程提交 `2cc6a56` 的本地/远端完整SHA实测一致；本交付记录随后另行提交，最新文档以分支远端为准。[PR #3](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/3) 未合并，含0.3用户修改/评审及此前课程；详见 [任务记录](tasks/1.1-first-sdk-call.md)。跨电脑先获取当前课程分支。
 - 当前交付分支 `codex/0-3-reproducible-env` 已推送，课程提交 `ac3af79` 包含 0.1/0.2 用户修改、0.3 环境及进度记录，本地/远端完整 SHA 实测一致；本验收文档随后另行提交，最新状态以分支远端为准。详见 [SYNC-002](tasks/SYNC-002-progress-push.md)。[PR #2](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/2) 已创建、main 尚未合并；跨电脑使用该分支，不能只拉 main 后认定课程丢失。
 
