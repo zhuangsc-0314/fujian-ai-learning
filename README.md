@@ -10,18 +10,18 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.4-A共9个小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
+长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.4-B共10个小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
 
 ## 当前学习：1.4-B长短材料比较
 
-已按约定呈现[前情提要](docs/learning/2026-10-11.md)，用户复习后恢复1.4-B。用户已独立完成输入token差值，13项基础及6项练习探针通过；下一步按[讲义](project_steps/01_04b_usage_comparison/README.md)运行一次真实比较。原1.2/1.3-C回归通过，真实比较与用户运行/解释未验证；见[任务记录](docs/tasks/1.4-b-usage-comparison.md)。
+已按约定先复习再恢复1.4-B。用户已独立完成差值，13项基础及6项练习探针通过；两条[用户真实记录](project_steps/01_04b_usage_comparison/USER_RUN_RESULTS.md)输入108/147，差值39，功能验收及用户成功运行通过。比较原因解释待用户，见[任务记录](docs/tasks/1.4-b-usage-comparison.md)与[讲义](project_steps/01_04b_usage_comparison/README.md)。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04b_usage_comparison\main.py
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04b_usage_comparison\verify_cases.py --exercise
 ```
 
-默认入口只预览、不读.env、不请求；当前练习探针退出0。显式--live才最多两次真实尝试，可能计费，失败停止；按讲义运行一次并核对实际结果。
+默认入口只预览、不读.env、不请求；当前练习探针退出0。显式--live才最多两次真实尝试，可能计费，失败停止；本课真实记录已提供，无需重复正常调用。
 
 ## 已完成修改：1.4-A读懂token用量
 
@@ -33,7 +33,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 $LASTEXITCODE
 ```
 
-任务/负责人/修改边界与实测见[1.4-A记录](docs/tasks/1.4-a-token-usage.md)。1.3-C已通过8项案例及500探针，用户修改/解释有证据、独立运行日志未验证；下述骨架安排均属历史快照。真实长短文比较/当前价目核对尚未实施，不将1.4-A骨架当整课完成。
+任务/负责人/修改边界与实测见[1.4-A记录](docs/tasks/1.4-a-token-usage.md)。1.3-C已通过8项案例及500探针，用户修改/解释有证据、独立运行日志未验证；下述骨架安排均属历史快照。真实长短文比较已在1.4-B通过，当前价目核对尚未实施，整课1.4仍有后续小步。
 
 ## 历史入口：参数补讲与1.3-A骨架
 

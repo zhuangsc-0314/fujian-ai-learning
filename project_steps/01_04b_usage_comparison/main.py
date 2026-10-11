@@ -47,7 +47,10 @@ def run_comparison(lesson: ModuleType) -> tuple[int, list[dict[str, object]]]:
         print(f"\n[对照材料] {label}")
         code = lesson.main(material_path=path, records=records)
         if code != 0:
-            print("本次比较停止；失败没有成功用量记录，不能据此认定未执行或免费。")
+            if code == 2:
+                print("本次比较停止：此轮在本地检查/初始化阶段失败，未进入invoke。")
+            else:
+                print("本次比较停止；失败没有成功用量记录，不能据此认定未执行或免费。")
             return code, records
         records[-1]["case"] = label
     return 0, records
