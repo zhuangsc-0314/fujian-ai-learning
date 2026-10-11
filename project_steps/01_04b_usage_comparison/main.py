@@ -32,10 +32,12 @@ def input_token_difference(
     short_record: dict[str, object], long_record: dict[str, object],
 ) -> int | None:
     """返回长材料减短材料的输入token差；任一缺失时返回None。"""
-    # TODO 1.4-B（你独立完成）：读取两条input_tokens，
-    # 任一为None就返回None，否则返回长减短。明确的0也允许参与运算。
-    # 不硬编码真实结果，不用字符差替代token差，不修改检查脚本。
-    return None
+    short_tokens = short_record.get("input_tokens")
+    long_tokens = long_record.get("input_tokens")
+    # 1.4-B独立练习已完成：只判断None，明确的0可以参与运算。
+    if short_tokens is None or long_tokens is None:
+        return None
+    return long_tokens - short_tokens
 
 
 def run_comparison(lesson: ModuleType) -> tuple[int, list[dict[str, object]]]:
@@ -72,7 +74,7 @@ def main() -> int:
     print(json.dumps(records, ensure_ascii=False, indent=2))
     if code == 0:
         difference = input_token_difference(records[0], records[1])
-        shown = "未知（或独立练习尚未完成）" if difference is None else str(difference)
+        shown = "未知" if difference is None else str(difference)
         print(f"输入token差值（长减短）：{shown}")
         print("输出/耗时是否变化请观察实际记录；两次请求不足以证明稳定规律。")
     print("费用未核算，实际计费须另核对供应商价目与账单。")

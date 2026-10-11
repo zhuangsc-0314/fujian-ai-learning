@@ -14,14 +14,14 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前学习：1.4-B长短材料比较
 
-已按约定呈现[前情提要](docs/learning/2026-10-11.md)，用户复习后恢复1.4-B。打开[讲义](project_steps/01_04b_usage_comparison/README.md)，先完成新main.py中的输入token差值TODO。骨架13项离线检查与1.2/1.3-C回归通过，真实比较未运行，能力待验证；见[任务记录](docs/tasks/1.4-b-usage-comparison.md)。
+已按约定呈现[前情提要](docs/learning/2026-10-11.md)，用户复习后恢复1.4-B。用户已独立完成输入token差值，13项基础及6项练习探针通过；下一步按[讲义](project_steps/01_04b_usage_comparison/README.md)运行一次真实比较。原1.2/1.3-C回归通过，真实比较与用户运行/解释未验证；见[任务记录](docs/tasks/1.4-b-usage-comparison.md)。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04b_usage_comparison\main.py
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04b_usage_comparison\verify_cases.py --exercise
 ```
 
-默认入口只预览、不读.env、不请求；当前TODO未完成，练习探针预期退出1。显式--live才最多两次真实尝试，可能计费，失败停止；先完成离线练习后按讲义运行。
+默认入口只预览、不读.env、不请求；当前练习探针退出0。显式--live才最多两次真实尝试，可能计费，失败停止；按讲义运行一次并核对实际结果。
 
 ## 已完成修改：1.4-A读懂token用量
 
