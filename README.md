@@ -14,7 +14,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前学习：1.4-B长短材料比较
 
-已按约定先复习再恢复1.4-B。用户已独立完成差值，13项基础及6项练习探针通过；两条[用户真实记录](project_steps/01_04b_usage_comparison/USER_RUN_RESULTS.md)输入108/147，差值39，功能验收及用户成功运行通过。比较原因解释待用户，见[任务记录](docs/tasks/1.4-b-usage-comparison.md)与[讲义](project_steps/01_04b_usage_comparison/README.md)。
+已按约定先复习再恢复1.4-B。用户独立差值、真实运行和核心比较解释通过，13项基础及6项练习通过；两条[用户真实记录](project_steps/01_04b_usage_comparison/USER_RUN_RESULTS.md)输入108/147，差值39。“与材料长度关系不大”由助手纠正为可能有关但不保证同比变化，见[任务记录](docs/tasks/1.4-b-usage-comparison.md)。下一小步为1.4-C价格区间与预算，使用已有用量，不重复正常API调用。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04b_usage_comparison\main.py
