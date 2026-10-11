@@ -97,16 +97,46 @@ def show_response(reply: AIMessage) -> None:
         )
 
 
-def main() -> int:
-    """退出0表示取得正文；2表示本地错误；1表示请求或响应处理失败。"""
+def collect_call_record(
+    reply: AIMessage, requested_model: str, elapsed_seconds: float, material_chars: int,
+) -> dict[str, object]:
+    """只摘取允许字段；不保存正文、完整HTTP头或配置字典。"""
+    usage = reply.usage_metadata or {}
+    metadata = reply.response_metadata
+    headers = metadata.get("headers") or {}
+    # 只取x-request-id；reply.id/响应中的id是生成结果标识，不能冒充请求ID。
+    # .get缺字段返回None，JSON写成null；明确的0保持为0。
+    return {
+        "requested_model": requested_model,
+        "returned_model": metadata.get("model_name"),
+        "material_chars": material_chars,
+        "input_tokens": usage.get("input_tokens"),
+        "output_tokens": usage.get("output_tokens"),
+        "total_tokens": usage.get("total_tokens"),
+        "elapsed_seconds": round(elapsed_seconds, 3),
+        "request_id": headers.get("x-request-id"),
+        "finish_reason": metadata.get("finish_reason"),
+    }
+
+
+def main(
+    *, material_path: Path | None = None, records: list[dict[str, object]] | None = None,
+) -> int:
+    """退出0为取得正文；2为本地错误；1为请求/响应失败。
+
+    无参数保持1.2命令行入口；1.4-B可传材料路径和用量记录列表。
+    *表示后面的参数必须写参数名；None表示未启用比较记录。
+    """
     attempts = 0
     started = None
     stage = "输入/配置检查"
     try:
-        if len(sys.argv) > 2:
+        if material_path is None and len(sys.argv) > 2:
             raise ValueError("本课只接受一个可选材料路径。")
         path = Path(__file__).resolve().parent.parent / "01_01_first_sdk_call" / "material.txt"
-        if len(sys.argv) == 2:
+        if material_path is not None:
+            path = material_path.resolve()
+        elif len(sys.argv) == 2:
             path = Path(sys.argv[1]).resolve()
         text = path.read_text(encoding="utf-8-sig").strip()
         if not text or len(text) > 2000:
@@ -127,6 +157,8 @@ def main() -> int:
             max_retries=0,
             max_tokens=256,
             extra_body={"thinking": {"type": "disabled"}},
+            # 仅比较入口启用响应头，后续只摘取允许的请求ID，不回显整个头。
+            include_response_headers=records is not None,
         )
         stage = "模型请求/响应处理"
         print("[3] 正在通过invoke向DeepSeek发送真实请求……")
@@ -139,6 +171,10 @@ def main() -> int:
         # 左边reply是变量名，右边.invoke是对象的方法；括号传入messages。
         reply = model.invoke(messages)
         show_response(reply)
+        if records is not None:
+            records.append(collect_call_record(
+                reply, settings["DEEPSEEK_MODEL"], perf_counter() - started, len(text),
+            ))
         return 0
     except (FileNotFoundError, UnicodeError, OSError):
         print("材料/配置读取失败：检查文件、UTF-8编码与权限；不回显内容。")
