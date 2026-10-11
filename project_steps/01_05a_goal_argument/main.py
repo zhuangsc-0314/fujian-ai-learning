@@ -22,10 +22,8 @@ def load_lesson() -> ModuleType:
 
 
 def add_goal_argument(parser: argparse.ArgumentParser) -> None:
-    """你独立完成：给现有解析器添加接收字符串的--goal命名选项。"""
-    # TODO 1.5-A：只在这里添加--goal；保留外部已设定的默认目标。
-    # help用中文解释用途；不把选项设为必填，不修改System约束或检查脚本。
-    pass
+    """用户已独立完成：添加接收字符串的--goal，沿用外部默认目标。"""
+    parser.add_argument("--goal", help="接收goal")
 
 
 def main(argv: list[str] | None = None, *, lesson: ModuleType | None = None) -> int:
@@ -35,7 +33,7 @@ def main(argv: list[str] | None = None, *, lesson: ModuleType | None = None) -> 
     parser = argparse.ArgumentParser(
         description="离线预览学习目标与消息角色；不调用模型。", allow_abbrev=False,
     )
-    # set_defaults先保证无参数也有args.goal；完成TODO后可用命名选项覆盖。
+    # set_defaults先保证无参数也有args.goal；命名选项可覆盖默认目标。
     parser.set_defaults(goal=lesson.LEARNING_GOAL)
     add_goal_argument(parser)
     args = parser.parse_args(argv)
