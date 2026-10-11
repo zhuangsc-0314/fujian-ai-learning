@@ -12,7 +12,16 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.5-A共12个小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
 
-## 当前学习：1.5-A学习目标命令行参数
+## 当前学习：1.5-B目标参数贯通与故障定位
+
+[1.5-B讲义](project_steps/01_05b_call_flow/README.md)复用1.5-A参数与1.2完整入口，用户独立定位run_call漏传目标。17项基础及相关回归通过；--diagnose观察到预览目标与invoke输入不一致，诊断和--exercise按骨架预期退出1。默认预览、离线诊断不读.env/不请求API；--live先做离线路由检查，未修复前阻断，修复后才允许显式一次真实尝试，可能计费。助手本轮真实请求0，无新增依赖。见[任务记录](docs/tasks/1.5-b-call-flow.md)。
+
+```powershell
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_05b_call_flow\main.py --diagnose --goal "列出原文包含的科目"
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_05b_call_flow\verify_cases.py --exercise
+```
+
+## 上一课：1.5-A学习目标命令行参数
 
 [1.5-A讲义](project_steps/01_05a_goal_argument/README.md)提供离线目标/消息预览，用户已独立新增`--goal`。18项基础及7项练习检查全部通过、退出0；默认/自定义目标正常，空白目标本地拒绝/退出2。功能与独立修改通过，用户独立运行及消息流转/失败位置解释未验证。保留1.2默认目标和System约束，不读.env、不创建模型、不调用API、不新增依赖；真实集成留到1.5-B。修改边界和证据见[任务记录](docs/tasks/1.5-a-goal-argument.md)，通过[草稿PR #16](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/16)交接。
 

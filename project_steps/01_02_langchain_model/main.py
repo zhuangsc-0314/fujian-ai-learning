@@ -137,10 +137,12 @@ def collect_call_record(
 
 def main(
     *, material_path: Path | None = None, records: list[dict[str, object]] | None = None,
+    learning_goal: str = LEARNING_GOAL,
 ) -> int:
     """退出0为取得正文；2为本地错误；1为请求/响应失败。
 
     无参数保持1.2命令行入口；1.4-B可传材料路径和用量记录列表。
+    1.5-B可传学习目标；省略时沿用原默认目标与System约束。
     *表示后面的参数必须写参数名；None表示未启用比较记录。
     """
     attempts = 0
@@ -157,7 +159,7 @@ def main(
         text = read_material(path)
         print(f"[1] 材料已读取：{len(text)}个字符。")
         settings = load_settings()
-        messages = build_messages(text)
+        messages = build_messages(text, learning_goal=learning_goal)
         print("[2] 已构造SystemMessage/HumanMessage；配置检查通过。")
         stage = "模型初始化"
         # ChatDeepSeek是供应商适配类；实例model保存配置，不在这里调用模型。
