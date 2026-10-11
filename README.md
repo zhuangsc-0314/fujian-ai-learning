@@ -14,7 +14,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前学习：1.4-C用量估算与预算
 
-1.4-B限定双验收已完成；当前[1.4-C讲义](project_steps/01_04c_token_budget/README.md)用已有147/59记录与[官方美元价格快照](project_steps/01_04c_token_budget/PRICE_SNAPSHOT.md)做离线估算。用户独立预算乘法完成，15项基础及3项练习通过/退出0；功能/独立修改通过，用户运行日志及单位/估算解释待验证，见[任务记录](docs/tasks/1.4-c-token-budget.md)。不读取.env/不调用模型，估算不是实际扣费。
+1.4-B限定双验收已完成；当前[1.4-C讲义](project_steps/01_04c_token_budget/README.md)用已有147/59记录与[官方美元价格快照](project_steps/01_04c_token_budget/PRICE_SNAPSHOT.md)做离线估算。用户独立预算乘法完成，15项基础及3项练习通过/退出0；功能/独立修改通过，百万单位换算及估算/账单区别已有用户解释；具体原因由助手补充，用户独立运行日志未验证，见[任务记录](docs/tasks/1.4-c-token-budget.md)。不读取.env/不调用模型，估算不是实际扣费。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04c_token_budget\main.py off-peak
@@ -33,7 +33,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 $LASTEXITCODE
 ```
 
-任务/负责人/修改边界与实测见[1.4-A记录](docs/tasks/1.4-a-token-usage.md)。1.3-C已通过8项案例及500探针，用户修改/解释有证据、独立运行日志未验证；下述骨架安排均属历史快照。真实长短文比较已在1.4-B通过，当前价目核对尚未实施，整课1.4仍有后续小步。
+任务/负责人/修改边界与实测见[1.4-A记录](docs/tasks/1.4-a-token-usage.md)。1.3-C已通过8项案例及500探针，用户修改/解释有证据、独立运行日志未验证；下述骨架安排均属历史快照。真实长短文比较已在1.4-B通过，价目核对及1.4-C离线估算已完成，1.4限定收尾，独立运行缺项保留。
 
 ## 历史入口：参数补讲与1.3-A骨架
 
