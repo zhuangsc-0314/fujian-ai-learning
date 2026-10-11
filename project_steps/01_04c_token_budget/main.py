@@ -46,7 +46,7 @@ def estimate_cost_range(
 
 def estimate_daily_budget(
     per_call_upper: Decimal, calls_per_day: int,
-) -> Decimal | None:
+) -> Decimal:
     """固定价目与相同token规模下，计算每日全未命中情景预算。"""
     if (
         not isinstance(per_call_upper, Decimal)
@@ -56,13 +56,12 @@ def estimate_daily_budget(
         raise ValueError("单次估算须为有限非负Decimal。")
     if type(calls_per_day) is not int or calls_per_day < 0:
         raise ValueError("每日次数须为非负整数。")
-    # TODO 1.4-C（你独立完成）：返回单次上界乘每日次数。
-    # 校验已提供；不要硬编码100次的结果，不把预算当成真实扣费。
-    return None
+    # 1.4-C独立练习已完成：固定情景下，单次上界乘每日次数。
+    return per_call_upper * calls_per_day
 
 
 def main() -> int:
-    """离线展示返回0；非法参数返回2；独立预算未完成仍可观察费用区间。"""
+    """离线展示返回0；非法参数返回2；未知用量不估算费用。"""
     if len(sys.argv) > 2:
         print("只接受一个案例名；真实请求0。")
         return 2
@@ -86,10 +85,7 @@ def main() -> int:
         lower, upper = costs
         print(f"单次理论区间：USD {lower:.9f}—{upper:.9f}。")
         budget = estimate_daily_budget(upper, 100)
-        if budget is None:
-            print("每日100次同规模预算：独立练习待完成。")
-        else:
-            print(f"每日100次同规模/全未命中情景预算：USD {budget:.9f}。")
+        print(f"每日100次同规模/全未命中情景预算：USD {budget:.9f}。")
     print("缓存明细/账户币种/调用时段/账单未核对；估算不是实际扣费。")
     print("本次真实请求0，不读取.env；本课不实施服务端额度限制。")
     return 0

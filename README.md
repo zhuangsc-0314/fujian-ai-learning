@@ -10,11 +10,11 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.4-B共10个小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
+长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.4-C共11个小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
 
 ## 当前学习：1.4-C用量估算与预算
 
-1.4-B限定双验收已完成；当前[1.4-C讲义](project_steps/01_04c_token_budget/README.md)用已有147/59记录与[官方美元价格快照](project_steps/01_04c_token_budget/PRICE_SNAPSHOT.md)做离线区间估算，不读取.env/不调用模型。15项基础通过，用户独立TODO是每日预算乘法，练习探针预期退出1；见[任务记录](docs/tasks/1.4-c-token-budget.md)。缓存明细/账户币种/账单未知，估算不是实际扣费。
+1.4-B限定双验收已完成；当前[1.4-C讲义](project_steps/01_04c_token_budget/README.md)用已有147/59记录与[官方美元价格快照](project_steps/01_04c_token_budget/PRICE_SNAPSHOT.md)做离线估算。用户独立预算乘法完成，15项基础及3项练习通过/退出0；功能/独立修改通过，用户运行日志及单位/估算解释待验证，见[任务记录](docs/tasks/1.4-c-token-budget.md)。不读取.env/不调用模型，估算不是实际扣费。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04c_token_budget\main.py off-peak
