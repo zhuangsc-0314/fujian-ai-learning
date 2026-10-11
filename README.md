@@ -12,16 +12,16 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.4-C共11个小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
 
-## 当前学习：1.4-C用量估算与预算
+## 当前学习：1.5-A学习目标命令行参数
 
-1.4-B限定双验收已完成；当前[1.4-C讲义](project_steps/01_04c_token_budget/README.md)用已有147/59记录与[官方美元价格快照](project_steps/01_04c_token_budget/PRICE_SNAPSHOT.md)做离线估算。用户独立预算乘法完成，15项基础及3项练习通过/退出0；功能/独立修改通过，百万单位换算及估算/账单区别已有用户解释；具体原因由助手补充，用户独立运行日志未验证，见[任务记录](docs/tasks/1.4-c-token-budget.md)。不读取.env/不调用模型，估算不是实际扣费。
+[1.5-A讲义](project_steps/01_05a_goal_argument/README.md)提供离线目标/消息预览，用户独立新增`--goal`。18项基础及相关1.2/1.3-C离线回归通过，目标选项TODO未完成，`--exercise`预期退出1。保留1.2默认目标和System约束，不读.env、不创建模型、不调用API、不新增依赖；真实集成留到1.5-B。修改边界和证据见[任务记录](docs/tasks/1.5-a-goal-argument.md)。
 
 ```powershell
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04c_token_budget\main.py off-peak
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_04c_token_budget\verify_cases.py --exercise
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_05a_goal_argument\main.py
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_05a_goal_argument\verify_cases.py --exercise
 ```
 
-新课所有案例均离线，无真实调用开关。旧1.4-B显式--live仍会请求；该课真实记录已完成，不为复习重跑。
+上一课[1.4-C](project_steps/01_04c_token_budget/README.md)功能及预算修改通过，用户正确解释百万单位换算和估算不是真实账单；具体计费差异原因由助手补充，用户独立运行日志未验证。1.4限定收尾，不重做已通过TODO。旧1.4-B显式--live仍会请求，已有真实记录，不为复习重跑。
 
 ## 已完成修改：1.4-A读懂token用量
 

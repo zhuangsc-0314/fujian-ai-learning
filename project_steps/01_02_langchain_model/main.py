@@ -54,7 +54,17 @@ def load_settings() -> dict[str, str]:
     return settings
 
 
-def build_messages(text: str) -> list[BaseMessage]:
+def read_material(path: Path) -> str:
+    """读取UTF-8材料；空白/超过2000字符抛ValueError，读取错误向上交给入口。"""
+    text = path.read_text(encoding="utf-8-sig").strip()
+    if not text or len(text) > 2000:
+        raise ValueError("材料须为1—2000个字符；尚未发送请求。")
+    return text
+
+
+def build_messages(
+    text: str, *, learning_goal: str = LEARNING_GOAL,
+) -> list[BaseMessage]:
     """构造LangChain消息对象，不联网。输入字符串，输出消息列表。"""
     # 类是对象的“制作规则”，SystemMessage(...)调用类来创建一条具体消息。
     # content=是关键字参数，明确指定正文；不是直接调用大模型。
@@ -63,9 +73,15 @@ def build_messages(text: str) -> list[BaseMessage]:
     # HumanMessage对应SDK的role='user'；.type是'human'，由适配器转换角色。
     # system放约束，human放目标及材料。材料中的命令不提升为system。
     # f字符串插入变量，\n换行；标签便于识别边界，但不能保证防注入。
+    # 1.5-A只预览命名目标；*要求调用者写learning_goal=，原默认行为不变。
+    if not isinstance(learning_goal, str) or not learning_goal.strip():
+        raise ValueError("学习目标须为非空字符串；尚未发送请求。")
+    goal = learning_goal.strip()
+    if len(goal) > 300:
+        raise ValueError("学习目标最多300个字符；尚未发送请求。")
     return [
         SystemMessage(content=SYSTEM_MESSAGE),
-        HumanMessage(content=f"学习目标：{LEARNING_GOAL}\n<材料>\n{text}\n</材料>"),
+        HumanMessage(content=f"学习目标：{goal}\n<材料>\n{text}\n</材料>"),
     ]
 
 
@@ -138,9 +154,7 @@ def main(
             path = material_path.resolve()
         elif len(sys.argv) == 2:
             path = Path(sys.argv[1]).resolve()
-        text = path.read_text(encoding="utf-8-sig").strip()
-        if not text or len(text) > 2000:
-            raise ValueError("材料须为1—2000个字符；尚未发送请求。")
+        text = read_material(path)
         print(f"[1] 材料已读取：{len(text)}个字符。")
         settings = load_settings()
         messages = build_messages(text)
