@@ -14,7 +14,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前学习：1.5-B目标参数贯通与故障定位
 
-[1.5-B讲义](project_steps/01_05b_call_flow/README.md)复用1.5-A参数与1.2完整入口。2026-10-12用户独立补传learning_goal=goal，助手17项基础和3项贯通练习全部通过，--diagnose目标一致、退出0；注入超时且不展示正文，真实HTTP0。功能/独立修改通过，用户独立运行日志和完整六步解释待验证，阶段1不登记全部掌握。默认预览、离线诊断不读.env/不请求API；修复后的--live须显式选择，最多一次真实尝试，可能计费，本轮未运行。无新增依赖；见[任务记录](docs/tasks/1.5-b-call-flow.md)。
+[1.5-B讲义](project_steps/01_05b_call_flow/README.md)复用1.5-A参数与1.2完整入口。2026-10-12用户独立补传learning_goal=goal，助手17项基础和3项贯通练习全部通过，--diagnose目标一致、退出0；注入超时且不展示正文，真实HTTP0。功能/独立修改通过；用户已准确定位invoke超时与跳过正文展示，并在提示后正确区分诊断通过与模型成功，本课限定核心验收通过，1.5收尾。用户独立运行日志和完整六步口述仍未单独验证，不阻挡后续；阶段1不登记全部能力掌握。默认预览、离线诊断不读.env/不请求API；修复后的--live须显式选择，最多一次真实尝试，可能计费，本轮未运行。无新增依赖；见[任务记录](docs/tasks/1.5-b-call-flow.md)。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_05b_call_flow\main.py --diagnose --goal "列出原文包含的科目"
