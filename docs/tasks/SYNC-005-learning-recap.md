@@ -15,6 +15,8 @@
 
 ## 实际交付与验证
 
+Git实收回执：提交7131422153ff566db8e08f8afb0c87ea90b85ba1已推送至同名origin分支；[草稿PR #20](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/20)基于codex/2.2-structured-card，未合并。后续新会话入口由[HANDOFF-001](HANDOFF-001-next-session.md)继承，见[交接提示词](../NEXT_SESSION_HANDOFF.md)。
+
 - 新增2026-10-12学习档案：记录1.4-B/C、1.5-A/B、2.1及2.2的已有证据，整理六项复习与下次唯一独立任务，给出离线命令和预期结果，不提供TODO实现。
 - 更新README、状态、学习进度、笔记下一步、协作契约与2.2交接链接；笔记保持14个功能完成小节，不新增用户能力证据。
 - 修正跨电脑指引：最新任务分支为接续入口，main只是早期汇总；不假称近期课程已合并，环境及凭证仍由新电脑自行配置。
