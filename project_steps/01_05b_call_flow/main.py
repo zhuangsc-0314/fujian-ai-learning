@@ -30,10 +30,10 @@ def run_call(
     *, records: list[dict[str, object]] | None = None,
 ) -> int:
     """将目标/材料交给既有1.2入口；本函数不重复配置或异常处理。"""
-    # TODO 1.5-B：诊断为何预览目标与invoke收到的目标不一致。
-    # 只修改下面的调用，把goal传给原入口新增的learning_goal关键字参数。
-    # 保留material_path与records；不改默认常量/System或诊断脚本。
-    return lesson.main(material_path=path, records=records)
+    # 1.5-B独立修复已通过：用户将goal传给下游learning_goal参数。
+    # 省略这个参数时下游会采用自己的默认目标，上游变量不会自动传递。
+    # 保留material_path与records；本函数只转交数据，不重复模型业务。
+    return lesson.main(material_path=path, records=records, learning_goal=goal)
 
 
 def main(argv: list[str] | None = None) -> int:
