@@ -6,6 +6,8 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 开发者与智能体接入
 
+**准备新开会话：** 复制[新会话接续提示词与交接记录](docs/NEXT_SESSION_HANDOFF.md)中的提示词。最新交接分支`codex/handoff-001-next-session`继承学习归档及2.2代码；先核实仓库状态，再复习、继续用户TODO，不把历史段落当当前任务。
+
 先阅读 [AGENTS.md](AGENTS.md)，再查看 [项目状态与任务索引](docs/PROJECT_STATUS.md)、[学习进度](docs/LEARNING_PROGRESS.md) 和 [决策记录](docs/DECISIONS.md)。当前用户练习不能由接入智能体代做。
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。

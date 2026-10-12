@@ -4,14 +4,14 @@
 
 ## 获取当前进度
 
-2026-10-12最新进度入口为`codex/sync-005-learning-recap`，继承2.2及之前课程，包含[下次复习档案](learning/2026-10-12.md)。2.2代码已在[草稿PR #19](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/19)，本次归档也通过草稿PR交接，尚未合并main。只拉main会看不到近期课程。后续合并授权与结果以任务回执为准。
+2026-10-12最新进度入口为`codex/handoff-001-next-session`，继承SYNC-005、2.2及之前课程，包含[下次复习档案](learning/2026-10-12.md)和[新会话交接提示词](NEXT_SESSION_HANDOFF.md)。2.2代码已在[草稿PR #19](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/19)，归档及新会话交接也通过草稿PR交接，尚未合并main。只拉main会看不到近期课程。后续合并授权与结果以任务回执为准。
 
 历史：2026-10-10[汇总PR #6](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/6)已合并main，见[SYNC-003](tasks/SYNC-003-daily-main.md)；这不是近期课程已合并的证据。
 
 首次获取：在你打算存放项目的父目录运行（目标文件夹不存在时）：
 
 ```powershell
-git clone --branch codex/sync-005-learning-recap https://github.com/zhuangsc-0314/fujian-ai-learning.git
+git clone --branch codex/handoff-001-next-session https://github.com/zhuangsc-0314/fujian-ai-learning.git
 cd fujian-ai-learning
 git log -1 --oneline
 ```
@@ -20,7 +20,7 @@ git log -1 --oneline
 
 ```powershell
 git fetch origin
-git switch codex/sync-005-learning-recap
+git switch codex/handoff-001-next-session
 git pull --ff-only
 ```
 
