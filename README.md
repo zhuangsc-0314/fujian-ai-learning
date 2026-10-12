@@ -10,9 +10,18 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.5-A共12个小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
+长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.5-B共13个功能完成小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
 
-## 当前学习：1.5-A学习目标命令行参数
+## 当前学习：1.5-B目标参数贯通与故障定位
+
+[1.5-B讲义](project_steps/01_05b_call_flow/README.md)复用1.5-A参数与1.2完整入口。2026-10-12用户独立补传learning_goal=goal，助手17项基础和3项贯通练习全部通过，--diagnose目标一致、退出0；注入超时且不展示正文，真实HTTP0。功能/独立修改通过；用户已准确定位invoke超时与跳过正文展示，并在提示后正确区分诊断通过与模型成功，本课限定核心验收通过，1.5收尾。用户独立运行日志和完整六步口述仍未单独验证，不阻挡后续；阶段1不登记全部能力掌握。默认预览、离线诊断不读.env/不请求API；修复后的--live须显式选择，最多一次真实尝试，可能计费，本轮未运行。无新增依赖；见[任务记录](docs/tasks/1.5-b-call-flow.md)。
+
+```powershell
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_05b_call_flow\main.py --diagnose --goal "列出原文包含的科目"
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\01_05b_call_flow\verify_cases.py --exercise
+```
+
+## 上一课：1.5-A学习目标命令行参数
 
 [1.5-A讲义](project_steps/01_05a_goal_argument/README.md)提供离线目标/消息预览，用户已独立新增`--goal`。18项基础及7项练习检查全部通过、退出0；默认/自定义目标正常，空白目标本地拒绝/退出2。功能与独立修改通过，用户独立运行及消息流转/失败位置解释未验证。保留1.2默认目标和System约束，不读.env、不创建模型、不调用API、不新增依赖；真实集成留到1.5-B。修改边界和证据见[任务记录](docs/tasks/1.5-a-goal-argument.md)，通过[草稿PR #16](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/16)交接。
 
