@@ -39,6 +39,8 @@
 
 ## 教学方式与验收
 
+2026-10-12收尾：最新复习入口docs/learning/2026-10-12.md，归档分支codex/sync-005-learning-recap。下次先给复习机会，再继续2.2的describe_information_gap独立展示；未完成/未取得用户证据的内容保持待验收，笔记仍14个功能完成小节。本次同步不是合并main或重复付费调用的授权。
+
 2026-10-12最新任务2.2（docs/tasks/2.2-structured-card.md）：2.1字段已恢复并重新25项通过；复用schema与1.2配置，JSON模式包装器/raw-parsed-parsing_error，18项离线基础及助手一次真实生成通过。470/140/610token、stop、LearningCard、一次尝试/重试0；不登记用户能力。用户独占describe_information_gap展示TODO，探针待完成/退出1，不代写；下一证据为独立展示/调用位置/结果和事实边界解释。适配器内集中模型/提示词/配置，无新依赖/保存/认证/多人平台，候选待人工核对，笔记仍14节。API Reference页面失败已说明，安装版本源码/接口、官方JSON缓存与本机实测核对。后续真实调用须显式--live，助手本轮不重复付费请求。分支codex/2.2-structured-card基于ac12e2e，经草稿PR基于2.1交接，不合并main；以下安排为历史快照。
 
 

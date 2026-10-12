@@ -4,12 +4,14 @@
 
 ## 获取当前进度
 
-本次统一入口为 `main`，包含此前课程、1.3-A骨架及命令行参数补讲；[汇总PR #6](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/6) 已合并，本机/远端核对见 [SYNC-003](tasks/SYNC-003-daily-main.md)。此前各任务文件里的分支入口是当时的交付快照。
+2026-10-12最新进度入口为`codex/sync-005-learning-recap`，继承2.2及之前课程，包含[下次复习档案](learning/2026-10-12.md)。2.2代码已在[草稿PR #19](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/19)，本次归档也通过草稿PR交接，尚未合并main。只拉main会看不到近期课程。后续合并授权与结果以任务回执为准。
+
+历史：2026-10-10[汇总PR #6](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/6)已合并main，见[SYNC-003](tasks/SYNC-003-daily-main.md)；这不是近期课程已合并的证据。
 
 首次获取：在你打算存放项目的父目录运行（目标文件夹不存在时）：
 
 ```powershell
-git clone --branch main https://github.com/zhuangsc-0314/fujian-ai-learning.git
+git clone --branch codex/sync-005-learning-recap https://github.com/zhuangsc-0314/fujian-ai-learning.git
 cd fujian-ai-learning
 git log -1 --oneline
 ```
@@ -18,7 +20,7 @@ git log -1 --oneline
 
 ```powershell
 git fetch origin
-git switch main
+git switch codex/sync-005-learning-recap
 git pull --ff-only
 ```
 
@@ -51,9 +53,17 @@ if (-not (Test-Path -LiteralPath .env)) {
 
 ## 打开代码与接续进度
 
-用 VS Code“文件 → 打开文件夹”打开克隆目录，阅读 README、AGENTS、PROJECT_STATUS、LEARNING_PROGRESS 和 [当天档案](learning/2026-10-10.md)。0.1/0.2/1.1/1.2本课核心验收通过；0.3按用户要求收尾，不重新补验收。当前先做 [命令行参数独立小练习](../project_steps/01_03_request_errors/COMMAND_LINE.md)，再补1.3-A超时except分支。两者都不读取.env、不联网。
+用 VS Code“文件 → 打开文件夹”打开实际克隆目录，阅读README、AGENTS、PROJECT_STATUS、LEARNING_PROGRESS和[2026-10-12复习档案](learning/2026-10-12.md)。先复习，再打开project_steps/02_02_structured_card/main.py完成describe_information_gap的独立展示TODO；2.1核心验收已通过，不重做该字段修改。2.2展示/解释与用户运行待验收，不把助手真实调用当用户掌握。
 
-1.3-A、1.2和0.3的F5调试入口明确使用 `.venv-py312`。1.2正常入口会发真实请求，验收已通过无需重复运行。新电脑没有旧 `.venv`，旧课程 F5 入口需要另行调整或使用新解释器的显式命令，不能假定虚拟环境跟随 Git 复制。Markdown 打开后按 `Ctrl+Shift+V` 查看预览。Continue聊天历史属于本机插件数据，不随此Git仓库同步；可共享的学习证据在项目文档中。
+本机解释器使用`.venv-py312`。在项目根目录可先运行离线预览与练习检查：
+
+```powershell
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_02_structured_card\main.py
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_02_structured_card\verify_cases.py --exercise
+$LASTEXITCODE
+```
+
+TODO尚未完成时预计预览退出0、18项基础通过但练习探针退出1；修改后须看实际结果，不能仅凭预览成功判断掌握。以上命令不读.env、不请求模型；不要为复习加--live。1.1/1.2正常入口会真实请求，已通过无需重复。新电脑没有旧.venv，不假定虚拟环境随Git复制。Markdown打开后按Ctrl+Shift+V查看预览。Continue聊天历史属于本机插件数据，不随此Git仓库同步；可共享学习证据在项目文档中。
 
 0.1默认入口已由用户恢复为正常material.json。invalid_json.json和missing_region.json均已修复；失败演示使用另存的invalid_json_trailing_comma.json或missing_region_original.json。正常验证也可显式传参：
 

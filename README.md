@@ -14,6 +14,8 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前学习：2.2真实结构化学习卡
 
+本次收尾与下次复习入口：[2026-10-12学习档案](docs/learning/2026-10-12.md)。先复习参数贯通、请求/异常边界、字典与实例、raw/parsed及格式/事实三层校验，再完成2.2展示TODO；不提前标记通过。最新归档分支为`codex/sync-005-learning-recap`，main尚未包含近期课程，另一台电脑按[接续指引](docs/CROSS_COMPUTER_SETUP.md)切到该分支。
+
 打开[2.2讲义](project_steps/02_02_structured_card/README.md)和[详细入口](project_steps/02_02_structured_card/main.py)，先看adapter.py的wrap_model及main的structured_model.invoke。默认预览不读.env/不请求；助手18项离线基础及一次真实生成已通过，parsed为LearningCard，470输入/140输出/610总token。用户实例字段展示TODO待完成，练习探针退出1；助手成功不计用户掌握。候选始终待人工核对，未保存/未认证，单引用不证明支持每项事实。见[实测](project_steps/02_02_structured_card/RUN_RESULTS.md)和[任务](docs/tasks/2.2-structured-card.md)。
 
 ```powershell
