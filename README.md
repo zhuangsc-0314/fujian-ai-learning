@@ -12,9 +12,19 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至2.1共14个功能完成小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
 
-## 当前学习：2.1学习卡结构与校验
+## 当前学习：2.2真实结构化学习卡
 
-先看 [2.1讲义](project_steps/02_01_card_schema/README.md) 和 [schema.py](project_steps/02_01_card_schema/schema.py)，再看main.py的validate_card。用户独立information_gap字段/输入及修复已通过；助手20项基础和5项字段练习全部通过、退出0。用户准确定位model_validate校验及失败后不展示，并解释格式不证明事实，本课限定核心验收通过；candidate为dict由助手纠正，用户运行日志未验证。已验收提交da1039e字段正确，但本机schema新增未提交拼写回退，当前入口退出2；用户需恢复information_gap，不把历史通过当当前文件通过。本课人工候选不是AI回答，不读.env、不调用模型、不保存数据库；引用存在不保证摘要有据，占位归属不是真实认证。见 [任务记录](docs/tasks/2.1-card-schema.md)。
+打开[2.2讲义](project_steps/02_02_structured_card/README.md)和[详细入口](project_steps/02_02_structured_card/main.py)，先看adapter.py的wrap_model及main的structured_model.invoke。默认预览不读.env/不请求；助手18项离线基础及一次真实生成已通过，parsed为LearningCard，470输入/140输出/610总token。用户实例字段展示TODO待完成，练习探针退出1；助手成功不计用户掌握。候选始终待人工核对，未保存/未认证，单引用不证明支持每项事实。见[实测](project_steps/02_02_structured_card/RUN_RESULTS.md)和[任务](docs/tasks/2.2-structured-card.md)。
+
+```powershell
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_02_structured_card\main.py
+```
+
+助手已进行一次真实调用，不为展示修改重复付费；显式--live才会读取本机配置和再次尝试请求，可能计费，自动重试关闭。依赖保持不变。
+
+## 上一课核心验收：2.1学习卡结构与校验
+
+先看 [2.1讲义](project_steps/02_01_card_schema/README.md) 和 [schema.py](project_steps/02_01_card_schema/schema.py)，再看main.py的validate_card。用户独立information_gap字段/输入及修复已通过；助手20项基础和5项字段练习全部通过、退出0。用户准确定位model_validate校验及失败后不展示，并解释格式不证明事实，本课限定核心验收通过；candidate为dict由助手纠正，用户运行日志未验证。此前本地字段拼写回退已恢复为information_gap，20+5项检查重新通过；历史差异见任务，不重做已通过练习。本课人工候选不是AI回答，不读.env、不调用模型、不保存数据库；引用存在不保证摘要有据，占位归属不是真实认证。见 [任务记录](docs/tasks/2.1-card-schema.md)。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_01_card_schema\main.py

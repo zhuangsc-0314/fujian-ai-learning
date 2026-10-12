@@ -4,7 +4,7 @@
 
 最新1.4-B收尾：真实记录与独立差值通过；用户已解释token切分/固定输入开销及输出/耗时因素，核心解释通过。其“与输入长度关系不大”经助手纠正为可能有关但不保证同比变化。限定范围双验收完成，不扩展为全面性能分析或独立调试掌握。详见[用户实测](../project_steps/01_04b_usage_comparison/USER_RUN_RESULTS.md)。
 
-当前任务[2.1](tasks/2.1-card-schema.md)，分支codex/2.1-card-schema，通过[草稿PR #18](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/18)基于1.5-B交接。用户独立新增information_gap并修复拼写/非空约束；助手正常入口、20项基础和5项字段练习全部通过、退出0、真实请求0。功能与独立字段修改通过；用户准确定位字段校验/123异常及print跳过，并解释格式不证明事实，限定核心能力通过；candidate类型由助手纠正，用户运行日志未验证。本机schema新增未提交拼写回退infomation_gap，当前正常入口实际退出2；保留用户代码，不提交其回退，已验收da1039e提交的通过证据仍有效。只整理空格/完成注释且AST一致，不代写逻辑。笔记新增第14个功能完成小节；无模型调用/保存/多人平台，本地恢复字段一致后再分配真实结构化生成，不重问已通过解释。依赖版本不变。
+上一任务[2.1](tasks/2.1-card-schema.md)，分支codex/2.1-card-schema，通过[草稿PR #18](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/18)基于1.5-B交接。用户独立新增information_gap并修复拼写/非空约束；助手正常入口、20项基础和5项字段练习全部通过、退出0、真实请求0。功能与独立字段修改通过；用户准确定位字段校验/123异常及print跳过，并解释格式不证明事实，限定核心能力通过；candidate类型由助手纠正，用户运行日志未验证。本地拼写回退已恢复，20+5项重新通过，最后规则与已验收schema一致；历史差异见恢复回执。只整理空格/完成注释且AST一致，不代写逻辑。笔记新增第14个功能完成小节；无模型调用/保存/多人平台，本地恢复字段一致后再分配真实结构化生成，不重问已通过解释。依赖版本不变。
 
 2.1首次评审历史快照（已由用户修复）：当时字段拼写不一致且缺最小长度，正常入口退出2、检查退出1；记录保留，不覆盖历史失败。当前以顶部和任务最新成功评审为准。
 
@@ -34,6 +34,8 @@
 - 历史课程分支 `codex/1-3-request-errors` 包含此前所有课程，7356c08为1.3骨架交付；[PR #5](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/5)及 [任务记录](tasks/1.3-request-errors.md)保留当时状态。补讲不修改异常逻辑，独立TODO仍待验收。
 - 1.2历史交付0a42a19、[PR #4](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/4)见 [任务记录](tasks/1.2-langchain-model.md)；1.1交付2cc6a56、[PR #3](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/3)见 [任务记录](tasks/1.1-first-sdk-call.md)；阶段0交付ac3af79、[PR #2](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/2)见 [SYNC-002](tasks/SYNC-002-progress-push.md)。这些提交均已推送，fetch及祖先检查确认全部包含在本轮汇总分支；各PR当前状态以GitHub为准。
 
+当前2.2真实结构化生成任务，分支codex/2.2-structured-card，基线ac12e2e，PR基于2.1。18项离线基础与一次真实API生成已通过；470/140/610token、stop、parsed为LearningCard、1次尝试/重试0/1.51秒。展示TODO待用户，练习探针退出1，用户能力/运行待证据；只更新下一步，笔记仍14小节。无依赖变化、保存、认证或多人平台；JSON/schema/引用存在均不保证完整事实依据，API Reference在线加载失败，已按安装版本接口/源码及官方JSON检索和实测核对。
+
 ## 任务索引
 
 | ID | 范围 | 负责人 | 功能状态 | 学习状态 | 依赖/下一步 |
@@ -54,7 +56,8 @@
 | 1.4-C | 离线价格区间与每日预算，功能通过 | 当前教学智能体；用户每日预算 | 官方美元快照/15项基础及3项练习通过 | 独立修改/百万单位/估算与账单区别通过；原因由助手补充，用户运行未验证 | [任务记录](tasks/1.4-c-token-budget.md)；1.4限定收尾，进入1.5-A |
 | 1.5-A | 离线学习目标参数，功能通过 | 主智能体验收/文档；用户目标选项 | 18项基础及7项练习通过，默认/自定义0、空白2 | 独立修改通过；用户运行/消息流转解释未验证 | [任务记录](tasks/1.5-a-goal-argument.md)；[PR #16](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/16)，真实集成留到1.5-B |
 | 1.5-B | 目标参数贯通与故障定位 | 协调者验收/文档；用户run_call | 通过：17项基础与3项练习、诊断目标一致，退出0 | 独立修复/超时位置解释通过；提示后诊断码理解正确；运行日志/完整口述未单独验证 | [任务记录](tasks/1.5-b-call-flow.md)；[PR #17](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/17)，1.5限定收尾，建议阶段2第一小步 |
-| 2.1 | 学习卡字段与Pydantic校验 | 协调者验收/文档；用户独立字段 | 通过：20项基础和5项字段练习，退出0 | 独立新增/修复、校验失败/事实区别核心解释通过；candidate类型经纠正，运行日志未验证 | [任务记录](tasks/2.1-card-schema.md)；[讲义](../project_steps/02_01_card_schema/README.md)，本地拼写回退需恢复，之后分配生成小步 |
+| 2.1 | 学习卡字段与Pydantic校验 | 协调者验收/文档；用户独立字段 | 通过：20项基础和5项字段练习，退出0 | 独立新增/修复、校验失败/事实区别核心解释通过；candidate类型经纠正，运行日志未验证 | [任务记录](tasks/2.1-card-schema.md)；[讲义](../project_steps/02_01_card_schema/README.md)，字段已恢复；2.2生成小步已分配 |
+| 2.2 | 真实结构化学习卡 | 协调者适配器/验证/文档；用户实例展示 | 18项基础及一次真实生成通过；展示探针待完成/退出1 | raw/parsed与调用位置/事实边界待用户 | [任务](tasks/2.2-structured-card.md)；[讲义](../project_steps/02_02_structured_card/README.md) |
 | SYNC-004 | 本次前情提要与Git同步 | 当前主智能体/协调者；用户直接分配 | 文档归档与Git交接 | 不新增能力证据 | [任务记录](tasks/SYNC-004-learning-recap.md) |
 | DOCS-001 | 累计学习笔记与Git维护 | 当前主智能体/协调者；用户直接分配 | 汇总9个小节，新增持续更新/提交约定 | 沿用既有证据，不新增掌握结论 | [任务记录](tasks/DOCS-001-study-notes.md)；[笔记](../学习笔记.md) |
 | SYNC-003 | 参数补讲、2026-10-10档案及main统一 | 当前主智能体/协调者；用户直接授权 | 通过：演示/档案已通过PR #6合并main、远端核对一致；本条为回执 | sys.argv独立数量修改/解释待用户；不代做1.3 TODO | [任务记录](tasks/SYNC-003-daily-main.md)；[当天档案](learning/2026-10-10.md)；[补讲](../project_steps/01_03_request_errors/COMMAND_LINE.md) |
@@ -64,10 +67,10 @@
 ## 当前可运行内容
 
 ```powershell
-.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_01_card_schema\main.py
+.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_02_structured_card\main.py
 ```
 
-当前命令只校验人工候选/展示JSON，真实请求0；da1039e用户修复版本的20项基础及5项练习实际退出0；最新本地未提交字段拼写回退导致当前入口退出2，不能将旧结果冒充当前实测，能力与差异见任务。1.2及历史课程1/2直接运行仍会真实调用，不可默认用作离线验证。
+当前命令只预览2.2消息/字段，真实请求0、退出0，不读.env；2.1字段已恢复并重新25项通过。2.2展示练习未完成时--exercise退出1，助手一次真实生成与离线数据分别见实测。1.2及历史课程1/2直接运行仍会真实调用，不可默认用作离线验证。
 
 正式环境Python3.12.15、uv0.12.24；0.3双环境安装40包版本一致，1.1只将既有openai3.26.1改为显式直接声明，安装版本不变且兼容/锁检查通过。2.1另将已有Pydantic2.14.0显式直接声明并自动更新锁，所有版本不变、同步/兼容与0.3回归通过；锁42条记录，当前直接依赖5个。旧Python3.10.10 .venv保留；本机工具/环境与.env不入仓库。DeepSeek默认公开材料调用已验证；Linux、百炼和真实异常分支未验证。
 
