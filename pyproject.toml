@@ -11,6 +11,8 @@ dependencies = [
     "python-dotenv==1.2.4",
     # 1.1 直接使用已安装的兼容 SDK，明确依赖关系，不升级其版本。
     "openai==3.26.1",
+    # 2.1直接使用已安装的Pydantic，改为显式声明；版本不升级。
+    "pydantic==2.14.0",
 ]
 
 [tool.uv]
