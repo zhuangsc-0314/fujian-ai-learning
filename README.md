@@ -14,7 +14,7 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前学习：2.1学习卡结构与校验
 
-先看 [2.1讲义](project_steps/02_01_card_schema/README.md) 和 [schema.py](project_steps/02_01_card_schema/schema.py)，再看main.py的validate_card。用户独立information_gap字段/输入及修复已通过；助手20项基础和5项字段练习全部通过、退出0。类/实例、实际校验与事实区别的解释及用户运行日志待验证，不将助手检查当成用户掌握。本课人工候选不是AI回答，不读.env、不调用模型、不保存数据库；引用存在不保证摘要有据，占位归属不是真实认证。见 [任务记录](docs/tasks/2.1-card-schema.md)。
+先看 [2.1讲义](project_steps/02_01_card_schema/README.md) 和 [schema.py](project_steps/02_01_card_schema/schema.py)，再看main.py的validate_card。用户独立information_gap字段/输入及修复已通过；助手20项基础和5项字段练习全部通过、退出0。用户准确定位model_validate校验及失败后不展示，并解释格式不证明事实，本课限定核心验收通过；candidate为dict由助手纠正，用户运行日志未验证。已验收提交da1039e字段正确，但本机schema新增未提交拼写回退，当前入口退出2；用户需恢复information_gap，不把历史通过当当前文件通过。本课人工候选不是AI回答，不读.env、不调用模型、不保存数据库；引用存在不保证摘要有据，占位归属不是真实认证。见 [任务记录](docs/tasks/2.1-card-schema.md)。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_01_card_schema\main.py
