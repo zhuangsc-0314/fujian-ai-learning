@@ -10,11 +10,11 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至1.5-B共13个功能完成小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
+长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至2.1共14个功能完成小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
 
 ## 当前学习：2.1学习卡结构与校验
 
-先看 [2.1讲义](project_steps/02_01_card_schema/README.md) 和 [schema.py](project_steps/02_01_card_schema/schema.py)，再看main.py的validate_card。人工候选不是AI回答；20项基础校验通过，用户独立information_gap字段与输入TODO待完成，练习探针退出1。本课不读.env、不调用模型、不保存数据库。字段通过/引用存在都不保证摘要有据；本机占位归属不是真实认证。见 [任务记录](docs/tasks/2.1-card-schema.md)。
+先看 [2.1讲义](project_steps/02_01_card_schema/README.md) 和 [schema.py](project_steps/02_01_card_schema/schema.py)，再看main.py的validate_card。用户独立information_gap字段/输入及修复已通过；助手20项基础和5项字段练习全部通过、退出0。类/实例、实际校验与事实区别的解释及用户运行日志待验证，不将助手检查当成用户掌握。本课人工候选不是AI回答，不读.env、不调用模型、不保存数据库；引用存在不保证摘要有据，占位归属不是真实认证。见 [任务记录](docs/tasks/2.1-card-schema.md)。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_01_card_schema\main.py
@@ -78,7 +78,7 @@ $LASTEXITCODE
 
 前一任务：[1.1 SDK对照](project_steps/01_01_first_sdk_call/README.md)，独立目标修改、请求/响应解释和缺Key定位说明均通过，见 [用户证据](project_steps/01_01_first_sdk_call/USER_RUN_RESULTS.md)。1.2不升级依赖。
 
-更早任务：[0.3 环境讲义](project_steps/00_03_reproducible_env/README.md)。课程按用户要求已完成，剩余补验收停止；报告扩展及新旧解释器运行/切换有证据，未验证项保留在[评审](project_steps/00_03_reproducible_env/REVIEW_RESULTS.md)，不阻挡1.2。1.1 新增 SDK 的显式直接声明，当前直接依赖4个，安装版本未变。
+更早任务：[0.3 环境讲义](project_steps/00_03_reproducible_env/README.md)。课程按用户要求已完成，剩余补验收停止；报告扩展及新旧解释器运行/切换有证据，未验证项保留在[评审](project_steps/00_03_reproducible_env/REVIEW_RESULTS.md)，不阻挡1.2。1.1曾将SDK显式直接声明增至4个；2.1再显式声明已有Pydantic，当前直接依赖5个，安装版本未变。
 
 更早任务：[安全配置讲义](project_steps/00_02_safe_config/README.md)。本课双重验收通过：用户独立 MODEL 校验、优先级解释、9项运行日志及故障定位/输入修复说明有证据，见 [评审记录](project_steps/00_02_safe_config/REVIEW_RESULTS.md)。历史助手13隔离案例、真实配置入口及新环境回归通过；未验证真实Key有效性。
 

@@ -28,8 +28,8 @@ def build_candidate(case: str) -> dict[str, object]:
         "summary": "材料明确说明题型全部为客观题。",
         "keywords": ["客观题"],
         "evidence_quote": "题型全部为客观题。",
-        # TODO 2.1-B（用户独立）：补上information_gap键和有原文依据的缺口说明。
-        # 例如说明原文未给出客观题的具体题型，不能自行补出定义。
+        # 用户独立补充的人工输入；内容正确仍须核对，字符串原样保留。
+        "information_gap": "原文未给出客观题的具体题型，不行自行补出定义。",
     }
     # 各失败案例从正常候选改一个地方。字典键与schema字段名必须对应。
     if case == "missing_summary":

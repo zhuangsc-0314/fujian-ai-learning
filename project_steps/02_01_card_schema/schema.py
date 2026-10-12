@@ -18,7 +18,5 @@ class LearningCard(BaseModel):
     # list[str]表示列表且各项为字符串；这里的长度约束限制列表项数。
     keywords: list[str] = Field(min_length=1, max_length=5)
     evidence_quote: str = Field(min_length=1, max_length=400)
-
-    # TODO 2.1-A（用户独立）：新增必填information_gap字段。
-    # 要求为字符串，去首尾空白后至少1字符、最多200字符。
-    # main.py的正常人工输入也要补同名键；不要改已有字段或验证脚本。
+    # 用户独立字段已通过：必填字符串，去首尾空白后1—200字符。
+    information_gap: str = Field(min_length=1, max_length=200)
