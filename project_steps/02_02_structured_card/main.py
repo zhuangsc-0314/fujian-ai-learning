@@ -25,9 +25,10 @@ MATERIAL_PATH = PROJECT_ROOT / "project_steps" / "01_01_first_sdk_call" / "mater
 
 def describe_information_gap(card: adapter.LearningCard) -> str:
     """用户独立展示已解析实例中的信息缺口，不从raw正文取值。"""
-    # TODO 2.2：返回“信息缺口：”加上card实例中的information_gap。
+    # 用户独立展示已通过：读取实例属性，返回带规定前缀的字符串。
     # 不硬编码原文缺口，不使用raw.content代替字段，不修改验证脚本。
-    return "信息缺口：待用户展示"
+    information_gap = card.information_gap
+    return "信息缺口：" + information_gap
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -39,6 +39,8 @@
 
 ## 教学方式与验收
 
+2026-10-13最新2.2续接：用户独立完成describe_information_gap，助手18项基础+2项实例展示通过/退出0，未读取.env、真实HTTP0。用户准确解释目标漏传层、structured_model.invoke请求行、超时后try后续跳过且finally执行；raw/parsed/parsing_error和本课事实边界由助手讲解，独立解释/用户运行日志待补，不宣布整课能力通过。根笔记新增2.2功能完成条目，共15节；无新依赖/保存/认证/多人平台，不重做已通过展示、不重复付费。续接分支codex/2.2-instance-display基于1378d7f，PR基于交接分支；下述14节/TODO未完成是2026-10-12快照。
+
 新会话交接（HANDOFF-001）：先读docs/NEXT_SESSION_HANDOFF.md和2026-10-12复习档案；最新交接分支codex/handoff-001-next-session继承SYNC-005。进入时重新核对本地/远端及用户未提交修改，当前2.2独立练习状态以最新证据为准；不根据提示词快照覆盖后来修改。该提示词未在另一会话实测，不代做TODO或复制历史授权。
 
 2026-10-12收尾：最新复习入口docs/learning/2026-10-12.md，归档分支codex/sync-005-learning-recap。下次先给复习机会，再继续2.2的describe_information_gap独立展示；未完成/未取得用户证据的内容保持待验收，笔记仍14个功能完成小节。本次同步不是合并main或重复付费调用的授权。
