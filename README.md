@@ -6,19 +6,19 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 开发者与智能体接入
 
-**准备新开会话：** 复制[新会话接续提示词与交接记录](docs/NEXT_SESSION_HANDOFF.md)中的提示词。最新交接分支`codex/handoff-001-next-session`继承学习归档及2.2代码；先核实仓库状态，再复习、继续用户TODO，不把历史段落当当前任务。
+**准备新开会话：** 查看[新会话交接记录](docs/NEXT_SESSION_HANDOFF.md)顶部最新说明。续接分支`codex/2.2-instance-display`继承`codex/handoff-001-next-session`，已验收用户展示；先核实仓库状态，不把历史提示词的TODO快照当当前任务。
 
 先阅读 [AGENTS.md](AGENTS.md)，再查看 [项目状态与任务索引](docs/PROJECT_STATUS.md)、[学习进度](docs/LEARNING_PROGRESS.md) 和 [决策记录](docs/DECISIONS.md)。当前用户练习不能由接入智能体代做。
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至2.1共14个功能完成小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
+长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至2.2共15个功能完成小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
 
 ## 当前学习：2.2真实结构化学习卡
 
-本次收尾与下次复习入口：[2026-10-12学习档案](docs/learning/2026-10-12.md)。先复习参数贯通、请求/异常边界、字典与实例、raw/parsed及格式/事实三层校验，再完成2.2展示TODO；不提前标记通过。最新归档分支为`codex/sync-005-learning-recap`，main尚未包含近期课程，另一台电脑按[接续指引](docs/CROSS_COMPUTER_SETUP.md)切到该分支。
+历史复习入口：[2026-10-12学习档案](docs/learning/2026-10-12.md)。2026-10-13用户已完成2.2展示，助手18项基础+2项展示检查通过/退出0；漏传层、请求位置及异常流程回答已有证据。下一步只补同课raw/parsed/error与事实边界独立解释、用户离线日志，不重做展示。最新续接分支`codex/2.2-instance-display`，main尚未包含近期课程；跨电脑见[接续指引](docs/CROSS_COMPUTER_SETUP.md)，以当前分支和任务记录为准。
 
-打开[2.2讲义](project_steps/02_02_structured_card/README.md)和[详细入口](project_steps/02_02_structured_card/main.py)，先看adapter.py的wrap_model及main的structured_model.invoke。默认预览不读.env/不请求；助手18项离线基础及一次真实生成已通过，parsed为LearningCard，470输入/140输出/610总token。用户实例字段展示TODO待完成，练习探针退出1；助手成功不计用户掌握。候选始终待人工核对，未保存/未认证，单引用不证明支持每项事实。见[实测](project_steps/02_02_structured_card/RUN_RESULTS.md)和[任务](docs/tasks/2.2-structured-card.md)。
+打开[2.2讲义](project_steps/02_02_structured_card/README.md)和[详细入口](project_steps/02_02_structured_card/main.py)，看adapter.py的wrap_model及main的structured_model.invoke。默认预览不读.env/不请求，也不执行展示函数；verify_cases.py --exercise离线验收展示，本轮18+2项通过。助手历史一次真实生成parsed为LearningCard，470输入/140输出/610总token；本轮没有新真实请求。功能与独立展示修改通过，整课能力待证据。候选始终待人工核对，未保存/未认证，单引用不证明支持每项事实。见[实测](project_steps/02_02_structured_card/RUN_RESULTS.md)和[任务](docs/tasks/2.2-structured-card.md)。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_02_structured_card\main.py

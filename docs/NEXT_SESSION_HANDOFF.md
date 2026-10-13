@@ -2,6 +2,8 @@
 
 本文件由HANDOFF-001维护。下个会话不用取得此前聊天历史，通过仓库文档接续；本文快照遇到更新记录须重新核对，不当作永久进度。
 
+**2026-10-13续接更新：** 本文以下可复制提示词与14节/TODO快照保留为2026-10-12历史记录。最新分支codex/2.2-instance-display继承交接分支；用户展示已完成，助手18+2项离线检查通过/退出0。笔记15个功能完成小节，用户raw/parsed/error和本课事实边界独立解释、用户离线日志待补。不要再布置展示TODO或为此重复--live；当前证据见[2.2续接任务](tasks/2.2-structured-card.md)、[学习进度](LEARNING_PROGRESS.md)。
+
 ## 交接位置与Git状态
 
 - 最新入口分支：`codex/handoff-001-next-session`，继承`codex/sync-005-learning-recap`及完整课程代码。
