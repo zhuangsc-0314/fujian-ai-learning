@@ -47,3 +47,10 @@
 继续学习只推进一个小修改：2.2独立raw/parsed/parsing_error与事实边界解释、用户运行证据自然接续，再进入2.3-A；本轮未代填任何用户能力。下一课独立迁移练习在README，参考实现已完整，不再以TODO阻挡运行。
 
 Git交接：精确提交、推送并草稿PR基于codex/plan-002-stage2-curriculum；SHA/PR按实际回执登记，不合并main。
+
+### Git实际回执
+
+- 功能提交：1f1060117b696a64acf183c35ec1572b74ba37f4，`feat: 补齐阶段2完整参考实现与本机学习卡闭环`；74个任务文件，未暂存.env/.local/2.1/2.2/LEARNING_PROGRESS。
+- git diff --cached --check通过；已推送origin/codex/stage2-001-complete-reference，ls-remote核对与本机功能SHA一致。
+- 已创建并附加[草稿PR #24](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/24)，base为codex/plan-002-stage2-curriculum，实际OPEN/isDraft=true；main仍cfc024708867ce2235d05b3ed5f5a14c0bf57c53，未合并。
+- 本回执单独docs提交并推送；最终HEAD由git log -1/远端核对，不重复模型/功能测试。
