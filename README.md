@@ -16,7 +16,11 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至2.12共29个功能/参考交付小节；新增14节是助手完整参考实现，用户尚未逐课验收。核心知识、代码、误区和独立掌握分别记录，随任务提交、推送并通过PR交接。
 
-## 当前学习：2.2真实结构化学习卡
+## 当前学习：2.3-A人工核对状态
+
+用户要求按既定流程继续，效果优化以后再构思。本课[详细教学](project_steps/02_03a_content_review/README.md)解释三状态、True/False/None和命名参数；[独立练习](project_steps/02_03a_content_review/practice.py)只完成review_unknown_time，完整业务参考逻辑保留。命令：`.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_03a_content_review\practice.py`；未完成时退出1是已知状态。2.2缺项保留不阻塞，不标全面掌握；任务/验收见[2.3-A](docs/tasks/2.3-a-review-status.md)。分支codex/2.3-a-review-status基于dc1bfe7。
+
+## 上一教学：2.2真实结构化学习卡
 
 **阶段2完整课程与代码：** [16个小步课程表](docs/STAGE2_CURRICULUM.md)、[实际模块/数据/API](docs/STAGE2_CODE_BLUEPRINT.md)、[代码入口导航](project_steps/STAGE2.md)。2.1/2.2用户代码保留，后续14课已补齐参考函数、PostgreSQL迁移、FastAPI和Vue，默认入口运行离线参考行为。完整启动见运行手册；48项测试和浏览器历史回放闭环通过。用户能力不因助手实现自动增加。
 
