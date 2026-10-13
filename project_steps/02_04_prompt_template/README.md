@@ -1,53 +1,40 @@
-# 2.4：ChatPromptTemplate与参数贯通
+# 2.4 ChatPromptTemplate与参数贯通
 
-状态：**规划与TODO骨架，未实现、未验收、未分配为当前课**。当前学习仍为2.2，历史已通过练习不重做。
+2026-10-13：用户要求完整代码，本课已提供可运行参考实现，替代此前骨架。功能实测见[STAGE2-001](../../docs/tasks/STAGE2-001-complete-reference.md)；用户能力仍待独立修改、解释和运行日志，不能由参考实现代替。
 
-## 本课交付与原因
+## 本次交付与原因
 
-预期交付：material/learning_goal/schema_json → 模板填值 → system/human消息预览。
+交付：system/human消息。这是阶段2生成→核对→保存→重开的必要环节。完整项目入口和环境准备见[运行手册](../../docs/STAGE2_RUNBOOK.md)，课程顺序见[总表](../../docs/STAGE2_CURRICULUM.md)。
 
-为什么现在学：材料、目标、schema需要稳定传入消息，便于复用与定位漏传。
+- 输入：材料、目标、schema。
+- 处理：读取当前main.py导入的共享模块；配置/模型集中在learning_app/ai.py，业务事务集中在service.py。
+- 输出：system/human消息。默认main展示离线参考行为；数据库SQL预览不算真实数据库通过。
 
-前置：2.3；沿用现有langchain-core，不安装完整langchain。
+## 关键代码与语法
 
-新概念（最多3项）：消息模板；模板变量；提示词版本。
+dict[str,str]说明键和值都是字符串；模板变量只替换一次，材料中的花括号不再次执行。
 
-## 代码与独立练习
-
-[main.py](main.py)含中文函数契约，未实现函数抛NotImplementedError。TODO USER由用户独立实现，TODO ASSISTANT由授课智能体在正式开课时补教学框架；不能一口气代做后续练习。
-
-独立位置：`prepare_prompt_values`。
-
-练习目标：独立贯通learning_goal并拒绝空白；材料只进入human变量，不修改system约束。
-
-通用Python语法：参数后的冒号说明预期类型，箭头说明返回类型；类型提示本身不自动校验。签名中的单独星号表示后续参数必须按名字传入；`T | None`表示T类型或未知值None；`list[tuple[int, int]]`表示由两个整数位置组成的列表。涉及的语法只在本课用到时逐项解释，不要求提前掌握全部。
-
-具体模块职责与后续正式代码落点见[代码蓝图](../../docs/STAGE2_CODE_BLUEPRINT.md)。
-
-## 运行方式
-
-现在可从仓库根目录运行说明预览：
+先读[main.py](main.py)的中文说明，再跳到导入的实际函数。它们已完整实现，不再抛尚未实施的NotImplementedError。数据库课再读[迁移](../../migrations/versions/0001_materials_cards.py)，页面课再读[组件](../../web/src/CardReview.vue)、[页面](../../web/src/App.vue)和[请求](../../web/src/api.ts)。
 
 ```powershell
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_04_prompt_template\main.py
 .\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_04_prompt_template\main.py --exercise
-$LASTEXITCODE
 ```
 
-预期：说明预览退出0；--exercise明确“尚未实施”并退出2。它们只验证说明入口能运行，不能作为本课功能通过。骨架没有--live，不读取.env、不调用模型/数据库、不启动Web服务。未来依赖、测试与实际运行命令在开课时补齐并记录实测。
+--exercise现在运行完整参考演示，退出0仅说明演示执行成功，不计入用户独立验收。所有默认入口模型请求0、未读取.env。真实数据库验证使用scripts/stage2-dev.ps1 test；网页构建和启动见运行手册。
 
-## 预期案例与双重验收
+## 三类案例与通过条件
 
-| 案例 | 预期结果（尚未实测） |
-| --- | --- |
-| 正常 | 更换目标后human消息同步变化。 |
-| 非法/失败 | 空目标或缺模板变量在请求前明确失败。 |
-| 边界/不可信 | 原文含花括号或“忽略规则”时仍作为变量值；不对填入的文本再次模板化。 |
+| 类型 | 输入/动作 | 应有结果 |
+| --- | --- | --- |
+| 正常 | 合法材料和明确参数、同归属及当前版本 | 返回对应对象/视图；保存后可读取 |
+| 非法 | 空字段、错误引句、跨归属、非法HTTP字段 | 在对应步骤明确拒绝；不假报成功、不自动调用模型 |
+| 边界 | 未知日期、重复引句、重复保存、旧审核版本或未运行质量集 | 未知保持未知；保留全部位置；保存幂等；版本冲突；not_run分列 |
 
-功能通过条件：以上业务案例完成实现并取得实际输出，符合输入/输出契约；说明预览不算通过。
+具体已执行案例在tests/test_stage2_offline.py与tests/test_stage2_postgres_api.py。助手测试结果仅用于功能验收。后续每次教学只选本课一个小修改，先解释输入/处理/输出，再看实际日志。
 
-能力通过条件：独立完成指定修改，解释输入→处理→输出，并定位本课至少一个实际或明确注入的失败步骤；用户日志与助手验证分列。未取得证据标待验证，用户明确要求收尾时保留缺项，不自动登记掌握。
+## 用户独立迁移练习
 
-开课时先用[任务模板](../../docs/tasks/TEMPLATE.md)分配唯一小任务及可编辑文件；完成后更新任务、状态和笔记，按PR交接。
+独立添加一个学习目标CLI参数，验证不是使用下游默认值。
 
-[阶段2总课程](../../docs/STAGE2_CURRICULUM.md) · [骨架导航](../STAGE2.md)
+请在当课分配时修改对应共享代码或创建独立练习文件；当前不代写这个迁移答案。验收需要你的修改、为什么这样改的中文解释、正常/非法/边界运行证据。失败先定位input/template/invoke/parse/database/review/view，再做最小修复。通过后记录能力证据，已有2.1/2.2通过练习不重做。

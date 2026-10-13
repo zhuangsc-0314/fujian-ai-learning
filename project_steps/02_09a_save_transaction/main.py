@@ -1,36 +1,24 @@
-"""2.9-A：保存候选与事务（规划骨架，尚未实现）。
+"""2.9-A：保存候选与事务（完整参考实现）。
 
-本次仅提供函数契约和独立练习位置。默认运行只显示说明，不运行TODO。
-输入/处理/输出：服务端已校验候选快照 → 材料/归属检查 → 事务写卡片 → ID
+输入：服务端候选快照/归属/材料版本；处理：共享业务模块；输出：已保存ID或回滚。
+语法提示：with sessions.begin()成功commit、异常rollback；ON CONFLICT由唯一约束处理并发重复。
+本课独立迁移练习见README，不把参考代码运行当作用户已掌握。
 """
 
 import sys
 from pathlib import Path
 
-
-# 固定仓库路径只用于导入课程说明工具；它不会导入模型或读取配置。
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from project_steps.stage2_scaffold import preview_lesson  # noqa: E402
-
-
-def save_candidate(
-    session: object, candidate_snapshot: dict[str, object],
-    *, owner_user_id: str, material_version_id: str,
-) -> str:
-    """规划返回保存后的卡片ID；session会在开课时收敛为SQLAlchemy Session。
-    TODO USER：在助手提供的映射/仓储框架中补事务部分。
-    candidate_snapshot来自服务端候选存储，不能直接信任HTTP请求正文。
-    """
-    # 未实现必须明确失败，不能先返回空数据伪装业务成功。
-    raise NotImplementedError("2.9-A课程TODO尚未实现")
+from learning_app.service import save_candidate  # noqa: E402
+from project_steps.stage2_reference import run_reference  # noqa: E402
 
 
 def main() -> int:
-    """仅供浏览未来课程说明；实际练习须在该课分配后实现。"""
-    return preview_lesson("2.9-A", "保存候选与事务", "save_candidate")
+    """共享演示入口；业务函数已实现，可继续阅读其中文注释。"""
+    return run_reference("2.9-A", "保存候选与事务")
 
 
 if __name__ == "__main__":

@@ -1,37 +1,25 @@
-"""2.8-B：数据表、约束与数据库迁移（规划骨架，尚未实现）。
+"""2.8-B：数据表约束与迁移（完整参考实现）。
 
-本次仅提供函数契约和独立练习位置。默认运行只显示说明，不运行TODO。
-输入/处理/输出：材料/卡片数据设计 → ORM与首个迁移 → 专用空开发库表结构
+输入：领域数据与表约束；处理：共享业务模块；输出：两张表和Alembic版本0001。
+语法提示：Mapped[str]声明ORM字段；外键限制卡片与材料owner一致，仍不是登录认证。
+本课独立迁移练习见README，不把参考代码运行当作用户已掌握。
 """
 
 import sys
 from pathlib import Path
 
-
-# 固定仓库路径只用于导入课程说明工具；它不会导入模型或读取配置。
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from project_steps.stage2_scaffold import preview_lesson  # noqa: E402
-
-
-def require_owner(owner_user_id: str) -> None:
-    """检查业务层提供的owner非空，失败抛ValueError；成功不返回业务数据。
-    TODO USER：只做本地非空检查，不能把它当身份认证。
-    """
-    # 未实现必须明确失败，不能先返回空数据伪装业务成功。
-    raise NotImplementedError("2.8-B课程TODO尚未实现")
-
-
-def build_model_metadata() -> object:
-    """TODO ASSISTANT：开课时实现SQLAlchemy映射与Alembic首个迁移。"""
-    raise NotImplementedError("2.8-B表与迁移尚未实现")
+from learning_app.storage import build_model_metadata  # noqa: E402
+from learning_app.domain import require_owner  # noqa: E402
+from project_steps.stage2_reference import run_reference  # noqa: E402
 
 
 def main() -> int:
-    """仅供浏览未来课程说明；实际练习须在该课分配后实现。"""
-    return preview_lesson("2.8-B", "数据表、约束与数据库迁移", "require_owner")
+    """共享演示入口；业务函数已实现，可继续阅读其中文注释。"""
+    return run_reference("2.8-B", "数据表约束与迁移")
 
 
 if __name__ == "__main__":

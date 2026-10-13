@@ -1,34 +1,24 @@
-"""2.9-B：归属查询与审核快照绑定（规划骨架，尚未实现）。
+"""2.9-B：归属查询与审核版本（完整参考实现）。
 
-本次仅提供函数契约和独立练习位置。默认运行只显示说明，不运行TODO。
-输入/处理/输出：服务端上下文、卡片ID/预期版本 → 限定归属查询/状态变更 → 结果或冲突
+输入：卡片ID/服务端owner/预期审核版本；处理：共享业务模块；输出：允许读取的记录或版本冲突。
+语法提示：where的多个条件共同成立；update同时限定owner和expected_version，rowcount=0表示冲突。
+本课独立迁移练习见README，不把参考代码运行当作用户已掌握。
 """
 
 import sys
 from pathlib import Path
 
-
-# 固定仓库路径只用于导入课程说明工具；它不会导入模型或读取配置。
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from project_steps.stage2_scaffold import preview_lesson  # noqa: E402
-
-
-def get_owned_card(
-    session: object, *, card_id: str, owner_user_id: str,
-) -> dict[str, object] | None:
-    """规划返回当前业务身份可读的卡片，不可读或不存在返回None。
-    TODO USER：在数据库查询中加归属限制，不能查全量后仅隐藏UI。
-    """
-    # 未实现必须明确失败，不能先返回空数据伪装业务成功。
-    raise NotImplementedError("2.9-B课程TODO尚未实现")
+from learning_app.service import get_owned_card  # noqa: E402
+from project_steps.stage2_reference import run_reference  # noqa: E402
 
 
 def main() -> int:
-    """仅供浏览未来课程说明；实际练习须在该课分配后实现。"""
-    return preview_lesson("2.9-B", "归属查询与审核快照绑定", "get_owned_card")
+    """共享演示入口；业务函数已实现，可继续阅读其中文注释。"""
+    return run_reference("2.9-B", "归属查询与审核版本")
 
 
 if __name__ == "__main__":

@@ -1,37 +1,24 @@
-"""2.8-A：本机PostgreSQL连接与故障定位（规划骨架，尚未实现）。
+"""2.8-A：本机PostgreSQL连接（完整参考实现）。
 
-本次仅提供函数契约和独立练习位置。默认运行只显示说明，不运行TODO。
-输入/处理/输出：专用开发库配置 → 显式连接检查 → 脱敏连接结果
+输入：显式本机开发库连接配置；处理：共享业务模块；输出：连接成功或安全诊断。
+语法提示：with engine.connect()管理连接；finally释放引擎，即使连接失败也执行。
+本课独立迁移练习见README，不把参考代码运行当作用户已掌握。
 """
 
 import sys
 from pathlib import Path
 
-
-# 固定仓库路径只用于导入课程说明工具；它不会导入模型或读取配置。
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from project_steps.stage2_scaffold import preview_lesson  # noqa: E402
-
-
-def describe_database_failure(error_code: str) -> str:
-    """根据固定错误码返回安全提示，不接受或回显完整异常/连接串。
-    TODO USER：补本机服务不可达的提示和可重试条件。
-    """
-    # 未实现必须明确失败，不能先返回空数据伪装业务成功。
-    raise NotImplementedError("2.8-A课程TODO尚未实现")
-
-
-def probe_database(database_url: str) -> bool:
-    """TODO ASSISTANT：开课时核对驱动、配置和显式连接入口。"""
-    raise NotImplementedError("2.8-A数据库连接尚未实现")
+from learning_app.storage import describe_database_failure, probe_database  # noqa: E402
+from project_steps.stage2_reference import run_reference  # noqa: E402
 
 
 def main() -> int:
-    """仅供浏览未来课程说明；实际练习须在该课分配后实现。"""
-    return preview_lesson("2.8-A", "本机PostgreSQL连接与故障定位", "describe_database_failure")
+    """共享演示入口；业务函数已实现，可继续阅读其中文注释。"""
+    return run_reference("2.8-A", "本机PostgreSQL连接")
 
 
 if __name__ == "__main__":

@@ -13,6 +13,11 @@ dependencies = [
     "openai==3.26.1",
     # 2.1直接使用已安装的Pydantic，改为显式声明；版本不升级。
     "pydantic==2.14.0",
+    "fastapi==0.143.0",
+    "uvicorn==0.54.0",
+    "sqlalchemy==2.1.4",
+    "alembic==1.20.0",
+    "psycopg[binary]==3.3.6",
 ]
 
 [tool.uv]
@@ -20,3 +25,9 @@ dependencies = [
 package = false
 # 工具版本也有记录；升级 uv 时须重新验证并修改此约束。
 required-version = "==0.12.24"
+
+[dependency-groups]
+dev = [
+    "httpx==0.28.1",
+    "pytest==9.1.1",
+]
