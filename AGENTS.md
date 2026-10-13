@@ -1,5 +1,7 @@
 # 项目协作契约
 
+2026-10-13最新2.3-A验收：用户已独立完成practice.py的review_unknown_time，命名参数True/None并return业务结果；助手三案例accepted/rejected/pending_manual_review通过、退出0。独立调用修改通过，中文解释与用户个人日志待证据；不再布置同一TODO、不代写或修改已通过逻辑。功能原参考不变、笔记29节不增加，仍无新API/数据库/依赖。
+
 2026-10-13当前教学2.3-A：用户明确要求按既定流程学习，效果优化后续讨论。新分支codex/2.3-a-review-status基于dc1bfe7；完整domain/main参考逻辑保留，用户独占project_steps/02_03a_content_review/practice.py的review_unknown_time调用练习，不代写。2.2功能/展示和部分复述通过，能力缺项保留且不阻塞推进；笔记29节不增加。本课只人工状态/未知结论/命名参数，无.env/API/数据库/新依赖，先读2.3-a-review-status任务和当课README。
 
 2026-10-13最新STAGE2-001：用户明确要求完整阶段2代码，替代PLAN-002骨架范围。共享learning_app、真实PG迁移/事务、FastAPI、Vue和14课参考入口已提供；48项检查及浏览器历史回放保存/审核/刷新通过，模型请求0。学习笔记29个功能/参考小节；新增14节仅助手交付，不登记用户已掌握。2.1/2.2用户逻辑保留，2.2独立解释/用户日志缺项继续保留；后续仍一次一个可验证练习。最新分支codex/stage2-001-complete-reference，先读任务与STAGE2_RUNBOOK，重新核对Git。新模板真实生成、F1十篇真实质量、真实认证/Linux未验证，无main合并/部署授权。下文旧“尚无后端/仅骨架/15节”按日期作为历史。

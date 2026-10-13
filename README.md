@@ -20,6 +20,8 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 用户要求按既定流程继续，效果优化以后再构思。本课[详细教学](project_steps/02_03a_content_review/README.md)解释三状态、True/False/None和命名参数；[独立练习](project_steps/02_03a_content_review/practice.py)只完成review_unknown_time，完整业务参考逻辑保留。命令：`.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_03a_content_review\practice.py`；未完成时退出1是已知状态。2.2缺项保留不阻塞，不标全面掌握；任务/验收见[2.3-A](docs/tasks/2.3-a-review-status.md)。分支codex/2.3-a-review-status基于dc1bfe7。
 
+最新评审：用户已完成上述调用，助手三案例实际通过/退出0；独立修改通过，未知与False及通过条件解释、用户运行日志待证据。上段退出1是未完成时的状态，当前不重做已通过调用。
+
 ## 上一教学：2.2真实结构化学习卡
 
 **阶段2完整课程与代码：** [16个小步课程表](docs/STAGE2_CURRICULUM.md)、[实际模块/数据/API](docs/STAGE2_CODE_BLUEPRINT.md)、[代码入口导航](project_steps/STAGE2.md)。2.1/2.2用户代码保留，后续14课已补齐参考函数、PostgreSQL迁移、FastAPI和Vue，默认入口运行离线参考行为。完整启动见运行手册；48项测试和浏览器历史回放闭环通过。用户能力不因助手实现自动增加。

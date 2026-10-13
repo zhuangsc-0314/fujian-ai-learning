@@ -16,10 +16,10 @@ from learning_app.domain import decide_review_status  # noqa: E402
 
 def review_unknown_time() -> str:
     """用户独立练习：事实已有依据，但还没有核实时间适用性。"""
-    # TODO USER：调用decide_review_status，按名字传入两个人工结论。
-    # 返回业务函数给出的状态，不直接硬编码某个状态字符串。
-    # 参数含义请先读README和domain.py；保留正常/不合格演示代码。
-    raise NotImplementedError("请独立完成时间适用性尚未核实的调用。")
+    return decide_review_status(
+        all_claims_supported=True,
+        has_time_conflict=None,
+    )
 
 
 def main() -> int:
