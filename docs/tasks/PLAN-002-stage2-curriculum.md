@@ -29,3 +29,9 @@
 - Vue/TypeScript未构建，PostgreSQL/SQLAlchemy/Alembic/FastAPI环境未安装或运行；真实生成、新材料质量、真实认证/跨用户隔离未新增验证。临时校验辅助在忽略.local中，不作为后续课程正式功能测试。
 - 本次代码/文档按分配范围精确提交并推送，草稿PR基于codex/2.2-instance-display；最终SHA/PR以Git回执核对。不合并main。
 - 下一步仍为2.2剩余解释/用户日志，再进入2.3-A。未来每课单独分配，不同时启动14课；用户要求调整时保留未验证证据，不把规划误登记为掌握。
+
+## Git交接回执
+
+- 规划与骨架提交42b21a336feff585ae72f3a1f40df43fb263f1d5已实际推送至origin/codex/plan-002-stage2-curriculum，40个分配文件精确提交。
+- 已创建并附加[草稿PR #23](https://github.com/zhuangsc-0314/fujian-ai-learning/pull/23)，基于codex/2.2-instance-display，未合并main。
+- 本回执单独docs提交；最终分支HEAD以git log -1及远端查询为准。只补交接记录，不重复课程或API测试。
