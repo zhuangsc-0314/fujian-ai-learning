@@ -16,6 +16,8 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 ## 当前学习：2.2真实结构化学习卡
 
+**阶段2完整课程与代码规划：** [16个小步课程表](docs/STAGE2_CURRICULUM.md)、[代码/数据/API蓝图](docs/STAGE2_CODE_BLUEPRINT.md)、[代码入口导航](project_steps/STAGE2.md)。已有2.1/2.2继续保留，新增14个未来课程TODO骨架及Vue/TypeScript练习文件；默认只显示说明，不代表业务实现或验收。规划分支`codex/plan-002-stage2-curriculum`继承2.2验收分支，当前能力状态与15节笔记数量不变。
+
 历史复习入口：[2026-10-12学习档案](docs/learning/2026-10-12.md)。2026-10-13用户已完成2.2展示，助手18项基础+2项展示检查通过/退出0；漏传层、请求位置及异常流程回答已有证据。下一步只补同课raw/parsed/error与事实边界独立解释、用户离线日志，不重做展示。最新续接分支`codex/2.2-instance-display`，main尚未包含近期课程；跨电脑见[接续指引](docs/CROSS_COMPUTER_SETUP.md)，以当前分支和任务记录为准。
 
 打开[2.2讲义](project_steps/02_02_structured_card/README.md)和[详细入口](project_steps/02_02_structured_card/main.py)，看adapter.py的wrap_model及main的structured_model.invoke。默认预览不读.env/不请求，也不执行展示函数；verify_cases.py --exercise离线验收展示，本轮18+2项通过。助手历史一次真实生成parsed为LearningCard，470输入/140输出/610总token；本轮没有新真实请求。功能与独立展示修改通过，整课能力待证据。候选始终待人工核对，未保存/未认证，单引用不证明支持每项事实。见[实测](project_steps/02_02_structured_card/RUN_RESULTS.md)和[任务](docs/tasks/2.2-structured-card.md)。
