@@ -1,5 +1,7 @@
 # 福建事业单位备考 AI 学习平台
 
+**2026-10-13阶段2完整参考实现已提供。** 从[运行手册](docs/STAGE2_RUNBOOK.md)启动共享Python服务、PostgreSQL和Vue页面；[课程总表](docs/STAGE2_CURRICULUM.md)与[代码导航](project_steps/STAGE2.md)覆盖2.1—2.12。默认历史候选回放无付费调用。功能参考交付与用户掌握分开，尚无可上线多人平台。下文旧课程/骨架描述是历史记录。
+
 为用户和朋友开发材料学习、政策问答、练习与错题复习平台，同时逐步学习 Python 和 LangChain。当前交付为设计、历史课程、阶段0诊断及阶段1模型调用示例，尚无可上线的多人平台。
 
 GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有；需要仓库访问权限）。克隆不包含本机虚拟环境、`.local` 或 `.env`。
@@ -12,11 +14,11 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 供新智能体复制的 [协作提示词](docs/COLLABORATION_PROMPT.md)；新任务使用 [任务记录模板](docs/tasks/TEMPLATE.md)。每批次由协调者分配任务，同一文件一个负责人，并行开发使用独立分支与 checkout；通过 PR 交接。
 
-长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至2.2共15个功能完成小节的核心知识、代码和误区，独立掌握状态单独标明。每完成一小节更新相应条目，随该任务提交、推送并通过PR交接；笔记属于正式Git文件。
+长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至2.12共29个功能/参考交付小节；新增14节是助手完整参考实现，用户尚未逐课验收。核心知识、代码、误区和独立掌握分别记录，随任务提交、推送并通过PR交接。
 
 ## 当前学习：2.2真实结构化学习卡
 
-**阶段2完整课程与代码规划：** [16个小步课程表](docs/STAGE2_CURRICULUM.md)、[代码/数据/API蓝图](docs/STAGE2_CODE_BLUEPRINT.md)、[代码入口导航](project_steps/STAGE2.md)。已有2.1/2.2继续保留，新增14个未来课程TODO骨架及Vue/TypeScript练习文件；默认只显示说明，不代表业务实现或验收。规划分支`codex/plan-002-stage2-curriculum`继承2.2验收分支，当前能力状态与15节笔记数量不变。
+**阶段2完整课程与代码：** [16个小步课程表](docs/STAGE2_CURRICULUM.md)、[实际模块/数据/API](docs/STAGE2_CODE_BLUEPRINT.md)、[代码入口导航](project_steps/STAGE2.md)。2.1/2.2用户代码保留，后续14课已补齐参考函数、PostgreSQL迁移、FastAPI和Vue，默认入口运行离线参考行为。完整启动见运行手册；48项测试和浏览器历史回放闭环通过。用户能力不因助手实现自动增加。
 
 历史复习入口：[2026-10-12学习档案](docs/learning/2026-10-12.md)。2026-10-13用户已完成2.2展示，助手18项基础+2项展示检查通过/退出0；漏传层、请求位置及异常流程回答已有证据。下一步只补同课raw/parsed/error与事实边界独立解释、用户离线日志，不重做展示。最新续接分支`codex/2.2-instance-display`，main尚未包含近期课程；跨电脑见[接续指引](docs/CROSS_COMPUTER_SETUP.md)，以当前分支和任务记录为准。
 
@@ -124,7 +126,7 @@ $LASTEXITCODE
 
 ## 学习路线
 
-当前项目式学习路线：[AI 学习平台设计与开发路线](docs/AI_LEARNING_PLATFORM_DESIGN.md)。面向你和朋友备考未来福建事业单位招聘，包含多人权限、部署与每阶段的功能/能力验收。当前仅设计，平台尚未实现。
+当前项目式学习路线：[AI 学习平台设计与开发路线](docs/AI_LEARNING_PLATFORM_DESIGN.md)。面向你和朋友备考未来福建事业单位招聘，包含多人权限、部署与每阶段的功能/能力验收。阶段2本机参考实现已提供；真实认证、多人权限及上线仍未实现/验收。
 
 学习证据与下一任务：[学习进度记录](docs/LEARNING_PROGRESS.md)。下列课程是已有示例；后续开发顺序以平台路线为准。
 

@@ -1,39 +1,25 @@
-"""2.7：生成服务与明确的结果对象（规划骨架，尚未实现）。
+"""2.7：生成服务与明确结果（完整参考实现）。
 
-本次仅提供函数契约和独立练习位置。默认运行只显示说明，不运行TODO。
-输入/处理/输出：材料上下文/目标 → AI适配器生成、校验 → 候选ID、内容、用量与错误阶段
+输入：已读取材料上下文与目标；处理：共享业务模块；输出：成功候选或明确失败。
+语法提示：with关闭Session后才invoke；raise ... from保留内部因果，页面只展示脱敏AppError。
+本课独立迁移练习见README，不把参考代码运行当作用户已掌握。
 """
 
 import sys
 from pathlib import Path
 
-
-# 固定仓库路径只用于导入课程说明工具；它不会导入模型或读取配置。
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from project_steps.stage2_scaffold import preview_lesson  # noqa: E402
-
-
-def classify_failure_stage(error_code: str) -> str:
-    """返回固定的失败步骤名称；未知code要明确归为未知而非成功。
-    TODO USER：开课时根据约定补结构化解析失败分支。
-    """
-    # 未实现必须明确失败，不能先返回空数据伪装业务成功。
-    raise NotImplementedError("2.7课程TODO尚未实现")
-
-
-def generate_candidate(
-    material_context: dict[str, object], learning_goal: str,
-) -> dict[str, object]:
-    """TODO ASSISTANT：提取共享服务；候选在服务端保存快照，不信任客户端回传正文。"""
-    raise NotImplementedError("2.7生成服务尚未实现")
+from learning_app.ai import classify_failure_stage  # noqa: E402
+from learning_app.service import generate_candidate  # noqa: E402
+from project_steps.stage2_reference import run_reference  # noqa: E402
 
 
 def main() -> int:
-    """仅供浏览未来课程说明；实际练习须在该课分配后实现。"""
-    return preview_lesson("2.7", "生成服务与明确的结果对象", "classify_failure_stage")
+    """共享演示入口；业务函数已实现，可继续阅读其中文注释。"""
+    return run_reference("2.7", "生成服务与明确结果")
 
 
 if __name__ == "__main__":

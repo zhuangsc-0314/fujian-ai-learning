@@ -1,12 +1,5 @@
-<script setup lang="ts">
-// TODO ASSISTANT：2.11-A开课时定义props和明确标注的人工界面样例。
-// TODO USER：独立把information_gap绑定到下方区域。
-// 当前没有props/请求/模型配置，不是可用学习卡组件。
+<script lang="ts">
+// 课程入口复用完整组件；实际逻辑和中文说明见web/src/CardReview.vue。
+import CardReview from '../../web/src/CardReview.vue'
+export default CardReview
 </script>
-
-<template>
-  <section aria-label="学习卡核对骨架">
-    <p>课程骨架：尚未接入学习卡数据。</p>
-    <!-- TODO USER：显示信息缺口；用文本绑定，不使用v-html。 -->
-  </section>
-</template>

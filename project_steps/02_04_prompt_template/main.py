@@ -1,39 +1,24 @@
-"""2.4：ChatPromptTemplate与参数贯通（规划骨架，尚未实现）。
+"""2.4：ChatPromptTemplate与参数贯通（完整参考实现）。
 
-本次仅提供函数契约和独立练习位置。默认运行只显示说明，不运行TODO。
-输入/处理/输出：material/learning_goal/schema_json → 模板填值 → system/human消息预览
+输入：材料、目标、schema；处理：共享业务模块；输出：system/human消息。
+语法提示：dict[str,str]说明键和值都是字符串；模板变量只替换一次，材料中的花括号不再次执行。
+本课独立迁移练习见README，不把参考代码运行当作用户已掌握。
 """
 
 import sys
 from pathlib import Path
 
-
-# 固定仓库路径只用于导入课程说明工具；它不会导入模型或读取配置。
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from project_steps.stage2_scaffold import preview_lesson  # noqa: E402
-
-
-def prepare_prompt_values(
-    material: str, learning_goal: str, schema_json: str,
-) -> dict[str, str]:
-    """返回模板需要的变量字典，字段约定见README。
-    TODO USER：完成目标校验和变量贯通；不在这里创建模型或读Key。
-    """
-    # 未实现必须明确失败，不能先返回空数据伪装业务成功。
-    raise NotImplementedError("2.4课程TODO尚未实现")
-
-
-def build_prompt_template() -> object:
-    """TODO ASSISTANT：开课时提供ChatPromptTemplate骨架并核对版本接口。"""
-    raise NotImplementedError("2.4消息模板尚未实现")
+from learning_app.ai import prepare_prompt_values, build_prompt_template  # noqa: E402
+from project_steps.stage2_reference import run_reference  # noqa: E402
 
 
 def main() -> int:
-    """仅供浏览未来课程说明；实际练习须在该课分配后实现。"""
-    return preview_lesson("2.4", "ChatPromptTemplate与参数贯通", "prepare_prompt_values")
+    """共享演示入口；业务函数已实现，可继续阅读其中文注释。"""
+    return run_reference("2.4", "ChatPromptTemplate与参数贯通")
 
 
 if __name__ == "__main__":

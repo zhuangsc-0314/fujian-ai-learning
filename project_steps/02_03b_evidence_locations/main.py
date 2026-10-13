@@ -1,33 +1,24 @@
-"""2.3-B：引用定位与逐项证据记录（规划骨架，尚未实现）。
+"""2.3-B：引用定位与逐项证据记录（完整参考实现）。
 
-本次仅提供函数契约和独立练习位置。默认运行只显示说明，不运行TODO。
-输入/处理/输出：不可变原文、连续引句 → 查找所有出现位置 → [(start, end), ...]及人工事实关联
+输入：原文和逐字引句；处理：共享业务模块；输出：所有半开区间位置。
+语法提示：find返回-1表示没找到；[start:end]包含start、不包含end；while逐次找下一处。
+本课独立迁移练习见README，不把参考代码运行当作用户已掌握。
 """
 
 import sys
 from pathlib import Path
 
-
-# 固定仓库路径只用于导入课程说明工具；它不会导入模型或读取配置。
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from project_steps.stage2_scaffold import preview_lesson  # noqa: E402
-
-
-def locate_quote(material: str, quote: str) -> list[tuple[int, int]]:
-    """返回所有半开区间：material[start:end]应等于quote。
-    TODO USER：查找多个位置与空引句处理；不存在时返回空列表。
-    位置匹配不证明语义有据；必须绑定材料版本，前端不自行换算中文下标。
-    """
-    # 未实现必须明确失败，不能先返回空数据伪装业务成功。
-    raise NotImplementedError("2.3-B课程TODO尚未实现")
+from learning_app.domain import locate_quote  # noqa: E402
+from project_steps.stage2_reference import run_reference  # noqa: E402
 
 
 def main() -> int:
-    """仅供浏览未来课程说明；实际练习须在该课分配后实现。"""
-    return preview_lesson("2.3-B", "引用定位与逐项证据记录", "locate_quote")
+    """共享演示入口；业务函数已实现，可继续阅读其中文注释。"""
+    return run_reference("2.3-B", "引用定位与逐项证据记录")
 
 
 if __name__ == "__main__":
