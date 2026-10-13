@@ -16,7 +16,11 @@ GitHub 仓库：<https://github.com/zhuangsc-0314/fujian-ai-learning>（私有�
 
 长期复习入口：[学习笔记.md](学习笔记.md)。已整理0.1至2.12共29个功能/参考交付小节；新增14节是助手完整参考实现，用户尚未逐课验收。核心知识、代码、误区和独立掌握分别记录，随任务提交、推送并通过PR交接。
 
-## 当前学习：2.3-A人工核对状态
+## 当前学习：2.3-B1引用位置与切片
+
+本次[具体讲义](project_steps/02_03b_evidence_locations/README.md)先讲字符位置、半开区间和位置对列表；只完成[practice.py](project_steps/02_03b_evidence_locations/practice.py)中的locate_my_quote，不改完整参考逻辑。命令：`.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_03b_evidence_locations\practice.py`；未完成时退出1。查找循环/emoji/重叠后续逐步学习；[任务](docs/tasks/2.3-b1-quote-slices.md)基于1f3196b，分支codex/2.3-b1-quote-slices，无.env/API/数据库调用。
+
+## 上一小步：2.3-A人工核对状态
 
 用户要求按既定流程继续，效果优化以后再构思。本课[详细教学](project_steps/02_03a_content_review/README.md)解释三状态、True/False/None和命名参数；[独立练习](project_steps/02_03a_content_review/practice.py)只完成review_unknown_time，完整业务参考逻辑保留。命令：`.\.venv-py312\Scripts\python.exe -X utf8 project_steps\02_03a_content_review\practice.py`；未完成时退出1是已知状态。2.2缺项保留不阻塞，不标全面掌握；任务/验收见[2.3-A](docs/tasks/2.3-a-review-status.md)。分支codex/2.3-a-review-status基于dc1bfe7。
 

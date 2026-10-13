@@ -1,5 +1,7 @@
 # 项目协作契约
 
+2026-10-13当前教学2.3-B1：用户继续进入引用位置与切片，先学从0计数、半开区间及位置对列表；用户独占project_steps/02_03b_evidence_locations/practice.py的locate_my_quote，不代写。while/find/:=及emoji/重叠后续拆解。分支codex/2.3-b1-quote-slices基于1f3196b，先读对应任务/课程README；共享定位实现和2.3-A已通过调用不改、不重做。既有解释纠正/个人日志缺项保留，不因继续全部标掌握，笔记29节不增加，无.env/API/数据库/新依赖。
+
 2026-10-13最新2.3-A验收：用户已独立完成practice.py的review_unknown_time，命名参数True/None并return业务结果；助手三案例accepted/rejected/pending_manual_review通过、退出0。独立调用修改通过，中文解释与用户个人日志待证据；不再布置同一TODO、不代写或修改已通过逻辑。功能原参考不变、笔记29节不增加，仍无新API/数据库/依赖。
 
 2026-10-13当前教学2.3-A：用户明确要求按既定流程学习，效果优化后续讨论。新分支codex/2.3-a-review-status基于dc1bfe7；完整domain/main参考逻辑保留，用户独占project_steps/02_03a_content_review/practice.py的review_unknown_time调用练习，不代写。2.2功能/展示和部分复述通过，能力缺项保留且不阻塞推进；笔记29节不增加。本课只人工状态/未知结论/命名参数，无.env/API/数据库/新依赖，先读2.3-a-review-status任务和当课README。
